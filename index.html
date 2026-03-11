@@ -20,7 +20,7 @@
   <title>Ebenezer Tarubinga</title>
 
   <meta name="author" content="Ebenezer Tarubinga">
-  <meta name="description" content="AI/ML Research Engineer specializing in computer vision, semi-supervised semantic segmentation, and depth estimation.">
+  <meta name="description" content="AI/ML Research Engineer. I build AI systems that go from research to production — computer vision, semi-supervised learning, and full-stack software.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
@@ -42,10 +42,10 @@
     <div class="row common-rows">
       <div class="col-xs-12 col-sm-8 personal-column">
         <p>
-          I am an AI Research Engineer at <a href="https://gractor.com">Gractor</a>, where I design and deploy computer vision systems for smart city infrastructure. Before that, I spent two years as a researcher at the <a href="https://xai.korea.ac.kr/">Pattern Recognition &amp; ML Lab</a> at Korea University (MSc in AI, 2023&ndash;25), advised by <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee">Prof. Seong-Whan Lee</a>, publishing first-author papers and filing an autonomous driving patent. I started my career as a software engineer at GliTech, shipping 10+ production projects and leading STEM education initiatives.
+          I build AI systems that go from research to production. Currently an AI Research Engineer at <a href="https://gractor.com">Gractor</a>, designing and deploying computer vision pipelines for smart city infrastructure. Previously published 2 first-author papers at Korea University's <a href="https://xai.korea.ac.kr/">Pattern Recognition &amp; ML Lab</a> (MSc in AI, advised by <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee">Prof. Seong-Whan Lee</a>), and before that shipped 10+ full-stack products as a software engineer.
         </p>
         <p>
-          My work spans the full stack of AI&mdash;from <strong>research</strong> (semi-supervised segmentation, adversarial robustness, depth estimation) to <strong>engineering</strong> (real-time inference pipelines, edge deployment, production ML systems) to <strong>product delivery</strong> (full-cycle project management, cross-functional collaboration, stakeholder engagement).
+          I care about closing the gap between what works in a paper and what works at scale&mdash;whether that means training segmentation models with 100 labeled images, deploying real-time inference on edge devices, or building full-stack applications from scratch.
         </p>
         <p style="text-align:center">
           <a href="mailto:ebstarmusic@gmail.com">Email</a> &nbsp;/&nbsp;
@@ -61,11 +61,11 @@
     </div>
   </div>
 
-  <!-- ===== PUBLICATIONS ===== -->
+  <!-- ===== SELECTED WORK ===== -->
   <div class="container">
     <div class="section-divider"></div>
     <div class="row section-heading-rows">
-      <h5>Publications &amp; Projects</h5>
+      <h5>Selected Work</h5>
     </div>
 
     <div class="publication-filter">
@@ -90,7 +90,7 @@
           <a href="https://github.com/psychofict/CW-BASS">Code</a>
           <a href="https://ieeexplore.ieee.org/abstract/document/11227871/">Paper</a>
         </div>
-        <p class="paper-desc">Tackled boundary blur and confirmation bias using confidence-weighted pseudo-labels, dynamic thresholding, and a boundary-aware module. Achieves 65.9% mIoU on Cityscapes with only 100 labeled images.</p>
+        <p class="paper-desc">Confidence-weighted pseudo-labels, dynamic thresholding, and a boundary-aware module for semi-supervised segmentation. <strong>65.9% mIoU on Cityscapes with only 100 labeled images.</strong></p>
       </div>
     </div>
 
@@ -110,15 +110,45 @@
           <a href="https://github.com/psychofict/FARCLUSS">Code</a>
           <a href="https://arxiv.org/abs/2506.11142">Paper</a>
         </div>
-        <p class="paper-desc">Introduced fuzzy pseudo-labeling, entropy-based weighting, adaptive class rebalancing, and lightweight contrastive regularization to improve generalization in semi-supervised semantic segmentation.</p>
+        <p class="paper-desc">Fuzzy pseudo-labeling, entropy-based weighting, adaptive class rebalancing, and prototype-based contrastive regularization. New baselines on Pascal VOC and Cityscapes across multiple label partitions.</p>
+      </div>
+    </div>
+
+    <!-- AgriLet -->
+    <div class="row common-rows publication-entry selected-publication">
+      <div class="col-xs-12 custom-col-sm-3 left-column">
+        <img src="pictures/proj_agritech.jpg" alt="AgriLet" class="paper-images">
+      </div>
+      <div class="col-xs-12 col-sm-9 right-column">
+        <papertitle>AgriLet &mdash; AI Crop Disease Detection &amp; Education Platform</papertitle><br>
+        <span class="venue-ref">React &middot; TypeScript &middot; Express &middot; Prisma &middot; SQLite</span><br>
+        <div class="link-bar">
+          <a href="https://github.com/psychofict/agrilet">Code</a>
+        </div>
+        <p class="paper-desc">Full-stack platform with AI-powered disease identification, severity scoring, 6 structured learning modules (13 lessons), community data contributions, and downloadable agricultural datasets.</p>
+      </div>
+    </div>
+
+    <!-- 3D Digital Twin -->
+    <div class="row common-rows publication-entry selected-publication">
+      <div class="col-xs-12 custom-col-sm-3 left-column">
+        <img src="pictures/proj_digitaltwin.jpg" alt="Digital Twin" class="paper-images">
+      </div>
+      <div class="col-xs-12 col-sm-9 right-column">
+        <papertitle>3D Digital Twin Traffic Management System</papertitle><br>
+        <span class="venue-ref">React &middot; TypeScript &middot; Three.js &middot; FastAPI</span><br>
+        <div class="link-bar">
+          <a href="https://github.com/psychofict/3d-digital-twin-traffic">Code</a>
+        </div>
+        <p class="paper-desc">Production edge AI system for real-time traffic monitoring with Three.js 3D visualization, predictive analytics, and smart city integration.</p>
       </div>
     </div>
 
     <!-- ===== ALL PROJECTS ===== -->
 
-    <!-- Computer Vision & Adversarial ML -->
+    <!-- Research -->
     <div class="row section-heading-rows publication-entry">
-      <h6>Computer Vision &amp; Adversarial ML</h6>
+      <h6>Research</h6>
     </div>
 
     <div class="row common-rows publication-entry">
@@ -126,13 +156,13 @@
         <img src="pictures/proj_adversarial.jpg" alt="Backdoor attacks" class="paper-images">
       </div>
       <div class="col-xs-12 col-sm-9 right-column">
-        <papertitle>Dual-Embedding Guided Backdoor Attack on Multimodal Contrastive Learning</papertitle><br>
-        <span class="venue-ref">Liang et al., CVPR 2024</span><br>
+        <papertitle>Backdoor Attacks on CLIP (BadCLIP)</papertitle><br>
+        <span class="venue-ref">Adversarial ML &middot; Multimodal Learning</span><br>
         <div class="link-bar">
           <a href="https://github.com/psychofict/badclip-backdoor-study">Code</a>
           <a href="https://drive.google.com/file/d/1OnPxU3cuqhB0uwFL-8w2sg2gjNiUdZNB/view">Slides</a>
         </div>
-        <p class="paper-desc">Studied stealthy backdoor triggers in CLIP-style models by aligning visual and textual embeddings in the joint representation space.</p>
+        <p class="paper-desc">Studied stealthy backdoor triggers in CLIP-style models via dual-embedding alignment in the joint visual-textual representation space.</p>
       </div>
     </div>
 
@@ -142,27 +172,27 @@
       </div>
       <div class="col-xs-12 col-sm-9 right-column">
         <papertitle>Semantic-Aware Multi-Label Adversarial Attacks</papertitle><br>
-        <span class="venue-ref">Mahmood et al., CVPR 2024</span><br>
+        <span class="venue-ref">Adversarial ML &middot; Multi-Label Classification</span><br>
         <div class="link-bar">
           <a href="https://github.com/psychofict/semantic-adversarial-attacks-study">Code</a>
           <a href="https://drive.google.com/file/d/16gKQe9vyjaXc6fQhMEOzhQRfN6H8z__J/view">Slides</a>
         </div>
-        <p class="paper-desc">Crafted targeted perturbations for multi-label classifiers that exploit semantic label co-occurrence dependencies.</p>
+        <p class="paper-desc">Targeted perturbations for multi-label classifiers that exploit semantic label co-occurrence dependencies.</p>
       </div>
     </div>
 
     <div class="row common-rows publication-entry">
       <div class="col-xs-12 custom-col-sm-3 left-column">
-        <img src="pictures/proj_segmentation.jpg" alt="Segmentation" class="paper-images">
+        <img src="pictures/proj_segmentation.jpg" alt="Segmentation baselines" class="paper-images">
       </div>
       <div class="col-xs-12 col-sm-9 right-column">
-        <papertitle>Semi-Supervised Segmentation Baselines: UniMatch &amp; ST++</papertitle><br>
-        <span class="venue-ref">Yang et al., CVPR 2022 / 2023</span><br>
+        <papertitle>Semi-Supervised Segmentation Baselines (UniMatch + ST++)</papertitle><br>
+        <span class="venue-ref">Semi-Supervised Learning &middot; Semantic Segmentation</span><br>
         <div class="link-bar">
           <a href="https://github.com/psychofict/semi-supervised-segmentation-baselines">Code</a>
           <a href="https://drive.google.com/file/d/1CRrbuWRL5Z9S_eKx_QkYUsb3n1NkhzUE/view">Slides</a>
         </div>
-        <p class="paper-desc">Systematic evaluation of weak-to-strong consistency and self-training techniques that served as the foundation for CW-BASS and FARCLUSS.</p>
+        <p class="paper-desc">Systematic evaluation of weak-to-strong consistency and self-training that served as the foundation for CW-BASS and FARCLUSS.</p>
       </div>
     </div>
 
@@ -171,128 +201,13 @@
         <img src="pictures/proj_depth.jpg" alt="Depth estimation" class="paper-images">
       </div>
       <div class="col-xs-12 col-sm-9 right-column">
-        <papertitle>Monocular Depth Estimation for Autonomous Driving</papertitle><br>
-        <span class="venue-ref">Yang et al., NeurIPS 2024</span><br>
+        <papertitle>Monocular Depth Estimation (Depth Anything V2)</papertitle><br>
+        <span class="venue-ref">3D Vision &middot; Autonomous Driving</span><br>
         <div class="link-bar">
           <a href="https://github.com/psychofict/depth-estimation-experiments">Code</a>
         </div>
-        <p class="paper-desc">Depth estimation and point cloud generation for autonomous driving applications using Depth Anything V2, with an improved depth-to-pointcloud pipeline.</p>
+        <p class="paper-desc">Depth estimation and point cloud generation for autonomous driving with an improved depth-to-pointcloud pipeline.</p>
       </div>
-    </div>
-
-    <div class="row common-rows publication-entry">
-      <div class="col-xs-12 custom-col-sm-3 left-column">
-        <img src="pictures/proj_nerf.jpg" alt="NeRF scenes" class="paper-images">
-      </div>
-      <div class="col-xs-12 col-sm-9 right-column">
-        <papertitle>Scalable Urban Dynamic Scenes</papertitle><br>
-        <span class="venue-ref">Turki et al., CVPR 2023</span><br>
-        <div class="link-bar">
-          <a href="https://drive.google.com/file/d/14LQN0Unb1tJavcTr7AYmPZVBt92rj6xB/view">Slides</a>
-        </div>
-        <p class="paper-desc">Multi-branch hash tables and NeRF-style encoding for large-scale dynamic urban scene reconstruction.</p>
-      </div>
-    </div>
-
-    <div class="row common-rows publication-entry">
-      <div class="col-xs-12 custom-col-sm-3 left-column">
-        <img src="pictures/proj_speech.jpg" alt="Speech recognition" class="paper-images">
-      </div>
-      <div class="col-xs-12 col-sm-9 right-column">
-        <papertitle>Speech Emotion Recognition</papertitle><br>
-        <span class="venue-ref">Wu et al., ICASSP 2023</span><br>
-        <div class="link-bar">
-          <a href="https://drive.google.com/file/d/17m_8mXF4cP9DntNO1NJMwAytBEngz5P_/view">Slides</a>
-        </div>
-        <p class="paper-desc">Bi-GRU with self-attention for classifying emotions from audio and text signals.</p>
-      </div>
-    </div>
-
-    <div class="row common-rows publication-entry">
-      <div class="col-xs-12 custom-col-sm-3 left-column">
-        <img src="pictures/proj_generation.jpg" alt="Image generation" class="paper-images">
-      </div>
-      <div class="col-xs-12 col-sm-9 right-column">
-        <papertitle>Text-to-Image Generation</papertitle><br>
-        <span class="venue-ref">Various</span><br>
-        <div class="link-bar">
-          <a href="https://drive.google.com/file/d/1jy_r4eKG322j0h5cY-CTmj8u9bpGjEFq/view">Autoregressive (Parti)</a>
-          <a href="https://drive.google.com/file/d/16ILtyVb_ASF5Fq9BhgZdV0KVKzu4uuUc/view">Controllable (ControlGAN)</a>
-          <a href="https://drive.google.com/file/d/1zqBFEC-k8MiEbeUu9r3_e6C3_1GNZUU5/view">Diffusion (Imagen)</a>
-        </div>
-        <p class="paper-desc">Comparative study of autoregressive, controllable, and diffusion-based approaches to text-conditioned image generation.</p>
-      </div>
-    </div>
-
-    <!-- Reinforcement Learning -->
-    <div class="row section-heading-rows publication-entry">
-      <h6>Reinforcement Learning</h6>
-    </div>
-
-    <div class="row common-rows publication-entry">
-      <div class="col-xs-12 custom-col-sm-3 left-column">
-        <img src="pictures/proj_rl.jpg" alt="Reinforcement learning" class="paper-images">
-      </div>
-      <div class="col-xs-12 col-sm-9 right-column">
-        <papertitle>Aligning Segment Anything Model to Open Context via RL</papertitle><br>
-        <span class="venue-ref">Huang et al., CVPR 2024</span><br>
-        <div class="link-bar">
-          <a href="https://drive.google.com/file/d/1mCw1k8wDHTo0PgHdmkmQjVq4SwS8pLyB/view">Slides</a>
-        </div>
-        <p class="paper-desc">Automatic SAM prompting with a reinforcement learning agent for diverse segmentation tasks.</p>
-      </div>
-    </div>
-
-    <div class="row common-rows publication-entry">
-      <div class="col-xs-12 custom-col-sm-3 left-column">
-        <img src="pictures/proj_rl.jpg" alt="Reinforcement learning" class="paper-images">
-      </div>
-      <div class="col-xs-12 col-sm-9 right-column">
-        <papertitle>Tool-Augmented Reward Modeling (Themis)</papertitle><br>
-        <span class="venue-ref">Li et al., ICLR 2024</span><br>
-        <div class="link-bar">
-          <a href="https://drive.google.com/file/d/1-aVQq_DWq7Xy2AIoedg5iGSFmgkgWtOB/view">Slides</a>
-        </div>
-        <p class="paper-desc">Integrating external APIs into reward models for more accurate and transparent decision processes.</p>
-      </div>
-    </div>
-
-    <!-- Medical Imaging -->
-    <div class="row section-heading-rows publication-entry">
-      <h6>Medical Imaging</h6>
-    </div>
-
-    <div class="row common-rows publication-entry">
-      <div class="col-xs-12 custom-col-sm-3 left-column">
-        <img src="pictures/proj_medical.jpg" alt="Medical imaging" class="paper-images">
-      </div>
-      <div class="col-xs-12 col-sm-9 right-column">
-        <papertitle>ASD Classification with Multi-Site fMRI Data</papertitle><br>
-        <span class="venue-ref">Kunda et al., IEEE TMI 2022</span><br>
-        <div class="link-bar">
-          <a href="https://drive.google.com/file/d/13OXs4WYHQlDlBXQHnHIjhm9FUPqIjU1N/view">Slides</a>
-        </div>
-        <p class="paper-desc">Second-order functional connectivity embedding with domain adaptation for autism detection across diverse clinical sites.</p>
-      </div>
-    </div>
-
-    <div class="row common-rows publication-entry">
-      <div class="col-xs-12 custom-col-sm-3 left-column">
-        <img src="pictures/proj_medical.jpg" alt="Medical imaging" class="paper-images">
-      </div>
-      <div class="col-xs-12 col-sm-9 right-column">
-        <papertitle>Mutual Correction Framework for Semi-Supervised Medical Image Segmentation</papertitle><br>
-        <span class="venue-ref">Wang et al., CVPR 2023</span><br>
-        <div class="link-bar">
-          <a href="https://drive.google.com/file/d/1U3Ml41xXmO4SC1FwyGTbRZ2LM5aC4a75/view">Slides</a>
-        </div>
-        <p class="paper-desc">Mutual correction framework for refining medical segmentation masks and mitigating confirmation bias with limited annotations.</p>
-      </div>
-    </div>
-
-    <!-- LLMs -->
-    <div class="row section-heading-rows publication-entry">
-      <h6>Large Language Models</h6>
     </div>
 
     <div class="row common-rows publication-entry">
@@ -300,8 +215,8 @@
         <img src="pictures/proj_llm.jpg" alt="LLM context" class="paper-images">
       </div>
       <div class="col-xs-12 col-sm-9 right-column">
-        <papertitle>Why Does the Effective Context Length of LLMs Fall Short?</papertitle><br>
-        <span class="venue-ref">An et al., ICLR 2025</span><br>
+        <papertitle>Effective Context Length of LLMs (STRING)</papertitle><br>
+        <span class="venue-ref">NLP &middot; Transformers</span><br>
         <div class="link-bar">
           <a href="https://github.com/psychofict/llm-effective-context-length">Code</a>
           <a href="https://drive.google.com/file/d/16obkOE5o65m8zrUtdMEZdOygMwHD6Aiu/view">Slides</a>
@@ -310,23 +225,9 @@
       </div>
     </div>
 
-    <!-- Software Engineering -->
+    <!-- Software -->
     <div class="row section-heading-rows publication-entry">
-      <h6>Software Engineering</h6>
-    </div>
-
-    <div class="row common-rows publication-entry">
-      <div class="col-xs-12 custom-col-sm-3 left-column">
-        <img src="pictures/proj_agritech.jpg" alt="AgriLet" class="paper-images">
-      </div>
-      <div class="col-xs-12 col-sm-9 right-column">
-        <papertitle>AgriLet — AI Crop Disease Detection &amp; Education Platform</papertitle><br>
-        <span class="venue-ref">Full-Stack Application</span><br>
-        <div class="link-bar">
-          <a href="https://github.com/psychofict/agrilet">Code</a>
-        </div>
-        <p class="paper-desc">AI-powered crop disease identification with severity scoring, 6 structured learning modules, community data contributions, and downloadable agricultural datasets. Built with React, TypeScript, Express, and Prisma.</p>
-      </div>
+      <h6>Software</h6>
     </div>
 
     <div class="row common-rows publication-entry">
@@ -334,30 +235,16 @@
         <img src="pictures/proj_elearn.jpg" alt="eLearn" class="paper-images">
       </div>
       <div class="col-xs-12 col-sm-9 right-column">
-        <papertitle>eLearn — E-Learning Platform for O/A Level Exam Prep</papertitle><br>
-        <span class="venue-ref">Full-Stack Application</span><br>
+        <papertitle>eLearn &mdash; E-Learning Platform</papertitle><br>
+        <span class="venue-ref">React &middot; TypeScript &middot; Express &middot; Prisma &middot; SQLite</span><br>
         <div class="link-bar">
           <a href="https://github.com/psychofict/elearn">Code</a>
         </div>
-        <p class="paper-desc">20+ subjects, 70+ lessons, progress tracking with study streaks, learning analytics dashboard, and personalized settings. Built with React, TypeScript, Express, and Prisma.</p>
+        <p class="paper-desc">20+ subjects, 70+ lessons, progress tracking with study streaks, learning analytics dashboard, and personalized settings. Full authentication, Zod validation, and responsive UI.</p>
       </div>
     </div>
 
-    <div class="row common-rows publication-entry">
-      <div class="col-xs-12 custom-col-sm-3 left-column">
-        <img src="pictures/proj_digitaltwin.jpg" alt="Digital Twin" class="paper-images">
-      </div>
-      <div class="col-xs-12 col-sm-9 right-column">
-        <papertitle>3D Digital Twin Traffic Management System</papertitle><br>
-        <span class="venue-ref">Production System</span><br>
-        <div class="link-bar">
-          <a href="https://github.com/psychofict/3d-digital-twin-traffic">Code</a>
-        </div>
-        <p class="paper-desc">Edge AI-based real-time traffic monitoring with Three.js 3D visualization, predictive analytics, and smart city integration. Built with React, TypeScript, Three.js, and FastAPI.</p>
-      </div>
-    </div>
-
-  </div><!-- end publications container -->
+  </div><!-- end selected work container -->
 
   <!-- ===== EXPERIENCE ===== -->
   <div class="container">
@@ -373,9 +260,8 @@
         <a href="https://gractor.com">Gractor</a> &middot; Seoul, Korea<br>
         <em>Sept 2025 &ndash; present</em></p>
         <ul>
-          <li>Designing and deploying AIoT computer vision solutions for smart city systems.</li>
-          <li>Developing real-time CV and ML models for production environments.</li>
-          <li>Integrating ML pipelines with cross-functional engineering teams.</li>
+          <li>Production CV systems for smart city AIoT; real-time inference on edge devices.</li>
+          <li>End-to-end ML pipelines from data collection to deployment with cross-functional teams.</li>
         </ul>
       </div>
     </div>
@@ -386,28 +272,26 @@
       </div>
       <div class="col-xs-12 col-sm-9 right-column">
         <p><strong>ML Research Engineer</strong><br>
-        <a href="https://xai.korea.ac.kr/">Pattern Recognition &amp; ML Lab</a>, Korea University &middot; Seoul, Korea<br>
+        <a href="https://xai.korea.ac.kr/">Pattern Recognition &amp; ML Lab</a>, Korea University<br>
         <em>Aug 2023 &ndash; Aug 2025</em></p>
         <ul>
-          <li>Published 2 first-author papers; segmentation models outperforming baselines by up to 25% mIoU.</li>
-          <li>Collaborated with industry partners on R&amp;D, filing an autonomous driving patent.</li>
-          <li>Developed object detection, tracking, depth estimation, and dense matching pipelines.</li>
+          <li>2 first-author publications; segmentation models outperforming baselines by up to 25% mIoU.</li>
+          <li>Autonomous driving patent filed; built detection, tracking, depth, and dense matching pipelines.</li>
         </ul>
       </div>
     </div>
 
     <div class="row common-rows">
       <div class="col-xs-12 col-sm-3 left-column">
-        <img src="pictures/glitech_logo.png" alt="GliT" class="paper-images">
+        <img src="pictures/glitech_logo.png" alt="GliTech" class="paper-images">
       </div>
       <div class="col-xs-12 col-sm-9 right-column">
         <p><strong>Software &amp; AI Engineer</strong><br>
-        GliT &middot; Hybrid<br>
+        GliTech<br>
         <em>Jan 2019 &ndash; Jan 2021</em></p>
         <ul>
-          <li>Led tech strategy and shipped 10+ full-cycle projects including AgriLet (AI crop disease detection) and eLearn (exam prep platform).</li>
-          <li>Built and deployed AI-powered applications using React, TypeScript, Node.js, and Python.</li>
-          <li>Launched Innovation Hub clubs engaging 250+ students; 35% STEM participation increase.</li>
+          <li>10+ shipped products including AI-powered applications serving hundreds of users.</li>
+          <li>Led engineering and STEM education initiatives reaching 250+ students.</li>
         </ul>
       </div>
     </div>
@@ -438,97 +322,35 @@
 
     <div class="skills-section">
       <div class="skill-group">
-        <span class="skill-label">Vision</span>
-        <span class="skill-pill">Semantic Segmentation</span>
-        <span class="skill-pill">Object Detection</span>
-        <span class="skill-pill">Depth Estimation</span>
-        <span class="skill-pill">Tracking</span>
-        <span class="skill-pill">Scene Classification</span>
-      </div>
-      <div class="skill-group">
-        <span class="skill-label">Frameworks</span>
+        <span class="skill-label">ML / CV</span>
         <span class="skill-pill">PyTorch</span>
         <span class="skill-pill">TensorFlow</span>
         <span class="skill-pill">OpenCV</span>
         <span class="skill-pill">CUDA</span>
         <span class="skill-pill">ONNX</span>
-        <span class="skill-pill">Docker</span>
         <span class="skill-pill">MLflow</span>
+        <span class="skill-pill">Docker</span>
+        <span class="skill-pill">NVIDIA Jetson</span>
+      </div>
+      <div class="skill-group">
+        <span class="skill-label">Software</span>
+        <span class="skill-pill">React</span>
+        <span class="skill-pill">TypeScript</span>
+        <span class="skill-pill">Node.js</span>
+        <span class="skill-pill">Express</span>
+        <span class="skill-pill">FastAPI</span>
+        <span class="skill-pill">Three.js</span>
+        <span class="skill-pill">Prisma</span>
+        <span class="skill-pill">PostgreSQL</span>
       </div>
       <div class="skill-group">
         <span class="skill-label">Languages</span>
         <span class="skill-pill">Python</span>
         <span class="skill-pill">C++</span>
+        <span class="skill-pill">TypeScript</span>
         <span class="skill-pill">C#</span>
-        <span class="skill-pill">Bash</span>
         <span class="skill-pill">Java</span>
-      </div>
-      <div class="skill-group">
-        <span class="skill-label">Infra</span>
-        <span class="skill-pill">NVIDIA Jetson</span>
-        <span class="skill-pill">CI/CD</span>
-        <span class="skill-pill">GitHub Actions</span>
-        <span class="skill-pill">Agile</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== CERTIFICATES ===== -->
-  <div class="container">
-    <div class="section-divider"></div>
-    <div class="row section-heading-rows"><h5>Certificates</h5></div>
-    <div class="row">
-      <div class="col-12">
-        <div class="row">
-          <div class="col-sm-6 mb-3">
-            <div class="d-flex align-items-center">
-              <img src="pictures/IBM.jpeg" alt="IBM" class="cert-logo">
-              <div>IBM Applied AI Professional Certificate</div>
-            </div>
-          </div>
-          <div class="col-sm-6 mb-3">
-            <div class="d-flex align-items-center">
-              <img src="pictures/northwestern-logo.jpg" alt="Northwestern" class="cert-logo">
-              <div>Modern Robotics Specialization &ndash; Northwestern</div>
-            </div>
-          </div>
-          <div class="col-sm-6 mb-3">
-            <div class="d-flex align-items-center">
-              <img src="pictures/Google.png" alt="Google" class="cert-logo">
-              <div>Foundations of Project Management &ndash; Google</div>
-            </div>
-          </div>
-          <div class="col-sm-6 mb-3">
-            <div class="d-flex align-items-center">
-              <img src="pictures/amazon.png" alt="Amazon" class="cert-logo">
-              <div>Semantic Segmentation with SageMaker &ndash; Amazon</div>
-            </div>
-          </div>
-          <div class="col-sm-6 mb-3">
-            <div class="d-flex align-items-center">
-              <img src="pictures/AWS.png" alt="AWS" class="cert-logo">
-              <div>AWS S3 Basics &ndash; Amazon Web Services</div>
-            </div>
-          </div>
-          <div class="col-sm-6 mb-3">
-            <div class="d-flex align-items-center">
-              <img src="pictures/Microsoft.png" alt="Microsoft" class="cert-logo">
-              <div>ML Pipelines with Azure ML Studio &ndash; Microsoft</div>
-            </div>
-          </div>
-          <div class="col-sm-6 mb-3">
-            <div class="d-flex align-items-center">
-              <img src="pictures/emory.univ.png" alt="Emory" class="cert-logo">
-              <div>Neuroscience &ndash; Emory University</div>
-            </div>
-          </div>
-          <div class="col-sm-6 mb-3">
-            <div class="d-flex align-items-center">
-              <img src="pictures/MIT.png" alt="MIT" class="cert-logo">
-              <div>Game Development using Scratch &ndash; MIT</div>
-            </div>
-          </div>
-        </div>
+        <span class="skill-pill">Bash</span>
       </div>
     </div>
   </div>

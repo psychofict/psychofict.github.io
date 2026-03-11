@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="8" fill="#f5f3ff"/>
+  <rect x="30" y="40" width="140" height="120" rx="4" fill="url(#depthGrad)"/>
+  <defs>
+    <linearGradient id="depthGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#7c3aed" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  <line x1="40" y1="70" x2="160" y2="70" stroke="#7c3aed" stroke-width="1" opacity="0.3"/>
+  <line x1="40" y1="100" x2="160" y2="100" stroke="#7c3aed" stroke-width="1" opacity="0.3"/>
+  <line x1="40" y1="130" x2="160" y2="130" stroke="#7c3aed" stroke-width="1" opacity="0.3"/>
+  <polygon points="80,55 100,45 120,55 120,90 80,90" fill="#a78bfa" opacity="0.5"/>
+  <rect x="50" y="100" width="30" height="50" fill="#8b5cf6" opacity="0.4"/>
+  <rect x="120" y="85" width="25" height="65" fill="#8b5cf6" opacity="0.35"/>
+</svg>

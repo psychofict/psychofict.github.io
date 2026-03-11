@@ -1,14 +1,13 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-  
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFYF6ZWHZZ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-YFYF6ZWHZZ');
 </script>
 
@@ -18,92 +17,43 @@
   <meta http-equiv="Pragma" content="no-cache"/>
   <meta http-equiv="Expires" content="0"/>
 
-  <title>Ebenezer (Ebstar) Tarubinga</title>
-  
+  <title>Ebenezer Tarubinga</title>
+
   <meta name="author" content="Ebenezer Tarubinga">
+  <meta name="description" content="AI/ML Research Engineer specializing in computer vision, semi-supervised semantic segmentation, and depth estimation.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Custom styles -->
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon" type="image/png" href="pictures/ebstar.png">
-
-  <style>
-    .publication-filter {
-      display: block;
-      margin-left: 0;
-      margin-top: 5px;
-    }
-    .filter-btn {
-      background: none;
-      border: none;
-      color: #1772d0;
-      cursor: pointer;
-      text-decoration: none;
-      font-size: 16px;
-      padding: 0 5px;
-      font-family: inherit;
-    }
-    .filter-btn:hover {
-      text-decoration: none;
-      color: orange;
-    }
-    .filter-btn.active {
-      color: #1772d0;
-      font-weight: bold;
-    }
-    .publication-entry {
-      transition: opacity 0.3s ease, height 0.3s ease;
-    }
-    .publication-entry.hidden {
-      display: none;
-    }
-    /* Style for the Simba GIF to crop the top */
-    .paper-images {
-      width: 100%;
-      height: auto;
-    }
-    .cropped-gif {
-      width: 100%;
-      clip-path: inset(20% 0 20% 0);
-    }
-    .spotlight {
-        color: orange;
-        font-weight: bold;
-      }
-  </style>
 </head>
-  
+
 <body>
+
+  <!-- ===== HEADER / BIO ===== -->
   <div class="container">
     <div class="row" style="margin-top: 10px;">
       <div class="col-sm-4 name-column" style="min-width: 266px;">
         <p style="text-align:center">
           <name>Ebenezer Tarubinga</name>
+        </p>
       </div>
     </div>
-    <!-- Bio / profile photo -->
+
     <div class="row common-rows">
-      
       <div class="col-xs-12 col-sm-8 personal-column">
-        <p> 
-          Hello! I am a ML/CV Engineer. I did my MSc. in AI at <a href="https://xai.korea.ac.kr/">Korea University</a> (2023-25), advised by <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee">Dr. Seong-Whan Lee</a>. <br> 
+        <p>
+          I am an AI Research Engineer at <a href="https://gractor.com">Gractor</a>, building computer vision systems for smart city infrastructure. I completed my MSc in AI at <a href="https://xai.korea.ac.kr/">Korea University</a> (2023&ndash;25), advised by <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee">Prof. Seong-Whan Lee</a>.
         </p>
         <p>
-          I have 4+ years of experience in computer vision, deep learning, robotics and software engineering. My most recent work has been deploying image & video segmentation models. <br>
-          Aside from Semantic segmentation, I also work on Depth estimation, Instance retrival, Dense matching and Sparse matching. I also have research experience in Big Data and Reinforcement Learning. <br>
+          My research focuses on <strong>semi-supervised semantic segmentation</strong>&mdash;tackling pseudo-label noise, boundary degradation, and class imbalance under limited annotations. I also work on depth estimation, adversarial robustness, instance retrieval, and dense/sparse matching.
         </p>
-        <p>  
-            If you want to discuss anything; please feel free to reach me :&#41; 
-        </p>
-        
         <p style="text-align:center">
           <a href="mailto:ebstarmusic@gmail.com">Email</a> &nbsp;/&nbsp;
           <a href="data/ebstar_cv.pdf">CV</a> &nbsp;/&nbsp;
-          <a href="https://scholar.google.com/citations?user=W818y-gAAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp;
+          <a href="https://scholar.google.com/citations?user=W818y-gAAAAJ&hl=en">Scholar</a> &nbsp;/&nbsp;
           <a href="https://www.linkedin.com/in/ebstar">LinkedIn</a> &nbsp;/&nbsp;
           <a href="https://github.com/psychofict">GitHub</a>
         </p>
-        
       </div>
       <div class="col-xs-12 col-sm-4 personal-column" style="margin-top:30px;">
         <img alt="profile photo" src="pictures/ebstar.png" class="personal-photo">
@@ -111,352 +61,413 @@
     </div>
   </div>
 
-  <!-- Selected Projects -->
+  <!-- ===== PUBLICATIONS ===== -->
   <div class="container">
+    <div class="section-divider"></div>
     <div class="row section-heading-rows">
-      <h5>Publications/Projects</h5>
+      <h5>Publications &amp; Projects</h5>
     </div>
-    <div class="publication-filter" style="margin-top:-1%">
-      <a href="javascript:void(0)" class="filter-btn active" data-filter="selected">Selected</a> /
-      <a href="javascript:void(0)" class="filter-btn" data-filter="all">All</a>
-      
-    <!-- CW‑BASS -->
-    <div class="row common-rows selected-publication" style="margin-top:0%">
+
+    <div class="publication-filter">
+      <button class="filter-btn active" data-filter="selected">Selected</button>
+      <span class="filter-sep">/</span>
+      <button class="filter-btn" data-filter="all">All</button>
+    </div>
+
+    <!-- CW-BASS -->
+    <div class="row common-rows publication-entry selected-publication">
       <div class="col-xs-12 custom-col-sm-3 left-column">
-            <img src="pictures/gif4.gif" alt="CW-BASS project image" class="paper-images">
-        </div>
-      <div class="col-xs-12 col-sm-9 right-column" style="margin-top:-1%">
-        <papertitle>
-          CW-BASS: Confidence-Weighted Boundary Aware Learning for Semi-Supervised Semantic Segmentation
-        </papertitle><br>
+        <img src="pictures/gif4.gif" alt="CW-BASS" class="paper-images">
+      </div>
+      <div class="col-xs-12 col-sm-9 right-column">
+        <papertitle>CW-BASS: Confidence-Weighted Boundary Aware Learning for Semi-Supervised Semantic Segmentation</papertitle><br>
         <strong>Ebenezer Tarubinga</strong>,
         <a href="https://scholar.google.com/citations?user=uH_-hRUAAAAJ&hl=en">Jenifer Kalafatovich</a>,
-        <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee">Seong-Whan Lee</a>,
-        <br>
-        <em>IJCNN 2025</em>
-        <br>
-        <a href="https://psychofict.github.io/CW-BASS/">Project Page</a> / <a href="https://github.com/psychofict/CW-BASS">Code</a> / <a href="https://arxiv.org/abs/2502.15152">Paper</a><br>
-        <p>Tackled boundary blur and confirmation bias using confidence-weighted and boundary-focused techniques to improve segmentation performance.</p>
+        <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee">Seong-Whan Lee</a><br>
+        <span class="venue-badge">IJCNN 2025</span><br>
+        <div class="link-bar">
+          <a href="https://psychofict.github.io/CW-BASS/">Project Page</a>
+          <a href="https://github.com/psychofict/CW-BASS">Code</a>
+          <a href="https://arxiv.org/abs/2502.15152">Paper</a>
+        </div>
+        <p class="paper-desc">Tackled boundary blur and confirmation bias using confidence-weighted pseudo-labels, dynamic thresholding, and a boundary-aware module. Achieves 65.9% mIoU on Cityscapes with only 100 labeled images.</p>
       </div>
     </div>
 
     <!-- FARCLUSS -->
-    <div class="row common-rows selected-publication" style="margin-top:3%">
+    <div class="row common-rows publication-entry selected-publication">
       <div class="col-xs-12 custom-col-sm-3 left-column">
-        <img src="pictures/farcluss.png" alt="FARCLUSS project image" class="paper-images">
+        <img src="pictures/farcluss.png" alt="FARCLUSS" class="paper-images">
       </div>
-      <div class="col-xs-12 col-sm-9 right-column" style="margin-top:-1%">
-        <papertitle>
-          FARCLUSS: Fuzzy Adaptive Rebalancing and Contrastive Uncertainty Learning for Semi-Supervised Semantic Segmentation
-        </papertitle><br>
+      <div class="col-xs-12 col-sm-9 right-column">
+        <papertitle>FARCLUSS: Fuzzy Adaptive Rebalancing and Contrastive Uncertainty Learning for Semi-Supervised Semantic Segmentation</papertitle><br>
         <strong>Ebenezer Tarubinga</strong>,
         <a href="https://scholar.google.com/citations?user=uH_-hRUAAAAJ&hl=en">Jenifer Kalafatovich</a>,
-        <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee">Seong-Whan Lee</a>,
-        <br>
-        <em>Neural Networks (Elsevier) – Under Review</em><br>
-        <a href="https://github.com/psychofict/FARCLUSS">Code</a> / <a href="https://arxiv.org/abs/2506.11142">Paper</a><br>
-        <p>Introduced fuzzy labels and lightweight contrastive learning to improve generalization in semi-supervised settings semantic segmentation.</p>
+        <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee">Seong-Whan Lee</a><br>
+        <span class="venue-badge venue-review">Neural Networks &ndash; Under Review</span><br>
+        <div class="link-bar">
+          <a href="https://github.com/psychofict/FARCLUSS">Code</a>
+          <a href="https://arxiv.org/abs/2506.11142">Paper</a>
+        </div>
+        <p class="paper-desc">Introduced fuzzy pseudo-labeling, entropy-based weighting, adaptive class rebalancing, and lightweight contrastive regularization to improve generalization in semi-supervised semantic segmentation.</p>
       </div>
     </div>
-  </div>
 
+    <!-- ===== ALL PROJECTS ===== -->
 
-    <!-- All Publications/Projects -->
-
-  <!-- Computer Vision & Adversarial ML -->
- <div data-filter="all">
-  <!-- Computer Vision & Adversarial ML heading -->
-  <div class="row section-heading-rows" style="margin-top:2%">
-    <h6>Computer Vision & Adversarial ML</h6>
-  </div>
-   
-  <!-- Dual-Embedding Guided Backdoor Attack on Multimodal Contrastive Learning -->
-  <div class="row common-rows publication-entry">
-    <div class="col-xs-12 custom-col-sm-3 left-column"></div>
-    <div class="col-xs-12 col-sm-9 right-column">
-      <papertitle><a href="https://drive.google.com/file/d/1OnPxU3cuqhB0uwFL-8w2sg2gjNiUdZNB/view">Dual-Embedding Guided Backdoor Attack on Multimodal Contrastive Learning.</a></papertitle><br>
-      <a href="https://github.com/psychofict/badclip-backdoor-study">Code</a><br>
-      <p>Project on designing stealthy backdoor triggers in CLIP-style models by aligning visual and textual embeddings (Liang et al., CVPR 2024).</p>
+    <!-- Computer Vision & Adversarial ML -->
+    <div class="row section-heading-rows publication-entry">
+      <h6>Computer Vision &amp; Adversarial ML</h6>
     </div>
-  </div>
 
-  <!-- Semantic-Aware Multi-Label Adversarial Attacks -->
-  <div class="row common-rows publication-entry">
-    <div class="col-xs-12 custom-col-sm-3 left-column"></div>
-    <div class="col-xs-12 col-sm-9 right-column">
-      <papertitle><a href="https://drive.google.com/file/d/16gKQe9vyjaXc6fQhMEOzhQRfN6H8z__J/view">Semantic-Aware Multi-Label Adversarial Attacks.</a></papertitle><br>
-      <a href="https://github.com/psychofict/semantic-adversarial-attacks-study">Code</a><br>
-      <p>Project on crafting targeted perturbations for multi-label classifiers that respect semantic label dependencies (Mahmood et al., CVPR 2024).</p>
+    <div class="row common-rows publication-entry">
+      <div class="col-xs-12 custom-col-sm-3 left-column"></div>
+      <div class="col-xs-12 col-sm-9 right-column">
+        <papertitle>Dual-Embedding Guided Backdoor Attack on Multimodal Contrastive Learning</papertitle><br>
+        <span class="venue-ref">Liang et al., CVPR 2024</span><br>
+        <div class="link-bar">
+          <a href="https://github.com/psychofict/badclip-backdoor-study">Code</a>
+          <a href="https://drive.google.com/file/d/1OnPxU3cuqhB0uwFL-8w2sg2gjNiUdZNB/view">Slides</a>
+        </div>
+        <p class="paper-desc">Studied stealthy backdoor triggers in CLIP-style models by aligning visual and textual embeddings in the joint representation space.</p>
+      </div>
     </div>
-  </div>
 
-  <!-- Enhanced Self-Training for Semi-Supervised Semantic Segmentation -->
-  <div class="row common-rows publication-entry">
-    <div class="col-xs-12 custom-col-sm-3 left-column"></div>
-    <div class="col-xs-12 col-sm-9 right-column">
-      <papertitle><a href="https://drive.google.com/file/d/1CRrbuWRL5Z9S_eKx_QkYUsb3n1NkhzUE/view">Self-Training for Semi-Supervised Semantic Segmentation.</a></papertitle><br>
-      <a href="https://github.com/psychofict/semi-supervised-segmentation-baselines">Code</a><br>
-      <p>Exploration of ST++ techniques—strong data augmentations and selective re-training—to boost segmentation with limited labels (Yang et al., CVPR 2022).</p>
+    <div class="row common-rows publication-entry">
+      <div class="col-xs-12 custom-col-sm-3 left-column"></div>
+      <div class="col-xs-12 col-sm-9 right-column">
+        <papertitle>Semantic-Aware Multi-Label Adversarial Attacks</papertitle><br>
+        <span class="venue-ref">Mahmood et al., CVPR 2024</span><br>
+        <div class="link-bar">
+          <a href="https://github.com/psychofict/semantic-adversarial-attacks-study">Code</a>
+          <a href="https://drive.google.com/file/d/16gKQe9vyjaXc6fQhMEOzhQRfN6H8z__J/view">Slides</a>
+        </div>
+        <p class="paper-desc">Crafted targeted perturbations for multi-label classifiers that exploit semantic label co-occurrence dependencies.</p>
+      </div>
     </div>
-  </div>
 
-  <!-- SUDS: Scalable Urban Dynamic Scenes -->
-  <div class="row common-rows publication-entry">
-    <div class="col-xs-12 custom-col-sm-3 left-column"></div>
-    <div class="col-xs-12 col-sm-9 right-column">
-      <papertitle><a href="https://drive.google.com/file/d/14LQN0Unb1tJavcTr7AYmPZVBt92rj6xB/view">Scalable Urban Dynamic Scenes.</a></papertitle><br>
-      <p>Advanced scene representation using multi-branch hash tables and NeRF-style encoding for large-scale dynamic urban reconstructions (Turki et al., CVPR 2023).</p>
+    <div class="row common-rows publication-entry">
+      <div class="col-xs-12 custom-col-sm-3 left-column"></div>
+      <div class="col-xs-12 col-sm-9 right-column">
+        <papertitle>Semi-Supervised Segmentation Baselines: UniMatch &amp; ST++</papertitle><br>
+        <span class="venue-ref">Yang et al., CVPR 2022 / 2023</span><br>
+        <div class="link-bar">
+          <a href="https://github.com/psychofict/semi-supervised-segmentation-baselines">Code</a>
+          <a href="https://drive.google.com/file/d/1CRrbuWRL5Z9S_eKx_QkYUsb3n1NkhzUE/view">Slides</a>
+        </div>
+        <p class="paper-desc">Systematic evaluation of weak-to-strong consistency and self-training techniques that served as the foundation for CW-BASS and FARCLUSS.</p>
+      </div>
     </div>
-  </div>
 
-  <!-- Monocular Depth Estimation -->
-  <div class="row common-rows publication-entry">
-    <div class="col-xs-12 custom-col-sm-3 left-column"></div>
-    <div class="col-xs-12 col-sm-9 right-column">
-      <papertitle>Monocular Depth Estimation Experiments.</papertitle><br>
-      <a href="https://github.com/psychofict/depth-estimation-experiments">Code</a><br>
-      <p>Depth estimation research and point cloud generation for autonomous driving applications using Depth Anything V2 (Yang et al., NeurIPS 2024).</p>
+    <div class="row common-rows publication-entry">
+      <div class="col-xs-12 custom-col-sm-3 left-column"></div>
+      <div class="col-xs-12 col-sm-9 right-column">
+        <papertitle>Monocular Depth Estimation for Autonomous Driving</papertitle><br>
+        <span class="venue-ref">Yang et al., NeurIPS 2024</span><br>
+        <div class="link-bar">
+          <a href="https://github.com/psychofict/depth-estimation-experiments">Code</a>
+        </div>
+        <p class="paper-desc">Depth estimation and point cloud generation for autonomous driving applications using Depth Anything V2, with an improved depth-to-pointcloud pipeline.</p>
+      </div>
     </div>
-  </div>
 
-  <!-- Speech Emotion Recognition -->
-  <div class="row common-rows publication-entry">
-    <div class="col-xs-12 custom-col-sm-3 left-column"></div>
-    <div class="col-xs-12 col-sm-9 right-column">
-      <papertitle><a href="https://drive.google.com/file/d/17m_8mXF4cP9DntNO1NJMwAytBEngz5P_/view">Speech Emotion Recognition.</a></papertitle><br>
-      <p>Implementation of a Bi-GRU with self-attention framework for classifying emotions from audio/text (Wu et al., ICASSP 2023).</p>
+    <div class="row common-rows publication-entry">
+      <div class="col-xs-12 custom-col-sm-3 left-column"></div>
+      <div class="col-xs-12 col-sm-9 right-column">
+        <papertitle>Scalable Urban Dynamic Scenes</papertitle><br>
+        <span class="venue-ref">Turki et al., CVPR 2023</span><br>
+        <div class="link-bar">
+          <a href="https://drive.google.com/file/d/14LQN0Unb1tJavcTr7AYmPZVBt92rj6xB/view">Slides</a>
+        </div>
+        <p class="paper-desc">Multi-branch hash tables and NeRF-style encoding for large-scale dynamic urban scene reconstruction.</p>
+      </div>
     </div>
-  </div>
 
-  <!-- Generative Models -->
-  <div class="row common-rows publication-entry">
-    <div class="col-xs-12 custom-col-sm-3 left-column"></div>
-    <div class="col-xs-12 col-sm-9 right-column">
-      <papertitle><a href="https://drive.google.com/file/d/1jy_r4eKG322j0h5cY-CTmj8u9bpGjEFq/view">Autoregressive text-to-image generation.</a></papertitle><br>
-      <p>AutoGAN (Parti) (Google Research, TMLR 2022)</p>
+    <div class="row common-rows publication-entry">
+      <div class="col-xs-12 custom-col-sm-3 left-column"></div>
+      <div class="col-xs-12 col-sm-9 right-column">
+        <papertitle>Speech Emotion Recognition</papertitle><br>
+        <span class="venue-ref">Wu et al., ICASSP 2023</span><br>
+        <div class="link-bar">
+          <a href="https://drive.google.com/file/d/17m_8mXF4cP9DntNO1NJMwAytBEngz5P_/view">Slides</a>
+        </div>
+        <p class="paper-desc">Bi-GRU with self-attention for classifying emotions from audio and text signals.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="row common-rows publication-entry">
-    <div class="col-xs-12 custom-col-sm-3 left-column"></div>
-    <div class="col-xs-12 col-sm-9 right-column">
-      <papertitle><a href="https://drive.google.com/file/d/16ILtyVb_ASF5Fq9BhgZdV0KVKzu4uuUc/view">Controllable text-to-image generation.</a></papertitle><br>
-      <p>Control GAN (B. Li et. al, NIPS 2019).</p>
+    <div class="row common-rows publication-entry">
+      <div class="col-xs-12 custom-col-sm-3 left-column"></div>
+      <div class="col-xs-12 col-sm-9 right-column">
+        <papertitle>Text-to-Image Generation</papertitle><br>
+        <span class="venue-ref">Various</span><br>
+        <div class="link-bar">
+          <a href="https://drive.google.com/file/d/1jy_r4eKG322j0h5cY-CTmj8u9bpGjEFq/view">Autoregressive (Parti)</a>
+          <a href="https://drive.google.com/file/d/16ILtyVb_ASF5Fq9BhgZdV0KVKzu4uuUc/view">Controllable (ControlGAN)</a>
+          <a href="https://drive.google.com/file/d/1zqBFEC-k8MiEbeUu9r3_e6C3_1GNZUU5/view">Diffusion (Imagen)</a>
+        </div>
+        <p class="paper-desc">Comparative study of autoregressive, controllable, and diffusion-based approaches to text-conditioned image generation.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="row common-rows publication-entry">
-    <div class="col-xs-12 custom-col-sm-3 left-column"></div>
-    <div class="col-xs-12 col-sm-9 right-column">
-      <papertitle><a href="https://drive.google.com/file/d/1zqBFEC-k8MiEbeUu9r3_e6C3_1GNZUU5/view">Diffusion based text-to-image generation.</a></papertitle><br>
-      <p>Imagen (Google Research, NIPS 2022).</p>
+    <!-- Reinforcement Learning -->
+    <div class="row section-heading-rows publication-entry">
+      <h6>Reinforcement Learning</h6>
     </div>
-  </div>
 
-  <!-- Reinforcement Learning -->
-  <div class="row section-heading-rows" style="margin-top:2%">
-    <h6>Reinforcement Learning</h6>
-  </div>
-
-  <!-- Aligning Segment Anything Model to Open Context via Reinforcement Learning -->
-  <div class="row common-rows publication-entry">
-    <div class="col-xs-12 custom-col-sm-3 left-column"></div>
-    <div class="col-xs-12 col-sm-9 right-column">
-      <papertitle><a href="https://drive.google.com/file/d/1mCw1k8wDHTo0PgHdmkmQjVq4SwS8pLyB/view">Aligning Segment Anything Model to Open Context via Reinforcement Learning.</a></papertitle><br>
-      <p>Study on automatically prompting SAM with an RL agent for diverse segmentation tasks (Huang et al., CVPR 2024).</p>
+    <div class="row common-rows publication-entry">
+      <div class="col-xs-12 custom-col-sm-3 left-column"></div>
+      <div class="col-xs-12 col-sm-9 right-column">
+        <papertitle>Aligning Segment Anything Model to Open Context via RL</papertitle><br>
+        <span class="venue-ref">Huang et al., CVPR 2024</span><br>
+        <div class="link-bar">
+          <a href="https://drive.google.com/file/d/1mCw1k8wDHTo0PgHdmkmQjVq4SwS8pLyB/view">Slides</a>
+        </div>
+        <p class="paper-desc">Automatic SAM prompting with a reinforcement learning agent for diverse segmentation tasks.</p>
+      </div>
     </div>
-  </div>
 
-  <!-- Tool-Augmented Reward Modeling (Themis) -->
-  <div class="row common-rows publication-entry">
-    <div class="col-xs-12 custom-col-sm-3 left-column"></div>
-    <div class="col-xs-12 col-sm-9 right-column">
-      <papertitle><a href="https://drive.google.com/file/d/1-aVQq_DWq7Xy2AIoedg5iGSFmgkgWtOB/view">Tool-Augmented Reward Modeling.</a></papertitle><br>
-      <p>Integrating external APIs into reward models for more accurate, transparent decision processes (Li et al., ICLR 2024).</p>
+    <div class="row common-rows publication-entry">
+      <div class="col-xs-12 custom-col-sm-3 left-column"></div>
+      <div class="col-xs-12 col-sm-9 right-column">
+        <papertitle>Tool-Augmented Reward Modeling (Themis)</papertitle><br>
+        <span class="venue-ref">Li et al., ICLR 2024</span><br>
+        <div class="link-bar">
+          <a href="https://drive.google.com/file/d/1-aVQq_DWq7Xy2AIoedg5iGSFmgkgWtOB/view">Slides</a>
+        </div>
+        <p class="paper-desc">Integrating external APIs into reward models for more accurate and transparent decision processes.</p>
+      </div>
     </div>
-  </div>
 
-  <!-- Medical & Healthcare Imaging -->
-  <div class="row section-heading-rows" style="margin-top:2%">
-    <h6>Medical &amp; Healthcare Imaging</h6>
-  </div>
-
-  <!-- ASD Classification with Multi-Site fMRI Data -->
-  <div class="row common-rows publication-entry">
-    <div class="col-xs-12 custom-col-sm-3 left-column"></div>
-    <div class="col-xs-12 col-sm-9 right-column">
-      <papertitle><a href="https://drive.google.com/file/d/13OXs4WYHQlDlBXQHnHIjhm9FUPqIjU1N/view">ASD Classification with Multi-Site fMRI Data.</a></papertitle><br>
-      <p>Development of a second-order functional connectivity embedding plus domain-adaptation to improve autism detection across diverse sites (Kunda et al., IEEE TMI 2022).</p>
+    <!-- Medical Imaging -->
+    <div class="row section-heading-rows publication-entry">
+      <h6>Medical Imaging</h6>
     </div>
-  </div>
 
-  <!-- MCF: Mutual Correction Framework for Semi-Supervised Medical Image Segmentation -->
-  <div class="row common-rows publication-entry">
-    <div class="col-xs-12 custom-col-sm-3 left-column"></div>
-    <div class="col-xs-12 col-sm-9 right-column">
-      <papertitle><a href="https://drive.google.com/file/d/1U3Ml41xXmO4SC1FwyGTbRZ2LM5aC4a75/view">Mutual Correction Framework for Semi-Supervised Medical Image Segmentation.</a></papertitle><br>
-      <p>Reviewing and improving the Mutual Correction Framework (MCF) for refining medical image segmentation masks via mutual corrections solving confirmation bias (Wang et al., CVPR 2023).</p>
+    <div class="row common-rows publication-entry">
+      <div class="col-xs-12 custom-col-sm-3 left-column"></div>
+      <div class="col-xs-12 col-sm-9 right-column">
+        <papertitle>ASD Classification with Multi-Site fMRI Data</papertitle><br>
+        <span class="venue-ref">Kunda et al., IEEE TMI 2022</span><br>
+        <div class="link-bar">
+          <a href="https://drive.google.com/file/d/13OXs4WYHQlDlBXQHnHIjhm9FUPqIjU1N/view">Slides</a>
+        </div>
+        <p class="paper-desc">Second-order functional connectivity embedding with domain adaptation for autism detection across diverse clinical sites.</p>
+      </div>
     </div>
-  </div>
 
-  <!-- Large-Scale Language Models -->
-  <div class="row section-heading-rows" style="margin-top:2%">
-    <h6>Large-Scale Language Models</h6>
-  </div>
-
-  <!-- Why Does the Effective Context Length of LLMs Fall Short? -->
-  <div class="row common-rows publication-entry">
-    <div class="col-xs-12 custom-col-sm-3 left-column"></div>
-    <div class="col-xs-12 col-sm-9 right-column">
-      <papertitle><a href=”https://drive.google.com/file/d/16obkOE5o65m8zrUtdMEZdOygMwHD6Aiu/view”>Why Does the Effective Context Length of LLMs Fall Short?.</a></papertitle><br>
-      <a href=”https://github.com/psychofict/llm-effective-context-length”>Code</a><br>
-      <p>Investigated the gap between declared training context length and empirical “effective” context length, analyzed positional-encoding biases and shifting method (Chenxin, ICLR 2025).</p></div>
-  </div>
-
-  <!-- Work Experience -->
-  <!-- Work Experience --> 
-<div class="container">
-  <div class="row section-heading-rows"><h5>Work Experience</h5></div>
-
-    <div class="row common-rows">
-    <div class="col-xs-12 col-sm-3 left-column">
-      <img src="pictures/gractor.png" alt="Gractor logo" class="paper-images">
+    <div class="row common-rows publication-entry">
+      <div class="col-xs-12 custom-col-sm-3 left-column"></div>
+      <div class="col-xs-12 col-sm-9 right-column">
+        <papertitle>Mutual Correction Framework for Semi-Supervised Medical Image Segmentation</papertitle><br>
+        <span class="venue-ref">Wang et al., CVPR 2023</span><br>
+        <div class="link-bar">
+          <a href="https://drive.google.com/file/d/1U3Ml41xXmO4SC1FwyGTbRZ2LM5aC4a75/view">Slides</a>
+        </div>
+        <p class="paper-desc">Mutual correction framework for refining medical segmentation masks and mitigating confirmation bias with limited annotations.</p>
+      </div>
     </div>
-    <div class="col-xs-12 col-sm-9 right-column">
-      <p><strong>AI Research Engineer</strong><br>
-      Gractor | Seoul, Korea<br>
-      <em>Sept 2025 – present</em></p>
-      <ul>
-        <li>Designed and implemented AIoT solutions for smart city systems.</li>
-        <li>Developed CV and ML models for several smart city systems.</li>
-        <li>Integrated ML models into production systems in collaboration with cross-functional teams.</li>
-      </ul>
-    </div>
-      
-  <div class="row common-rows">
-    <div class="col-xs-12 col-sm-3 left-column">
-      <img src="pictures/ku_logo.png" alt="Korea University logo" class="paper-images">
-    </div>
-    <div class="col-xs-12 col-sm-9 right-column">
-      <p><strong>Machine Learning Research Engineer</strong><br>
-      Pattern Recognition & Machine Learning Lab | Seoul, Korea<br>
-      <em>Aug 2023 – Aug 2025</em></p>
-      <ul>
-        <li>Built and deployed novel segmentation models, outperforming baselines by up to 25% mIoU.</li>
-        <li>Collaborated with external industry partners on R&D initiatives, publishing papers and filing a patent.</li>
-        <li>Developed object detection and tracking pipelines for autonomous driving applications.</li>
-        <li>Led research in depth estimation, instance retrieval, and dense/sparse matching.</li>
-      </ul>
-    </div>
-  </div>
 
-
-    <div class="row common-rows">
-    <div class="col-xs-12 col-sm-3 left-column">
-      <img src="pictures/glitech_logo.png" alt="GliTech logo" class="paper-images">
+    <!-- LLMs -->
+    <div class="row section-heading-rows publication-entry">
+      <h6>Large Language Models</h6>
     </div>
-    <div class="col-xs-12 col-sm-9 right-column">
-      <p><strong>Software & AI Engineer</strong><br>
-      GliT | Hybrid<br>
-      <em>Aug 2022 – Aug 2023</em></p>
-      <ul>
-        <li>Led tech strategy and completed 10+ full-cycle projects successfully.</li>
-        <li>Built and deployed AI-powered applications using deep learning frameworks.</li>
-        <li>Launched Innovation Hub clubs in schools, engaging 250+ students and raising STEM participation by 35%.</li>
-        <li>Secured 10+ school partnerships, increasing tech adoption by 40% through community-focused solutions.</li>
-      </ul>
-    </div>
-  </div>
-</div>
 
-  
-  <!-- Education -->
+    <div class="row common-rows publication-entry">
+      <div class="col-xs-12 custom-col-sm-3 left-column"></div>
+      <div class="col-xs-12 col-sm-9 right-column">
+        <papertitle>Why Does the Effective Context Length of LLMs Fall Short?</papertitle><br>
+        <span class="venue-ref">An et al., ICLR 2025</span><br>
+        <div class="link-bar">
+          <a href="https://github.com/psychofict/llm-effective-context-length">Code</a>
+          <a href="https://drive.google.com/file/d/16obkOE5o65m8zrUtdMEZdOygMwHD6Aiu/view">Slides</a>
+        </div>
+        <p class="paper-desc">Investigated the gap between declared and effective context length in LLMs, analyzing positional-encoding biases and the STRING shifting method.</p>
+      </div>
+    </div>
+
+  </div><!-- end publications container -->
+
+  <!-- ===== EXPERIENCE ===== -->
   <div class="container">
-  <div class="row section-heading-rows"><h5>Education</h5></div>
+    <div class="section-divider"></div>
+    <div class="row section-heading-rows"><h5>Experience</h5></div>
 
     <div class="row common-rows">
       <div class="col-xs-12 col-sm-3 left-column">
-        <img src="pictures/ku_logo.png" alt="Korea University logo" class="paper-images">
+        <img src="pictures/gractor.png" alt="Gractor" class="paper-images">
+      </div>
+      <div class="col-xs-12 col-sm-9 right-column">
+        <p><strong>AI Research Engineer</strong><br>
+        <a href="https://gractor.com">Gractor</a> &middot; Seoul, Korea<br>
+        <em>Sept 2025 &ndash; present</em></p>
+        <ul>
+          <li>Designing and deploying AIoT computer vision solutions for smart city systems.</li>
+          <li>Developing real-time CV and ML models for production environments.</li>
+          <li>Integrating ML pipelines with cross-functional engineering teams.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row common-rows">
+      <div class="col-xs-12 col-sm-3 left-column">
+        <img src="pictures/ku_logo.png" alt="Korea University" class="paper-images">
+      </div>
+      <div class="col-xs-12 col-sm-9 right-column">
+        <p><strong>ML Research Engineer</strong><br>
+        <a href="https://xai.korea.ac.kr/">Pattern Recognition &amp; ML Lab</a>, Korea University &middot; Seoul, Korea<br>
+        <em>Aug 2023 &ndash; Aug 2025</em></p>
+        <ul>
+          <li>Published 2 first-author papers; segmentation models outperforming baselines by up to 25% mIoU.</li>
+          <li>Collaborated with industry partners on R&amp;D, filing an autonomous driving patent.</li>
+          <li>Developed object detection, tracking, depth estimation, and dense matching pipelines.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row common-rows">
+      <div class="col-xs-12 col-sm-3 left-column">
+        <img src="pictures/glitech_logo.png" alt="GliT" class="paper-images">
+      </div>
+      <div class="col-xs-12 col-sm-9 right-column">
+        <p><strong>Software &amp; AI Engineer</strong><br>
+        GliT &middot; Hybrid<br>
+        <em>Aug 2022 &ndash; Aug 2023</em></p>
+        <ul>
+          <li>Led tech strategy and shipped 10+ full-cycle projects.</li>
+          <li>Built and deployed AI-powered applications using PyTorch, C++, and C#.</li>
+          <li>Launched Innovation Hub clubs engaging 250+ students; 35% STEM participation increase.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== EDUCATION ===== -->
+  <div class="container">
+    <div class="section-divider"></div>
+    <div class="row section-heading-rows"><h5>Education</h5></div>
+
+    <div class="row common-rows">
+      <div class="col-xs-12 col-sm-3 left-column">
+        <img src="pictures/ku_logo.png" alt="Korea University" class="paper-images">
       </div>
       <div class="col-xs-12 col-sm-9 right-column">
         <p><strong>Korea University</strong><br>
           Master of Science, Artificial Intelligence<br>
-          <em>2023 - 2025</em></p>
+          <em>2023 &ndash; 2025</em><br>
+          Advisor: <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee">Prof. Seong-Whan Lee</a> &middot; Global Korea Scholarship</p>
       </div>
     </div>
-    
-  <!-- Skills, Certifications -->
-  <div class="container">
-    <div class="row section-heading-rows"><h5>Core Skills</h5></div>
-    <ul>
-      <li>Vision Tasks: Scene classification, object detection/tracking, semantic segmentation, depth estimation</li>
-      <li>Frameworks & Tools: PyTorch, TensorFlow, OpenCV, CUDA, ONNX, Docker, Blender, Unity</li>
-      <li>Languages: Python, C++, C#, Bash, Java</li>
-      <li>Others: MLflow, Agile development, CI/CD, NVIDIA Jetson, academic writing, stakeholders</li>
-    </ul>
+  </div>
 
-    <!-- Certificates Section -->
-<div class="row section-heading-rows"><h5>Certificates</h5></div>
-<div class="row">
-  <div class="col-12">
+  <!-- ===== SKILLS ===== -->
+  <div class="container">
+    <div class="section-divider"></div>
+    <div class="row section-heading-rows"><h5>Skills</h5></div>
+
+    <div class="skills-section">
+      <div class="skill-group">
+        <span class="skill-label">Vision</span>
+        <span class="skill-pill">Semantic Segmentation</span>
+        <span class="skill-pill">Object Detection</span>
+        <span class="skill-pill">Depth Estimation</span>
+        <span class="skill-pill">Tracking</span>
+        <span class="skill-pill">Scene Classification</span>
+      </div>
+      <div class="skill-group">
+        <span class="skill-label">Frameworks</span>
+        <span class="skill-pill">PyTorch</span>
+        <span class="skill-pill">TensorFlow</span>
+        <span class="skill-pill">OpenCV</span>
+        <span class="skill-pill">CUDA</span>
+        <span class="skill-pill">ONNX</span>
+        <span class="skill-pill">Docker</span>
+        <span class="skill-pill">MLflow</span>
+      </div>
+      <div class="skill-group">
+        <span class="skill-label">Languages</span>
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">C++</span>
+        <span class="skill-pill">C#</span>
+        <span class="skill-pill">Bash</span>
+        <span class="skill-pill">Java</span>
+      </div>
+      <div class="skill-group">
+        <span class="skill-label">Infra</span>
+        <span class="skill-pill">NVIDIA Jetson</span>
+        <span class="skill-pill">CI/CD</span>
+        <span class="skill-pill">GitHub Actions</span>
+        <span class="skill-pill">Agile</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CERTIFICATES ===== -->
+  <div class="container">
+    <div class="section-divider"></div>
+    <div class="row section-heading-rows"><h5>Certificates</h5></div>
     <div class="row">
-      <div class="col-sm-6 mb-3">
-        <div class="d-flex align-items-center">
-          <img src="pictures/IBM.jpeg" alt="IBM" style="height:40px;width:auto;margin-right:10px;">
-          <div>IBM Applied AI Professional Certificate - IBM</div>
-        </div>
-      </div>
-      <div class="col-sm-6 mb-3">
-        <div class="d-flex align-items-center">
-          <img src="pictures/northwestern-logo.jpg" alt="Northwestern" style="height:40px;width:auto;margin-right:10px;">
-          <div>Modern Robotics Specialization - Northwestern University</div>
-        </div>
-      </div>
-      <div class="col-sm-6 mb-3">
-        <div class="d-flex align-items-center">
-          <img src="pictures/Google.png" alt="Google" style="height:40px;width:auto;margin-right:10px;">
-          <div>Foundations of Project Management - Google</div>
-        </div>
-      </div>
-      <div class="col-sm-6 mb-3">
-        <div class="d-flex align-items-center">
-          <img src="pictures/amazon.png" alt="Amazon" style="height:40px;width:auto;margin-right:10px;">
-          <div>Semantic Segmentation with Amazon Sagemaker - Amazon</div>
-        </div>
-      </div>
-      <div class="col-sm-6 mb-3">
-        <div class="d-flex align-items-center">
-          <img src="pictures/AWS.png" alt="AWS" style="height:40px;width:auto;margin-right:10px;">
-          <div>AWS S3 Basics - Amazon Web Services</div>
-        </div>
-      </div>
-      <div class="col-sm-6 mb-3">
-        <div class="d-flex align-items-center">
-          <img src="pictures/Microsoft.png" alt="Microsoft" style="height:40px;width:auto;margin-right:10px;">
-          <div>Machine Learning Pipelines with Azure ML Studio - Microsoft</div>
-        </div>
-      </div>
-      <div class="col-sm-6 mb-3">
-        <div class="d-flex align-items-center">
-          <img src="pictures/emory.univ.png" alt="Emory University" style="height:40px;width:auto;margin-right:10px;">
-          <div>Neuroscience - Emory University</div>
-        </div>
-      </div>
-      <div class="col-sm-6 mb-3">
-        <div class="d-flex align-items-center">
-          <img src="pictures/MIT.png" alt="MIT" style="height:40px;width:auto;margin-right:10px;">
-          <div>Game Development using Scratch - MIT</div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-sm-6 mb-3">
+            <div class="d-flex align-items-center">
+              <img src="pictures/IBM.jpeg" alt="IBM" class="cert-logo">
+              <div>IBM Applied AI Professional Certificate</div>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-3">
+            <div class="d-flex align-items-center">
+              <img src="pictures/northwestern-logo.jpg" alt="Northwestern" class="cert-logo">
+              <div>Modern Robotics Specialization &ndash; Northwestern</div>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-3">
+            <div class="d-flex align-items-center">
+              <img src="pictures/Google.png" alt="Google" class="cert-logo">
+              <div>Foundations of Project Management &ndash; Google</div>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-3">
+            <div class="d-flex align-items-center">
+              <img src="pictures/amazon.png" alt="Amazon" class="cert-logo">
+              <div>Semantic Segmentation with SageMaker &ndash; Amazon</div>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-3">
+            <div class="d-flex align-items-center">
+              <img src="pictures/AWS.png" alt="AWS" class="cert-logo">
+              <div>AWS S3 Basics &ndash; Amazon Web Services</div>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-3">
+            <div class="d-flex align-items-center">
+              <img src="pictures/Microsoft.png" alt="Microsoft" class="cert-logo">
+              <div>ML Pipelines with Azure ML Studio &ndash; Microsoft</div>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-3">
+            <div class="d-flex align-items-center">
+              <img src="pictures/emory.univ.png" alt="Emory" class="cert-logo">
+              <div>Neuroscience &ndash; Emory University</div>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-3">
+            <div class="d-flex align-items-center">
+              <img src="pictures/MIT.png" alt="MIT" class="cert-logo">
+              <div>Game Development using Scratch &ndash; MIT</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="container">
+  <!-- ===== FOOTER ===== -->
+  <div class="container">
+    <div class="section-divider"></div>
     <div class="row">
       <div class="col">
-        <p style="text-align:right;font-size:small;">
-          Template based on <a href="https://jonbarron.info/">Jon Barron's website</a>.
+        <p style="text-align:center;font-size:small;color:#999;padding:20px 0;">
+          Template based on <a href="https://jonbarron.info/" style="color:#999;">Jon Barron's website</a>.
         </p>
       </div>
     </div>
@@ -464,44 +475,30 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const publications = document.querySelectorAll('.publication-entry');
-        
-        // Function to apply filtering
-        function applyFilter(filterValue) {
-          // Remove active class from all buttons
-          filterBtns.forEach(btn => btn.classList.remove('active'));
-          
-          // Add active class to the button with matching data-filter
-          const activeBtn = document.querySelector(`.filter-btn[data-filter="${filterValue}"]`);
-          if (activeBtn) {
-            activeBtn.classList.add('active');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const entries = document.querySelectorAll('.publication-entry');
+
+      function applyFilter(filter) {
+        filterBtns.forEach(btn => btn.classList.remove('active'));
+        document.querySelector('.filter-btn[data-filter="' + filter + '"]').classList.add('active');
+
+        entries.forEach(entry => {
+          if (filter === 'selected') {
+            entry.style.display = entry.classList.contains('selected-publication') ? '' : 'none';
+          } else {
+            entry.style.display = '';
           }
-          
-          // Show/hide publications based on filter
-          if (filterValue === 'selected') {
-            publications.forEach(pub => {
-              if (pub.classList.contains('selected-publication')) {
-                pub.classList.remove('hidden');
-              } else {
-                pub.classList.add('hidden');
-              }
-            });
-          } else if (filterValue === 'all') {
-            publications.forEach(pub => pub.classList.remove('hidden'));
-          }
-        }
-        
-        // Add click event listeners to filter buttons
-        filterBtns.forEach(btn => {
-          btn.addEventListener('click', function() {
-            const filter = this.getAttribute('data-filter');
-            applyFilter(filter);
-          });
         });
-        
-        // Apply the "selected" filter by default on page load
-        applyFilter('selected');
+      }
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          applyFilter(this.getAttribute('data-filter'));
+        });
       });
+
+      applyFilter('selected');
+    });
   </script>
 </body>
+</html>

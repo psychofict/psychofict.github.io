@@ -1,3 +1,4 @@
+/* ===== FONTS ===== */
 /* latin-ext */
 @font-face {
   font-family: 'Lato';
@@ -63,6 +64,12 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* ===== BASE ===== */
+body {
+  background: #fff;
+  color: #333;
+}
+
 a {
   color: #1772d0;
   text-decoration: none;
@@ -74,14 +81,9 @@ a:hover {
   text-decoration: none;
 }
 
-body,
-td,
-th,
-tr,
-p,
-a {
+body, td, th, tr, p, a {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px
+  font-size: 14px;
 }
 
 strong {
@@ -97,7 +99,7 @@ heading {
 papertitle {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
-  font-weight: 700
+  font-weight: 700;
 }
 
 name {
@@ -105,42 +107,30 @@ name {
   font-size: 32px;
 }
 
-.one {
-  width: 160px;
-  height: 160px;
-  position: relative;
+h5 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0;
 }
 
-.two {
-  width: 160px;
-  height: 160px;
-  position: absolute;
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
+h6 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0;
 }
 
-.fade {
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
-}
-
-span.highlight {
-  background-color: #ffffd0;
-}
-
-.highlight {
-    background-color: #ffffd0;
-  }
-
+/* ===== LAYOUT ===== */
 .container {
   margin-right: auto;
   margin-left: auto;
   max-width: 800px;
 }
 
-.personal-photo{
+.personal-photo {
   width: 90%;
   max-width: 100%;
   margin: auto;
@@ -148,59 +138,30 @@ span.highlight {
   clip-path: circle();
 }
 
-.institute-logo-small{
-  width: 100px;
-}
-
-.institute-logo-medium{
-    width: 120px;
-  }
-
-.paper-images{
+.paper-images {
   width: 100%;
   margin: auto;
   display: block;
 }
 
-@media screen and (max-width: 576px) {
-  .personal-photo{
-    width: 80%;
-    max-width: 200px;
-    margin: auto;
-    display: block;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-
-  .paper-images{
-    width: 100%;
-    max-width: 200px;
-    margin: auto;
-    display: block;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-}
-
-
-.left-column{
+.left-column {
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.right-column{
+.right-column {
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.personal-column{
+.personal-column {
   margin-top: auto;
   margin-bottom: auto;
   margin-left: auto;
   margin-right: auto;
 }
 
-.name-column{
+.name-column {
   margin-top: auto;
   margin-bottom: auto;
   margin-left: auto;
@@ -213,23 +174,189 @@ span.highlight {
 }
 
 .section-heading-rows {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 16px;
+  margin-bottom: 8px;
 }
 
 .custom-col-sm-3 {
-    flex: 0 0 25%; 
-    max-width: 22%;
-    margin-right: auto;
+  flex: 0 0 25%;
+  max-width: 22%;
+  margin-right: auto;
 }
 
+/* ===== SECTION DIVIDERS ===== */
+.section-divider {
+  border-top: 1px solid #e8e8e8;
+  margin: 24px 0 8px 0;
+}
+
+/* ===== PUBLICATION FILTER ===== */
+.publication-filter {
+  margin-bottom: 16px;
+}
+
+.filter-btn {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  padding: 4px 10px;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  color: #f09228;
+}
+
+.filter-btn.active {
+  color: #1772d0;
+  font-weight: 700;
+  background: #f0f6ff;
+}
+
+.filter-sep {
+  color: #ccc;
+  margin: 0 2px;
+}
+
+/* ===== PUBLICATION ENTRIES ===== */
+.publication-entry {
+  padding: 8px 0;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.publication-entry:hover {
+  background-color: #fafbfc;
+}
+
+/* ===== VENUE BADGES ===== */
+.venue-badge {
+  display: inline-block;
+  background: #e8f0fe;
+  color: #1a56db;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 4px 0;
+}
+
+.venue-badge.venue-review {
+  background: #fef3e2;
+  color: #b45309;
+}
+
+.venue-ref {
+  color: #888;
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* ===== LINK BAR ===== */
+.link-bar {
+  margin: 4px 0 6px 0;
+}
+
+.link-bar a {
+  display: inline-block;
+  font-size: 13px;
+  color: #1772d0;
+  margin-right: 4px;
+  padding: 1px 6px;
+  border: 1px solid #d0dbe8;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+}
+
+.link-bar a:hover {
+  background: #1772d0;
+  color: #fff;
+  border-color: #1772d0;
+  text-decoration: none;
+}
+
+/* ===== PAPER DESCRIPTION ===== */
+.paper-desc {
+  color: #555;
+  font-size: 13px;
+  margin-top: 4px;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+/* ===== SKILLS ===== */
+.skills-section {
+  margin-bottom: 16px;
+}
+
+.skill-group {
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.skill-label {
+  font-weight: 700;
+  font-size: 13px;
+  color: #555;
+  min-width: 85px;
+}
+
+.skill-pill {
+  display: inline-block;
+  background: #f3f4f6;
+  color: #444;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+/* ===== CERTIFICATES ===== */
+.cert-logo {
+  height: 36px;
+  width: auto;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+/* ===== MOBILE ===== */
 @media screen and (max-width: 576px) {
-    .custom-col-sm-3{
-      width: 100%;
-      max-width: 300px;
-      margin: auto;
-      display: block;
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
+  .personal-photo {
+    width: 80%;
+    max-width: 200px;
+    margin: auto;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
+
+  .paper-images {
+    width: 100%;
+    max-width: 200px;
+    margin: auto;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .custom-col-sm-3 {
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .skill-label {
+    min-width: 100%;
+    margin-bottom: 2px;
+  }
+}

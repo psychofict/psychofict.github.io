@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ebenezer Tarubinga — AI/ML Engineer</title>
   <meta name="author" content="Ebenezer Tarubinga" />
-  <meta name="description" content="Ebenezer Tarubinga — AI/ML Engineer. Production LLM systems and first-author computer-vision research. Research to production, at scale." />
+  <meta name="description" content="Ebenezer Tarubinga — AI/ML Engineer. Primary engineer on four live government platforms; first-author semi-supervised segmentation research (#2 / #3 globally). AI that holds up in production." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Ebenezer Tarubinga — AI/ML Engineer" />
-  <meta property="og:description" content="Production LLM systems and first-author semi-supervised segmentation research (#1 / #2 / #3 globally). Research → production." />
+  <meta property="og:description" content="I build AI systems that hold up in production. Primary engineer on four live government platforms; first-author segmentation research (#2 / #3 globally)." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://psychofict.github.io/" />
   <meta property="og:image" content="https://psychofict.github.io/pictures/ebstar.png" />
@@ -50,8 +50,8 @@
     <div class="nav-inner">
       <a href="#home" class="brand"><span class="brand-mark">ET</span><span class="brand-name">Ebenezer&nbsp;Tarubinga</span></a>
       <nav class="nav-links" id="navLinks">
-        <a href="#publications">Publications</a>
         <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a class="nav-cta" href="data/ebstar_cv.pdf" target="_blank" rel="noopener">CV ↓</a>
@@ -70,17 +70,20 @@
   <section class="hero" id="home">
     <div class="hero-grid reveal">
       <div class="hero-text">
-        <p class="eyebrow"><span class="dot"></span> Available for research &amp; ML-engineering collaborations</p>
+        <p class="eyebrow"><span class="dot"></span> Open to ML / research-engineer roles &amp; research collaborations</p>
         <h1>Ebenezer <span class="grad">Tarubinga</span></h1>
-        <p class="role"><span class="mono">AI/ML Engineer</span> &middot; Computer-Vision Research</p>
+        <p class="role"><span class="mono">AI/ML Engineer</span> &middot; Seoul, Korea</p>
         <p class="lede">
-          I build production <strong>LLM systems</strong> and publish first-author research on
-          <strong>semi-supervised segmentation</strong>. I care about closing the gap between
-          what works in a paper and what holds up at scale.
+          <strong>I build AI systems that hold up in production.</strong> I'm the primary engineer on
+          four live government platforms at Gractor, a Series-A smart-city AI company — retrieval over
+          millions of sensor records, tool-calling agents, and the evaluation harnesses that keep them
+          honest. On the side I publish first-author segmentation research, currently <strong>#2–#3
+          globally</strong> on the standard benchmarks. My whole thing is the distance between a number
+          that works in a paper and a system a city can actually depend on.
         </p>
 
         <div class="hero-cta">
-          <a class="btn btn-primary" href="#publications">View research</a>
+          <a class="btn btn-primary" href="#projects">See what I've shipped</a>
           <a class="btn btn-ghost" href="data/ebstar_cv.pdf" target="_blank" rel="noopener">Download CV</a>
         </div>
 
@@ -103,89 +106,67 @@
 
     <!-- stat tiles -->
     <div class="stats reveal">
-      <div class="stat"><span class="stat-num">3</span><span class="stat-label">first-author papers</span></div>
-      <div class="stat"><span class="stat-num grad">#1&nbsp;·&nbsp;#2&nbsp;·&nbsp;#3</span><span class="stat-label">global SSSS SOTA rankings</span></div>
-      <div class="stat"><span class="stat-num">~130K</span><span class="stat-label">lines shipped to production</span></div>
-      <div class="stat"><span class="stat-num">MSc</span><span class="stat-label">AI · Korea University</span></div>
+      <div class="stat"><span class="stat-num grad">4</span><span class="stat-label">live government platforms shipped</span></div>
+      <div class="stat"><span class="stat-num">98.8%</span><span class="stat-label">RAG accuracy over 2.7M+ records</span></div>
+      <div class="stat"><span class="stat-num grad">#2&nbsp;·&nbsp;#3</span><span class="stat-label">global segmentation benchmarks</span></div>
+      <div class="stat"><span class="stat-num">3</span><span class="stat-label">first-author papers · MSc, Korea Univ.</span></div>
     </div>
   </section>
 
   <main>
-    <!-- ===================== PUBLICATIONS ===================== -->
-    <section id="publications" class="section">
-      <div class="section-head reveal">
-        <span class="kicker">01 — Research</span>
-        <h2>Publications</h2>
-        <p class="section-sub">First-author work on learning dense predictions from very few labels. CW-BASS &amp; FARCLUSS were the former <strong>#3</strong> and <strong>#2</strong> global SSSS SOTA with ResNet-101; PixCon is the current <strong>#1</strong> on foundation-model features.</p>
-      </div>
-
-      <!-- PixCon -->
-      <article class="pub reveal">
-        <div class="pub-media"><img src="pictures/pixcon_results.gif" alt="PixCon results demo" loading="lazy" /></div>
-        <div class="pub-body">
-          <div class="pub-tags"><span class="rank rank-1">#1 · Global SSSS SOTA</span><span class="venue">Preprint · under review</span><span class="year">2026</span></div>
-          <h3>PixCon: Clean-Positive Contrastive Learning for Foundation-Model Semi-Supervised Segmentation</h3>
-          <p class="authors"><strong>Ebenezer Tarubinga</strong> <span class="muted">· independent</span></p>
-          <p class="pub-desc">A clean-positive pixel memory bank that admits only labeled pixels, keeping contrastive positives free of pseudo-label noise on DINOv2-scale features. Takes the <strong>#1</strong> spot in semi-supervised segmentation alongside UniMatch V2.</p>
-          <div class="links">
-            <a href="https://arxiv.org/abs/2607.03068" target="_blank" rel="noopener">arXiv</a>
-            <a href="https://github.com/psychofict/PixCon" target="_blank" rel="noopener">Code</a>
-            <a href="https://psychofict.github.io/PixCon/" target="_blank" rel="noopener">Project</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- FARCLUSS -->
-      <article class="pub reveal">
-        <div class="pub-media"><img src="pictures/farcluss.png" alt="FARCLUSS" loading="lazy" /></div>
-        <div class="pub-body">
-          <div class="pub-tags"><span class="rank rank-2">Former #2 · Global SSSS SOTA</span><span class="venue">Neural Networks · under review</span><span class="year">2026</span></div>
-          <h3>FARCLUSS: Fuzzy Adaptive Rebalancing &amp; Contrastive Uncertainty Learning for Semi-Supervised Segmentation</h3>
-          <p class="authors"><strong>Ebenezer Tarubinga</strong>, <a href="https://scholar.google.com/citations?user=uH_-hRUAAAAJ&hl=en" target="_blank" rel="noopener">Jenifer Kalafatovich</a>, <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee" target="_blank" rel="noopener">Seong-Whan Lee</a></p>
-          <p class="pub-desc">Fuzzy top-K pseudo-labeling, entropy-normalized uncertainty weighting, per-batch class rebalancing, and prototype contrastive regularization. Formerly <strong>#2 globally</strong> on Cityscapes &amp; Pascal VOC (78.8% / 78.2% mIoU, ResNet-101).</p>
-          <div class="links">
-            <a href="https://arxiv.org/abs/2506.11142" target="_blank" rel="noopener">arXiv</a>
-            <a href="https://github.com/psychofict/FARCLUSS" target="_blank" rel="noopener">Code</a>
-            <a href="https://psychofict.github.io/FARCLUSS/" target="_blank" rel="noopener">Project</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- CW-BASS -->
-      <article class="pub reveal">
-        <div class="pub-media"><img src="pictures/gif4.gif" alt="CW-BASS" loading="lazy" /></div>
-        <div class="pub-body">
-          <div class="pub-tags"><span class="rank rank-3">Former #3 · Global SSSS SOTA</span><span class="venue">IJCNN 2025 · IEEE</span><span class="year">2025</span></div>
-          <h3>CW-BASS: Confidence-Weighted Boundary-Aware Learning for Semi-Supervised Semantic Segmentation</h3>
-          <p class="authors"><strong>Ebenezer Tarubinga</strong>, <a href="https://scholar.google.com/citations?user=uH_-hRUAAAAJ&hl=en" target="_blank" rel="noopener">Jenifer Kalafatovich</a>, <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee" target="_blank" rel="noopener">Seong-Whan Lee</a></p>
-          <p class="pub-desc">Confidence-weighted cross-entropy with Sobel boundary regularization and bounded-sigmoid dynamic thresholding. Formerly <strong>#3 globally</strong> on Pascal VOC 2012 (77.15% mIoU) and top-10 on Papers With Code.</p>
-          <div class="links">
-            <a href="https://ieeexplore.ieee.org/abstract/document/11227871/" target="_blank" rel="noopener">IEEE</a>
-            <a href="https://arxiv.org/abs/2502.15152" target="_blank" rel="noopener">arXiv</a>
-            <a href="https://github.com/psychofict/CW-BASS" target="_blank" rel="noopener">Code</a>
-            <a href="https://psychofict.github.io/CW-BASS/" target="_blank" rel="noopener">Project</a>
-          </div>
-        </div>
-      </article>
-
-    </section>
-
     <!-- ===================== PROJECTS ===================== -->
     <section id="projects" class="section">
       <div class="section-head reveal">
-        <span class="kicker">02 — Building</span>
+        <span class="kicker">01 — Building</span>
         <h2>Projects</h2>
-        <p class="section-sub">Open-source tools, research explorations, and full-stack products.</p>
+        <p class="section-sub">Production platforms at government scale, plus open-source tools and research explorations.</p>
       </div>
 
       <div class="filters reveal" id="projFilters">
         <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="production">Production</button>
         <button class="chip" data-filter="oss">Open Source</button>
         <button class="chip" data-filter="research">Research</button>
         <button class="chip" data-filter="fullstack">Full-Stack</button>
       </div>
 
       <div class="proj-grid" id="projGrid">
+        <!-- AI-DMS -->
+        <article class="card proj reveal" data-cat="production">
+          <div class="card-top"><span class="proj-ico">💧</span><span class="tag tag-production">Production</span></div>
+          <h3>AI-DMS — Water-Utility Intelligence</h3>
+          <p class="card-desc">Production RAG over <strong>2.7M+ IoT meter readings</strong> — hybrid retrieval (vector + BM25 → rank fusion → cross-encoder reranking) validated at <strong>98.8% accuracy</strong> (84/85). Multi-provider LLM router with circuit-breaker failover, and a 71-function TypeDB reasoning ontology that surfaced 7,431 leak-days and 420 contamination-risk events.</p>
+          <div class="card-tags"><span>FastAPI</span><span>TypeDB</span><span>RAG</span><span>React 19</span></div>
+          <div class="links"><a href="https://github.com/psychofict" target="_blank" rel="noopener">Gractor · production</a></div>
+        </article>
+
+        <!-- OMS -->
+        <article class="card proj reveal" data-cat="production">
+          <div class="card-top"><span class="proj-ico">🚰</span><span class="tag tag-production">Production</span></div>
+          <h3>OMS — Anyang Smart-Water Agent</h3>
+          <p class="card-desc">Rebuilt a 13,610-LOC LangGraph agent into a 9,710-LOC single-pass Flask agent — from 94.9% to <strong>100% (96/96)</strong> on a canonical / adversarial / graph-traversal eval harness, ~30% less code and ~12× faster startup. Reads zero-copy, GET-only over the live utility (26,078 meters, ~800K readings/day) behind a bilingual prompt-injection guardrail.</p>
+          <div class="card-tags"><span>Flask</span><span>TypeDB</span><span>Agents</span><span>Eval Harness</span></div>
+          <div class="links"><a href="https://github.com/psychofict" target="_blank" rel="noopener">Gractor · production</a></div>
+        </article>
+
+        <!-- Spain Digital Twin -->
+        <article class="card proj reveal" data-cat="production">
+          <div class="card-top"><span class="proj-ico">🏙️</span><span class="tag tag-production">Production</span></div>
+          <h3>Spain Smart-Mobility 3D Digital Twin</h3>
+          <p class="card-desc">Hardened a <strong>₩5.1B Korea–Spain</strong> digital twin from demo to GS-certification candidate across the 215 km AP-2 corridor: migrated MongoDB → PostgreSQL 16 + PostGIS and built a fault-tolerant real-time event pipeline (21 event types, Redis dedup, WebSocket replay, DATEX II + Waze bridges) behind a React 19 + Three.js frontend. Grand Prize, 2024 City Design Awards.</p>
+          <div class="card-tags"><span>FastAPI</span><span>React 19</span><span>Three.js</span><span>PostGIS</span></div>
+          <div class="links"><a href="https://github.com/psychofict/3d-digital-twin-traffic" target="_blank" rel="noopener">Code</a></div>
+        </article>
+
+        <!-- River CMS -->
+        <article class="card proj reveal" data-cat="production">
+          <div class="card-top"><span class="proj-ico">🛰️</span><span class="tag tag-production">Production</span></div>
+          <h3>River CMS — Smart-City Edge Platform</h3>
+          <p class="card-desc">Offline-first edge platform for a <strong>461,600-resident</strong> city: YOLOv5 + OpenVINO inference on Intel OAK-D cameras, a dependency-isolated dual-MQTT broker that runs on cached config through cloud outages, and ModBus RTU serial control with a hardware watchdog.</p>
+          <div class="card-tags"><span>Python</span><span>YOLOv5</span><span>OpenVINO</span><span>MQTT</span></div>
+          <div class="links"><a href="https://github.com/psychofict" target="_blank" rel="noopener">Gractor · production</a></div>
+        </article>
+
         <!-- hwpkit -->
         <article class="card proj reveal" data-cat="oss">
           <div class="card-top"><span class="proj-ico">📄</span><span class="tag tag-oss">Open Source</span></div>
@@ -240,15 +221,6 @@
           <div class="links"><a href="https://github.com/psychofict/llm-effective-context-length" target="_blank" rel="noopener">Code</a><a href="https://drive.google.com/file/d/16obkOE5o65m8zrUtdMEZdOygMwHD6Aiu/view" target="_blank" rel="noopener">Slides</a></div>
         </article>
 
-        <!-- 3D Digital Twin -->
-        <article class="card proj reveal" data-cat="fullstack">
-          <div class="card-top"><span class="proj-ico">🏙️</span><span class="tag tag-fullstack">Full-Stack</span></div>
-          <h3>3D Digital Twin — Traffic Management</h3>
-          <p class="card-desc">Real-time traffic monitoring with Three.js 3D visualization, edge-AI inference, and predictive analytics for smart-city integration.</p>
-          <div class="card-tags"><span>React</span><span>Three.js</span><span>FastAPI</span></div>
-          <div class="links"><a href="https://github.com/psychofict/3d-digital-twin-traffic" target="_blank" rel="noopener">Code</a></div>
-        </article>
-
         <!-- AgriLet -->
         <article class="card proj reveal" data-cat="fullstack">
           <div class="card-top"><span class="proj-ico">🌱</span><span class="tag tag-fullstack">Full-Stack</span></div>
@@ -269,6 +241,65 @@
       </div>
     </section>
 
+    <!-- ===================== PUBLICATIONS ===================== -->
+    <section id="publications" class="section">
+      <div class="section-head reveal">
+        <span class="kicker">02 — Research</span>
+        <h2>Publications</h2>
+        <p class="section-sub">First-author work on learning dense predictions from very few labels. CW-BASS &amp; FARCLUSS were the former <strong>#3</strong> and <strong>#2</strong> global SSSS SOTA on ResNet-101; PixCon is the current <strong>#2</strong> on foundation-model features.</p>
+      </div>
+
+      <!-- PixCon -->
+      <article class="pub reveal">
+        <div class="pub-media"><img src="pictures/pixcon_results.gif" alt="PixCon results demo" loading="lazy" /></div>
+        <div class="pub-body">
+          <div class="pub-tags"><span class="rank rank-1">#2 · Global SSSS SOTA</span><span class="venue">Preprint · under review</span><span class="year">2026</span></div>
+          <h3>PixCon: Clean-Positive Contrastive Learning for Foundation-Model Semi-Supervised Segmentation</h3>
+          <p class="authors"><strong>Ebenezer Tarubinga</strong> <span class="muted">· independent</span></p>
+          <p class="pub-desc">A clean-positive pixel memory bank that admits only labeled pixels, keeping contrastive positives free of pseudo-label noise on DINOv2-scale features. Ranks <strong>#2</strong> in semi-supervised segmentation, matching a strong UniMatch V2 baseline at lower cost.</p>
+          <div class="links">
+            <a href="https://arxiv.org/abs/2607.03068" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://github.com/psychofict/PixCon" target="_blank" rel="noopener">Code</a>
+            <a href="https://psychofict.github.io/PixCon/" target="_blank" rel="noopener">Project</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- FARCLUSS -->
+      <article class="pub reveal">
+        <div class="pub-media"><img src="pictures/farcluss.png" alt="FARCLUSS" loading="lazy" /></div>
+        <div class="pub-body">
+          <div class="pub-tags"><span class="rank rank-2">Former #2 · Global SSSS SOTA</span><span class="venue">Neural Networks · under review</span><span class="year">2026</span></div>
+          <h3>FARCLUSS: Fuzzy Adaptive Rebalancing &amp; Contrastive Uncertainty Learning for Semi-Supervised Segmentation</h3>
+          <p class="authors"><strong>Ebenezer Tarubinga</strong>, <a href="https://scholar.google.com/citations?user=uH_-hRUAAAAJ&hl=en" target="_blank" rel="noopener">Jenifer Kalafatovich</a>, <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee" target="_blank" rel="noopener">Seong-Whan Lee</a></p>
+          <p class="pub-desc">Fuzzy top-K pseudo-labeling, entropy-normalized uncertainty weighting, per-batch class rebalancing, and prototype contrastive regularization. Formerly <strong>#2 globally</strong> on Cityscapes &amp; Pascal VOC (78.8% / 78.2% mIoU, ResNet-101).</p>
+          <div class="links">
+            <a href="https://arxiv.org/abs/2506.11142" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://github.com/psychofict/FARCLUSS" target="_blank" rel="noopener">Code</a>
+            <a href="https://psychofict.github.io/FARCLUSS/" target="_blank" rel="noopener">Project</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CW-BASS -->
+      <article class="pub reveal">
+        <div class="pub-media"><img src="pictures/gif4.gif" alt="CW-BASS" loading="lazy" /></div>
+        <div class="pub-body">
+          <div class="pub-tags"><span class="rank rank-3">Former #3 · Global SSSS SOTA</span><span class="venue">IJCNN 2025 · IEEE</span><span class="year">2025</span></div>
+          <h3>CW-BASS: Confidence-Weighted Boundary-Aware Learning for Semi-Supervised Semantic Segmentation</h3>
+          <p class="authors"><strong>Ebenezer Tarubinga</strong>, <a href="https://scholar.google.com/citations?user=uH_-hRUAAAAJ&hl=en" target="_blank" rel="noopener">Jenifer Kalafatovich</a>, <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee" target="_blank" rel="noopener">Seong-Whan Lee</a></p>
+          <p class="pub-desc">Confidence-weighted cross-entropy with Sobel boundary regularization and bounded-sigmoid dynamic thresholding. Formerly <strong>#3 globally</strong> on Pascal VOC 2012 (77.15% mIoU) and top-10 on Papers With Code.</p>
+          <div class="links">
+            <a href="https://ieeexplore.ieee.org/abstract/document/11227871/" target="_blank" rel="noopener">IEEE</a>
+            <a href="https://arxiv.org/abs/2502.15152" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://github.com/psychofict/CW-BASS" target="_blank" rel="noopener">Code</a>
+            <a href="https://psychofict.github.io/CW-BASS/" target="_blank" rel="noopener">Project</a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
     <!-- ===================== EXPERIENCE ===================== -->
     <section id="experience" class="section">
       <div class="section-head reveal">
@@ -281,8 +312,8 @@
           <div class="tl-logo"><img src="pictures/gractor.png" alt="Gractor" /></div>
           <div class="tl-body">
             <div class="tl-head"><h3>AI/ML Engineer</h3><span class="tl-date">Sept 2025 — present</span></div>
-            <p class="tl-org">Gractor · Seoul, Korea</p>
-            <p class="tl-desc">Primary engineer building production <strong>LLM systems</strong> (RAG, tool-calling agents, evaluation harnesses) and <strong>computer-vision pipelines</strong> with edge inference, across live smart-city government platforms.</p>
+            <p class="tl-org">Gractor · Series&nbsp;A smart-city AI · Seoul, Korea</p>
+            <p class="tl-desc">Primary engineer across four live government platforms. Built a hybrid-RAG system over <strong>2.7M+ sensor records to 98.8% accuracy</strong>, rebuilt a production agent from <strong>94.9% → 100%</strong> (30% less code, 12× faster startup), and shipped multi-provider LLM routing with circuit-breaker failover. Also hardened a ₩5.1B Korea–Spain 3D digital twin and YOLOv5 edge inference across government smart-poles.</p>
           </div>
         </div>
 
@@ -291,7 +322,7 @@
           <div class="tl-body">
             <div class="tl-head"><h3>Research Engineer (MSc)</h3><span class="tl-date">Aug 2023 — Feb 2026</span></div>
             <p class="tl-org">Korea University · Pattern Recognition &amp; ML Lab</p>
-            <p class="tl-desc">Advised by <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee" target="_blank" rel="noopener">Prof. Seong-Whan Lee</a> (IEEE Fellow). Three first-author segmentation papers ranked <strong>#1 / #2 / #3</strong> globally; ~10K LOC of PyTorch multi-GPU training infrastructure; Korean patent filed (autonomous-driving perception).</p>
+            <p class="tl-desc">Advised by <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee" target="_blank" rel="noopener">Prof. Seong-Whan Lee</a> (IEEE Fellow). Three first-author segmentation papers ranked <strong>#2 and #3</strong> globally on Cityscapes and Pascal VOC; ~10K LOC of PyTorch multi-GPU training infrastructure; Korean patent filed (autonomous-driving perception).</p>
           </div>
         </div>
 
@@ -374,7 +405,7 @@
   <footer class="footer">
     <div class="foot-cta reveal">
       <h2>Let's build something that ships.</h2>
-      <p>Open to research collaborations and ML-engineering work.</p>
+      <p>Open to ML / research-engineer roles and research collaborations.</p>
       <a class="btn btn-primary" href="mailto:ebstarmusic@gmail.com">Get in touch</a>
     </div>
     <div class="foot-bar">

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ebenezer Tarubinga — AI/ML Engineer</title>
+  <meta name="author" content="Ebenezer Tarubinga" />
+  <meta name="description" content="Ebenezer Tarubinga — AI/ML Engineer. Primary engineer on four live government platforms; first-author semi-supervised segmentation research (#2 / #3 globally). AI that holds up in production." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ebenezer Tarubinga — AI/ML Engineer" />
+  <meta property="og:description" content="I build AI systems that hold up in production. Primary engineer on four live government platforms; first-author segmentation research (#2 / #3 globally)." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://psychofict.github.io/" />
+  <meta property="og:image" content="https://psychofict.github.io/pictures/ebstar.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" href="pictures/ebstar-mark-black.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="stylesheet.css" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFYF6ZWHZZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YFYF6ZWHZZ');
+  </script>
+
+  <!-- Set theme before paint to avoid flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- animated background glow -->
+  <div class="bg-orbs" aria-hidden="true"><span></span><span></span><span></span></div>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="brand"><span class="brand-mark"><img src="pictures/ebstar-mark-white.png" alt="Ebstar" /></span><span class="brand-name">Ebenezer&nbsp;Tarubinga</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a class="nav-cta" href="data/ebstar_cv.pdf" target="_blank" rel="noopener">CV ↓</a>
+      </nav>
+      <div class="nav-tools">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button id="menuBtn" class="icon-btn menu-btn" aria-label="Menu"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="hero-grid reveal">
+      <div class="hero-text">
+        <p class="eyebrow"><span class="dot"></span> Open to ML / research-engineer roles &amp; research collaborations</p>
+        <h1>Ebenezer <span class="grad">Tarubinga</span></h1>
+        <p class="role"><span class="mono">AI/ML Engineer</span> &middot; Seoul, Korea</p>
+        <p class="lede">
+          <strong>I build AI systems that hold up in production.</strong> As the primary engineer on
+          four live government platforms at Gractor, I build the RAG pipelines, tool-calling agents, and
+          evaluation harnesses they run on — and I publish first-author segmentation research that's
+          currently <strong>#2–#3 globally</strong>. I care about the gap between what works in a paper
+          and what a city can actually depend on.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#projects">See what I've shipped</a>
+          <a class="btn btn-ghost" href="data/ebstar_cv.pdf" target="_blank" rel="noopener">Download CV</a>
+        </div>
+
+        <div class="socials">
+          <a class="social" href="mailto:ebstarmusic@gmail.com" title="Email" aria-label="Email"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg></a>
+          <a class="social" href="https://github.com/psychofict" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 5 18 5.3 18 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg></a>
+          <a class="social" href="https://scholar.google.com/citations?user=W818y-gAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M12 3 1 9l11 6 9-4.9V17h2V9zM6 13.7v3.2c0 1.6 2.7 3.1 6 3.1s6-1.5 6-3.1v-3.2l-6 3.3z"/></svg></a>
+          <a class="social" href="https://arxiv.org/search/cs?searchtype=author&query=Tarubinga,+E" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv"><span class="social-txt">arXiv</span></a>
+          <a class="social" href="https://www.linkedin.com/in/ebstar" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.3v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4A2 2 0 1 1 5.3 3.3a2 2 0 0 1 0 4.1zM7.1 20.4H3.6V9h3.5z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <div class="photo-ring">
+          <img src="pictures/ebstar.png" alt="Ebenezer Tarubinga" loading="eager" />
+        </div>
+        <span class="loc-chip"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Seoul, Korea</span>
+      </div>
+    </div>
+
+    <!-- stat tiles -->
+    <div class="stats reveal">
+      <div class="stat"><span class="stat-num grad">4</span><span class="stat-label">live government platforms shipped</span></div>
+      <div class="stat"><span class="stat-num">98.8%</span><span class="stat-label">RAG accuracy over 2.7M+ records</span></div>
+      <div class="stat"><span class="stat-num grad">#2&nbsp;·&nbsp;#3</span><span class="stat-label">global segmentation benchmarks</span></div>
+      <div class="stat"><span class="stat-num">3</span><span class="stat-label">first-author papers · MSc, Korea Univ.</span></div>
+    </div>
+  </section>
+
+  <main>
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" class="section">
+      <div class="section-head reveal">
+        <span class="kicker">01 — Building</span>
+        <h2>Projects</h2>
+        <p class="section-sub">The systems I've actually shipped at government scale — plus open-source tools and research side-projects.</p>
+      </div>
+
+      <div class="filters reveal" id="projFilters">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="production">Production</button>
+        <button class="chip" data-filter="oss">Open Source</button>
+        <button class="chip" data-filter="research">Research</button>
+        <button class="chip" data-filter="fullstack">Full-Stack</button>
+      </div>
+
+      <div class="proj-grid" id="projGrid">
+        <!-- AI-DMS -->
+        <article class="card proj reveal" data-cat="production">
+          <div class="card-top"><span class="proj-ico">💧</span><span class="tag tag-production">Production</span></div>
+          <h3>AI-DMS — Water-Utility Intelligence</h3>
+          <p class="card-desc">A production <strong>RAG</strong> system for a city's water utility — hybrid retrieval + reranking over <strong>2.7M+ meter readings</strong>, tuned to <strong>98.8% accuracy</strong> on our eval set. It reasons over a TypeDB knowledge graph that's flagged thousands of leaks and contamination risks.</p>
+          <div class="card-tags"><span>FastAPI</span><span>TypeDB</span><span>RAG</span><span>React 19</span></div>
+          <div class="links"><a href="https://github.com/psychofict" target="_blank" rel="noopener">Gractor · production</a></div>
+        </article>
+
+        <!-- OMS -->
+        <article class="card proj reveal" data-cat="production">
+          <div class="card-top"><span class="proj-ico">🚰</span><span class="tag tag-production">Production</span></div>
+          <h3>OMS — Anyang Smart-Water Agent</h3>
+          <p class="card-desc">A <strong>tool-calling agent</strong> for the Anyang water grid (26,000+ meters). I rebuilt a sprawling LangGraph stack far simpler — a third less code, <strong>~12× faster</strong>, and <strong>100%</strong> on a red-team eval harness — reading the live system read-only so it can't break it.</p>
+          <div class="card-tags"><span>Flask</span><span>TypeDB</span><span>Agents</span><span>Eval Harness</span></div>
+          <div class="links"><a href="https://github.com/psychofict" target="_blank" rel="noopener">Gractor · production</a></div>
+        </article>
+
+        <!-- Spain Digital Twin -->
+        <article class="card proj reveal" data-cat="production">
+          <div class="card-top"><span class="proj-ico">🏙️</span><span class="tag tag-production">Production</span></div>
+          <h3>Spain Smart-Mobility 3D Digital Twin</h3>
+          <p class="card-desc">A live <strong>3D digital twin</strong> of a 215 km motorway (Zaragoza–Barcelona) — a <strong>₩5.1B</strong> Korea–Spain program, <strong>Grand Prize</strong> at the 2024 City Design Awards. I took it from demo to certifiable on PostgreSQL/PostGIS, streaming real-time traffic onto a Three.js map.</p>
+          <div class="card-tags"><span>FastAPI</span><span>React 19</span><span>Three.js</span><span>PostGIS</span></div>
+          <div class="links"><a href="https://github.com/psychofict/3d-digital-twin-traffic" target="_blank" rel="noopener">Code</a></div>
+        </article>
+
+        <!-- River CMS -->
+        <article class="card proj reveal" data-cat="production">
+          <div class="card-top"><span class="proj-ico">🛰️</span><span class="tag tag-production">Production</span></div>
+          <h3>River CMS — Smart-City Edge Platform</h3>
+          <p class="card-desc"><strong>Edge AI</strong> for a city of <strong>460,000</strong> — YOLOv5 on-device on smart-pole cameras, with MQTT and serial control to the hardware. It's offline-first: survives cloud outages and reboots a device if it goes quiet.</p>
+          <div class="card-tags"><span>Python</span><span>YOLOv5</span><span>OpenVINO</span><span>MQTT</span></div>
+          <div class="links"><a href="https://github.com/psychofict" target="_blank" rel="noopener">Gractor · production</a></div>
+        </article>
+
+        <!-- hwpkit -->
+        <article class="card proj reveal" data-cat="oss">
+          <div class="card-top"><span class="proj-ico">📄</span><span class="tag tag-oss">Open Source</span></div>
+          <h3>hwpkit</h3>
+          <p class="card-desc">Read, fill &amp; edit Korean HWP (Hancom Office) documents in Python — text extraction for LLM/RAG, programmatic form-filling, and corruption-free binary rewrite.</p>
+          <div class="card-tags"><span>Python</span><span>OLE/CFB</span><span>RAG</span></div>
+          <div class="links"><a href="https://github.com/psychofict/hwpkit" target="_blank" rel="noopener">Code</a><a href="https://hwpkit.ebstar.co" target="_blank" rel="noopener">Docs</a></div>
+        </article>
+
+        <!-- BadCLIP -->
+        <article class="card proj reveal" data-cat="research">
+          <div class="card-top"><span class="proj-ico">🎯</span><span class="tag tag-research">Research</span></div>
+          <h3>Backdoor Attacks on CLIP (BadCLIP)</h3>
+          <p class="card-desc">Stealthy backdoor triggers in CLIP-style models via dual-embedding alignment in the joint visual-textual representation space.</p>
+          <div class="card-tags"><span>Adversarial ML</span><span>Multimodal</span></div>
+          <div class="links"><a href="https://github.com/psychofict/badclip-backdoor-study" target="_blank" rel="noopener">Code</a><a href="https://drive.google.com/file/d/1OnPxU3cuqhB0uwFL-8w2sg2gjNiUdZNB/view" target="_blank" rel="noopener">Slides</a></div>
+        </article>
+
+        <!-- Semantic adversarial -->
+        <article class="card proj reveal" data-cat="research">
+          <div class="card-top"><span class="proj-ico">🧬</span><span class="tag tag-research">Research</span></div>
+          <h3>Semantic-Aware Multi-Label Adversarial Attacks</h3>
+          <p class="card-desc">Targeted perturbations for multi-label classifiers that exploit semantic label co-occurrence dependencies.</p>
+          <div class="card-tags"><span>Adversarial ML</span><span>Multi-Label</span></div>
+          <div class="links"><a href="https://github.com/psychofict/semantic-adversarial-attacks-study" target="_blank" rel="noopener">Code</a><a href="https://drive.google.com/file/d/16gKQe9vyjaXc6fQhMEOzhQRfN6H8z__J/view" target="_blank" rel="noopener">Slides</a></div>
+        </article>
+
+        <!-- Semi-sup baselines -->
+        <article class="card proj reveal" data-cat="research">
+          <div class="card-top"><span class="proj-ico">🧩</span><span class="tag tag-research">Research</span></div>
+          <h3>Semi-Supervised Segmentation Baselines</h3>
+          <p class="card-desc">Systematic evaluation of weak-to-strong consistency (UniMatch) and self-training (ST++) — the foundation for CW-BASS and FARCLUSS.</p>
+          <div class="card-tags"><span>SSL</span><span>Segmentation</span></div>
+          <div class="links"><a href="https://github.com/psychofict/semi-supervised-segmentation-baselines" target="_blank" rel="noopener">Code</a><a href="https://drive.google.com/file/d/1CRrbuWRL5Z9S_eKx_QkYUsb3n1NkhzUE/view" target="_blank" rel="noopener">Slides</a></div>
+        </article>
+
+        <!-- Depth -->
+        <article class="card proj reveal" data-cat="research">
+          <div class="card-top"><span class="proj-ico">🌀</span><span class="tag tag-research">Research</span></div>
+          <h3>Monocular Depth Estimation (Depth Anything V2)</h3>
+          <p class="card-desc">Depth estimation and point-cloud generation for autonomous driving, with an improved depth-to-pointcloud pipeline on KITTI.</p>
+          <div class="card-tags"><span>3D Vision</span><span>Autonomous Driving</span></div>
+          <div class="links"><a href="https://github.com/psychofict/depth-estimation-experiments" target="_blank" rel="noopener">Code</a></div>
+        </article>
+
+        <!-- LLM context -->
+        <article class="card proj reveal" data-cat="research">
+          <div class="card-top"><span class="proj-ico">📏</span><span class="tag tag-research">Research</span></div>
+          <h3>Effective Context Length of LLMs (STRING)</h3>
+          <p class="card-desc">Why declared context length overstates the effective one — analyzing positional-encoding bias and the STRING shifting method across Llama, Mistral &amp; Qwen.</p>
+          <div class="card-tags"><span>NLP</span><span>Transformers</span></div>
+          <div class="links"><a href="https://github.com/psychofict/llm-effective-context-length" target="_blank" rel="noopener">Code</a><a href="https://drive.google.com/file/d/16obkOE5o65m8zrUtdMEZdOygMwHD6Aiu/view" target="_blank" rel="noopener">Slides</a></div>
+        </article>
+
+        <!-- AgriLet -->
+        <article class="card proj reveal" data-cat="fullstack">
+          <div class="card-top"><span class="proj-ico">🌱</span><span class="tag tag-fullstack">Full-Stack</span></div>
+          <h3>AgriLet — Crop Disease Detection &amp; Education</h3>
+          <p class="card-desc">AI-powered disease identification with severity scoring, structured learning modules, community data contributions, and downloadable datasets.</p>
+          <div class="card-tags"><span>React</span><span>TypeScript</span><span>Prisma</span></div>
+          <div class="links"><a href="https://github.com/psychofict/agrilet" target="_blank" rel="noopener">Code</a></div>
+        </article>
+
+        <!-- eLearn -->
+        <article class="card proj reveal" data-cat="fullstack">
+          <div class="card-top"><span class="proj-ico">🎓</span><span class="tag tag-fullstack">Full-Stack</span></div>
+          <h3>eLearn — E-Learning Platform</h3>
+          <p class="card-desc">20+ subjects, 70+ lessons, progress tracking with study streaks, a learning-analytics dashboard, full auth, and a responsive UI.</p>
+          <div class="card-tags"><span>React</span><span>Express</span><span>Prisma</span></div>
+          <div class="links"><a href="https://github.com/psychofict/elearn" target="_blank" rel="noopener">Code</a></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== PUBLICATIONS ===================== -->
+    <section id="publications" class="section">
+      <div class="section-head reveal">
+        <span class="kicker">02 — Research</span>
+        <h2>Publications</h2>
+        <p class="section-sub">First-author work on learning dense predictions from very few labels. CW-BASS &amp; FARCLUSS were the former <strong>#3</strong> and <strong>#2</strong> global SSSS SOTA on ResNet-101; PixCon is the current <strong>#2</strong> on foundation-model features.</p>
+      </div>
+
+      <!-- PixCon -->
+      <article class="pub reveal">
+        <div class="pub-media"><img src="pictures/pixcon_results.gif" alt="PixCon results demo" loading="lazy" /></div>
+        <div class="pub-body">
+          <div class="pub-tags"><span class="rank rank-1">#2 · Global SSSS SOTA</span><span class="venue">Preprint · under review</span><span class="year">2026</span></div>
+          <h3>PixCon: Clean-Positive Contrastive Learning for Foundation-Model Semi-Supervised Segmentation</h3>
+          <p class="authors"><strong>Ebenezer Tarubinga</strong> <span class="muted">· independent</span></p>
+          <p class="pub-desc">A clean-positive pixel memory bank that admits only labeled pixels, keeping contrastive positives free of pseudo-label noise on DINOv2-scale features. Ranks <strong>#2</strong> in semi-supervised segmentation, matching a strong UniMatch V2 baseline at lower cost.</p>
+          <div class="links">
+            <a href="https://arxiv.org/abs/2607.03068" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://github.com/psychofict/PixCon" target="_blank" rel="noopener">Code</a>
+            <a href="https://psychofict.github.io/PixCon/" target="_blank" rel="noopener">Project</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- FARCLUSS -->
+      <article class="pub reveal">
+        <div class="pub-media"><img src="pictures/farcluss.png" alt="FARCLUSS" loading="lazy" /></div>
+        <div class="pub-body">
+          <div class="pub-tags"><span class="rank rank-2">Former #2 · Global SSSS SOTA</span><span class="venue">Neural Networks · under review</span><span class="year">2026</span></div>
+          <h3>FARCLUSS: Fuzzy Adaptive Rebalancing &amp; Contrastive Uncertainty Learning for Semi-Supervised Segmentation</h3>
+          <p class="authors"><strong>Ebenezer Tarubinga</strong>, <a href="https://scholar.google.com/citations?user=uH_-hRUAAAAJ&hl=en" target="_blank" rel="noopener">Jenifer Kalafatovich</a>, <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee" target="_blank" rel="noopener">Seong-Whan Lee</a></p>
+          <p class="pub-desc">Fuzzy top-K pseudo-labeling, entropy-normalized uncertainty weighting, per-batch class rebalancing, and prototype contrastive regularization. Formerly <strong>#2 globally</strong> on Cityscapes &amp; Pascal VOC (78.8% / 78.2% mIoU, ResNet-101).</p>
+          <div class="links">
+            <a href="https://arxiv.org/abs/2506.11142" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://github.com/psychofict/FARCLUSS" target="_blank" rel="noopener">Code</a>
+            <a href="https://psychofict.github.io/FARCLUSS/" target="_blank" rel="noopener">Project</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CW-BASS -->
+      <article class="pub reveal">
+        <div class="pub-media"><img src="pictures/gif4.gif" alt="CW-BASS" loading="lazy" /></div>
+        <div class="pub-body">
+          <div class="pub-tags"><span class="rank rank-3">Former #3 · Global SSSS SOTA</span><span class="venue">IJCNN 2025 · IEEE</span><span class="year">2025</span></div>
+          <h3>CW-BASS: Confidence-Weighted Boundary-Aware Learning for Semi-Supervised Semantic Segmentation</h3>
+          <p class="authors"><strong>Ebenezer Tarubinga</strong>, <a href="https://scholar.google.com/citations?user=uH_-hRUAAAAJ&hl=en" target="_blank" rel="noopener">Jenifer Kalafatovich</a>, <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee" target="_blank" rel="noopener">Seong-Whan Lee</a></p>
+          <p class="pub-desc">Confidence-weighted cross-entropy with Sobel boundary regularization and bounded-sigmoid dynamic thresholding. Formerly <strong>#3 globally</strong> on Pascal VOC 2012 (77.15% mIoU) and top-10 on Papers With Code.</p>
+          <div class="links">
+            <a href="https://ieeexplore.ieee.org/abstract/document/11227871/" target="_blank" rel="noopener">IEEE</a>
+            <a href="https://arxiv.org/abs/2502.15152" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://github.com/psychofict/CW-BASS" target="_blank" rel="noopener">Code</a>
+            <a href="https://psychofict.github.io/CW-BASS/" target="_blank" rel="noopener">Project</a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section id="experience" class="section">
+      <div class="section-head reveal">
+        <span class="kicker">03 — Path</span>
+        <h2>Experience</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-logo"><img src="pictures/gractor.png" alt="Gractor" /></div>
+          <div class="tl-body">
+            <div class="tl-head"><h3>AI/ML Engineer</h3><span class="tl-date">Sept 2025 — present</span></div>
+            <p class="tl-org">Gractor · Smart-city AI · Seoul, Korea</p>
+            <p class="tl-desc">The main engineer on four live government platforms. Most of my work is the <strong>RAG</strong> and agent systems a city's water utility runs on — retrieval at <strong>98.8% accuracy</strong> over millions of live readings, and a tool-calling agent I rebuilt to a perfect eval score with a third less code. I also took a <strong>₩5.1B</strong> Korea–Spain digital twin from demo to certifiable and shipped YOLOv5 edge inference on smart-city poles.</p>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-logo"><img src="pictures/ku.svg" alt="Korea University" /></div>
+          <div class="tl-body">
+            <div class="tl-head"><h3>Research Engineer (MSc)</h3><span class="tl-date">Aug 2023 — Feb 2026</span></div>
+            <p class="tl-org">Korea University · Pattern Recognition &amp; ML Lab</p>
+            <p class="tl-desc">Advised by <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee" target="_blank" rel="noopener">Prof. Seong-Whan Lee</a> (IEEE Fellow). Three first-author segmentation papers ranked <strong>#2 and #3</strong> globally on Cityscapes and Pascal VOC; ~10K LOC of PyTorch multi-GPU training infrastructure; Korean patent filed (autonomous-driving perception).</p>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-logo"><img src="pictures/glitech_logo.png" alt="GliT" /></div>
+          <div class="tl-body">
+            <div class="tl-head"><h3>AI Software Engineer</h3><span class="tl-date">Jan 2019 — Jan 2021</span></div>
+            <p class="tl-org">GliT (GLITEC) · EdTech</p>
+            <p class="tl-desc">Built offline-first mobile learning products reaching 500+ students and 80,000+ learning sessions, and led STEM-education initiatives.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- education + awards -->
+      <div class="edu-awards">
+        <div class="card mini reveal">
+          <div class="mini-logos"><img src="pictures/ku.svg" alt="Korea University" /></div>
+          <span class="mini-kicker">🎓 Education</span>
+          <h3>MSc, Artificial Intelligence</h3>
+          <p class="tl-org">Korea University · 2023 – 2026</p>
+          <p class="card-desc">Global Korea Scholarship (sole Zimbabwe awardee) · BK21 Research Fellowship · Advised by Prof. Seong-Whan Lee (IEEE Fellow).</p>
+        </div>
+        <div class="card mini reveal">
+          <div class="mini-logos"><img src="pictures/gincon-icon.png" alt="GINCON" /><img src="pictures/national-assembly.svg" alt="National Assembly of Korea" /></div>
+          <span class="mini-kicker">🏆 Recognition</span>
+          <h3>GINCON Global Committee 2025</h3>
+          <p class="tl-org">Recognized at the Korean National Assembly</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section id="skills" class="section">
+      <div class="section-head reveal">
+        <span class="kicker">04 — Toolkit</span>
+        <h2>Skills</h2>
+      </div>
+
+      <div class="skills reveal">
+        <div class="skill-row"><span class="skill-cat">AI / LLM</span><div class="pills">
+          <span>RAG (hybrid retrieval)</span><span>Agents &amp; Tool-Calling</span><span>Model Context Protocol</span><span>Evaluation Harnesses</span><span>Guardrails</span><span>LangGraph</span><span>OpenAI</span><span>Anthropic Claude</span><span>HyperCLOVA X</span><span>Hugging Face</span>
+        </div></div>
+        <div class="skill-row"><span class="skill-cat">ML / CV</span><div class="pills">
+          <span>PyTorch</span><span>TensorFlow</span><span>OpenCV</span><span>scikit-learn</span><span>NumPy</span><span>Pandas</span><span>SciPy</span><span>YOLOv5</span><span>OpenVINO</span><span>ONNX</span><span>CUDA</span><span>Weights &amp; Biases</span>
+        </div></div>
+        <div class="skill-row"><span class="skill-cat">Backend &amp; Data</span><div class="pills">
+          <span>FastAPI</span><span>Flask</span><span>Node.js</span><span>Express</span><span>SQLAlchemy</span><span>Prisma</span><span>TypeDB</span><span>PostgreSQL + PostGIS</span><span>MongoDB</span><span>Redis</span><span>OpenSearch</span><span>SQLite</span>
+        </div></div>
+        <div class="skill-row"><span class="skill-cat">Frontend</span><div class="pills">
+          <span>React 19</span><span>TypeScript</span><span>Next.js</span><span>Three.js</span><span>deck.gl</span><span>MapLibre</span><span>ECharts</span><span>Tailwind</span><span>Radix UI</span><span>Framer Motion</span><span>Zustand</span><span>Vite</span>
+        </div></div>
+        <div class="skill-row"><span class="skill-cat">Infra / IoT</span><div class="pills">
+          <span>Docker</span><span>Kubernetes</span><span>AWS</span><span>Nginx</span><span>systemd</span><span>Prometheus</span><span>Grafana</span><span>Mosquitto MQTT</span><span>ModBus RTU</span><span>Vercel</span><span>Cloudflare</span><span>GitHub Actions</span>
+        </div></div>
+        <div class="skill-row"><span class="skill-cat">Languages</span><div class="pills">
+          <span>Python</span><span>TypeScript</span><span>JavaScript</span><span>C++</span><span>C#</span><span>Java</span><span>SQL</span><span>Bash</span>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- ===================== CERTIFICATES ===================== -->
+    <section id="certificates" class="section">
+      <div class="section-head reveal">
+        <span class="kicker">05 — Credentials</span>
+        <h2>Certifications</h2>
+      </div>
+      <div class="cert-grid reveal">
+        <div class="cert"><img src="pictures/ibm.svg" alt="IBM" /><div class="cert-txt"><span class="cert-name">Applied AI Professional Certificate</span><span class="cert-by">IBM</span></div></div>
+        <div class="cert"><img src="pictures/northwestern.svg" alt="Northwestern" /><div class="cert-txt"><span class="cert-name">Modern Robotics Specialization</span><span class="cert-by">Northwestern University</span></div></div>
+        <div class="cert"><img src="pictures/aws.svg" alt="AWS" /><div class="cert-txt"><span class="cert-name">Semantic Segmentation with SageMaker</span><span class="cert-by">Amazon Web Services</span></div></div>
+        <div class="cert"><img src="pictures/azure.svg" alt="Microsoft Azure" /><div class="cert-txt"><span class="cert-name">ML Pipelines with Azure ML Studio</span><span class="cert-by">Microsoft</span></div></div>
+        <div class="cert"><img src="pictures/google.svg" alt="Google" /><div class="cert-txt"><span class="cert-name">Foundations of Project Management</span><span class="cert-by">Google</span></div></div>
+        <div class="cert"><img src="pictures/aws.svg" alt="AWS" /><div class="cert-txt"><span class="cert-name">AWS S3 Basics</span><span class="cert-by">Amazon Web Services</span></div></div>
+        <div class="cert"><img src="pictures/emory.svg" alt="Emory" /><div class="cert-txt"><span class="cert-name">Neuroscience</span><span class="cert-by">Emory University</span></div></div>
+        <div class="cert"><img src="pictures/mit.svg" alt="MIT" /><div class="cert-txt"><span class="cert-name">Game Development with Scratch</span><span class="cert-by">MIT</span></div></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="foot-cta reveal">
+      <h2>Let's build something that ships.</h2>
+      <p>Open to ML / research-engineer roles and research collaborations.</p>
+      <a class="btn btn-primary" href="mailto:ebstarmusic@gmail.com">Get in touch</a>
+    </div>
+    <div class="foot-bar">
+      <span>© 2026 Ebenezer Tarubinga</span>
+      <div class="foot-links">
+        <a href="https://github.com/psychofict" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=W818y-gAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+        <a href="https://www.linkedin.com/in/ebstar" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:ebstarmusic@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ---- Theme toggle ----
+    var root = document.documentElement;
+    document.getElementById('themeToggle').addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      applySkillLogos();
+    });
+
+    // ---- Skill logos (simple-icons, monochrome + theme-aware; dot fallback for concepts) ----
+    var SKILL_ICONS = {
+      "RAG (hybrid retrieval)": null, "Agents & Tool-Calling": null, "Model Context Protocol": "anthropic",
+      "Evaluation Harnesses": null, "Guardrails": null, "LangGraph": "langchain", "OpenAI": null,
+      "Anthropic Claude": "anthropic", "HyperCLOVA X": "naver", "Hugging Face": "huggingface",
+      "PyTorch": "pytorch", "TensorFlow": "tensorflow", "OpenCV": "opencv", "scikit-learn": "scikitlearn",
+      "NumPy": "numpy", "Pandas": "pandas", "SciPy": "scipy", "YOLOv5": "yolo", "OpenVINO": "intel", "ONNX": "onnx",
+      "CUDA": "nvidia", "Weights & Biases": "weightsandbiases",
+      "FastAPI": "fastapi", "Flask": "flask", "Node.js": "nodedotjs", "Express": "express", "SQLAlchemy": "sqlalchemy",
+      "Prisma": "prisma", "TypeDB": null, "PostgreSQL + PostGIS": "postgresql", "MongoDB": "mongodb", "Redis": "redis",
+      "OpenSearch": "opensearch", "SQLite": "sqlite",
+      "React 19": "react", "TypeScript": "typescript", "Next.js": "nextdotjs", "Three.js": "threedotjs", "deck.gl": null,
+      "MapLibre": "maplibre", "ECharts": "apacheecharts", "Tailwind": "tailwindcss", "Radix UI": "radixui",
+      "Framer Motion": "framer", "Zustand": null, "Vite": "vite",
+      "Docker": "docker", "Kubernetes": "kubernetes", "AWS": null, "Nginx": "nginx", "systemd": null,
+      "Prometheus": "prometheus", "Grafana": "grafana", "Mosquitto MQTT": "mqtt", "ModBus RTU": null, "Vercel": "vercel",
+      "Cloudflare": "cloudflare", "GitHub Actions": "githubactions",
+      "Python": "python", "JavaScript": "javascript", "C++": "cplusplus", "C#": null, "Java": "openjdk", "SQL": null, "Bash": "gnubash"
+    };
+    var SKILL_LOCAL = { "OpenAI": "pictures/openai.svg", "AWS": "pictures/aws.svg" };
+    function applySkillLogos() {
+      document.querySelectorAll('.pills > span').forEach(function (el) {
+        if (el.querySelector('.skill-ico') || el.querySelector('.skill-dot')) return;
+        var label = el.textContent.trim();
+        var src = SKILL_LOCAL[label] || (SKILL_ICONS[label] ? 'https://cdn.simpleicons.org/' + SKILL_ICONS[label] : null);
+        if (src) {
+          var ico = new Image(19, 19); ico.className = 'skill-ico'; ico.alt = ''; ico.loading = 'lazy';
+          ico.onerror = function () { var d = document.createElement('span'); d.className = 'skill-dot'; this.replaceWith(d); };
+          ico.src = src;
+          el.insertBefore(ico, el.firstChild);
+        } else {
+          var dot = document.createElement('span'); dot.className = 'skill-dot'; el.insertBefore(dot, el.firstChild);
+        }
+      });
+    }
+    applySkillLogos();
+
+    // ---- Tech logos on project tags (only where a real logo exists; plain text otherwise) ----
+    var TAG_ALIAS = { "React": "react", "PostGIS": "postgresql", "MQTT": "mqtt" };
+    document.querySelectorAll('.card-tags span').forEach(function (el) {
+      if (el.querySelector('.tag-ico')) return;
+      var label = el.textContent.trim();
+      var slug = SKILL_ICONS[label] || TAG_ALIAS[label];
+      var src = SKILL_LOCAL[label] || (slug ? 'https://cdn.simpleicons.org/' + slug : null);
+      if (!src) return;
+      var ico = new Image(13, 13); ico.className = 'tag-ico'; ico.alt = ''; ico.loading = 'lazy';
+      ico.onerror = function () { this.remove(); };
+      ico.src = src;
+      el.insertBefore(ico, el.firstChild);
+    });
+
+    // ---- Publication venue marks (arXiv / IEEE / Elsevier) ----
+    function venueSlug(t) {
+      t = t.toLowerCase();
+      if (t.indexOf('ieee') >= 0 || t.indexOf('ijcnn') >= 0) return 'ieee';
+      if (t.indexOf('neural networks') >= 0 || t.indexOf('elsevier') >= 0) return 'elsevier';
+      if (t.indexOf('preprint') >= 0 || t.indexOf('arxiv') >= 0) return 'arxiv';
+      return null;
+    }
+    document.querySelectorAll('.venue').forEach(function (el) {
+      if (el.querySelector('.venue-ico')) return;
+      var slug = venueSlug(el.textContent);
+      if (!slug) return;
+      var ico = new Image(13, 13); ico.className = 'venue-ico'; ico.alt = ''; ico.loading = 'lazy';
+      ico.onerror = function () { this.remove(); };
+      ico.src = 'https://cdn.simpleicons.org/' + slug;
+      el.insertBefore(ico, el.firstChild);
+    });
+
+    // ---- Link-button icons (monochrome, inherit text colour) ----
+    var LINK_SVG = {
+      github: '<svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 5 18 5.3 18 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>',
+      file: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>',
+      globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg>',
+      slides: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="1"/><path d="M12 17v3M9 20h6"/></svg>'
+    };
+    document.querySelectorAll('.links a').forEach(function (a) {
+      if (a.querySelector('svg')) return;
+      var href = (a.getAttribute('href') || '').toLowerCase();
+      var txt = a.textContent.trim().toLowerCase();
+      var key;
+      if (txt.indexOf('production') >= 0) key = null;
+      else if (href.indexOf('github.com') >= 0) key = 'github';
+      else if (href.indexOf('arxiv.org') >= 0 || href.indexOf('ieee') >= 0) key = 'file';
+      else if (href.indexOf('drive.google') >= 0 || txt === 'slides') key = 'slides';
+      else key = 'globe';
+      if (key) a.insertAdjacentHTML('afterbegin', LINK_SVG[key]);
+    });
+
+    // ---- Mobile menu ----
+    var navLinks = document.getElementById('navLinks');
+    document.getElementById('menuBtn').addEventListener('click', function () {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { navLinks.classList.remove('open'); });
+    });
+
+    // ---- Nav shadow on scroll ----
+    var nav = document.getElementById('nav');
+    addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', scrollY > 8);
+    });
+
+    // ---- Scroll reveal ----
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+    // ---- Active nav link ----
+    var links = [].slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+    var secs = links.map(function (l) { return document.querySelector(l.getAttribute('href')); }).filter(Boolean);
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          links.forEach(function (l) { l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id); });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    secs.forEach(function (s) { spy.observe(s); });
+
+    // ---- Project filter ----
+    var filters = document.getElementById('projFilters');
+    if (filters) {
+      filters.addEventListener('click', function (ev) {
+        var btn = ev.target.closest('.chip'); if (!btn) return;
+        filters.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('active'); });
+        btn.classList.add('active');
+        var f = btn.getAttribute('data-filter');
+        document.querySelectorAll('#projGrid .proj').forEach(function (card) {
+          card.style.display = (f === 'all' || card.getAttribute('data-cat') === f) ? '' : 'none';
+        });
+      });
+    }
+  </script>
+</body>
+</html>

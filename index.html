@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ebenezer Tarubinga — AI/ML Engineer</title>
+  <meta name="author" content="Ebenezer Tarubinga" />
+  <meta name="description" content="Ebenezer Tarubinga — AI/ML engineer in Seoul. Production retrieval, agents, computer vision and platform infrastructure, plus four first-author papers on learning to segment from almost no labels." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ebenezer Tarubinga — AI/ML Engineer" />
+  <meta property="og:description" content="Production AI systems for city infrastructure, the platform underneath a nine-product fleet, and four first-author papers. MSc AI, Korea University." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://psychofict.github.io/" />
+  <meta property="og:image" content="https://psychofict.github.io/pictures/ebstar.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" href="pictures/ebstar-mark-black.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="stylesheet.css" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFYF6ZWHZZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YFYF6ZWHZZ');
+  </script>
+
+  <!-- Resolve the stored theme before paint. Nothing is set when the visitor has
+       no preference, so the CSS falls through to prefers-color-scheme. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body>
+  <div class="page-glow" aria-hidden="true"></div>
+
+  <!-- Glyph sprite. Every system row carries a line drawing of what the system
+       actually does, in one stroke weight, so the index scans as a set rather
+       than as a wall of paragraphs. Stock photography would say nothing. -->
+  <svg class="sprite" aria-hidden="true" focusable="false"><defs>
+    <g id="g-retrieval"><rect x="2" y="3" width="11" height="13" rx="2"/><path d="M5 7h5M5 10h5M5 13h3"/><circle cx="16.5" cy="15.5" r="4.5"/><path d="M19.9 18.9 22.5 21.5"/></g>
+    <g id="g-agent"><circle cx="12" cy="4.5" r="2.5"/><path d="M12 7v3.5"/><path d="M4 11.5h16"/><path d="M6 11.5v3M12 11.5v3M18 11.5v3"/><rect x="3.5" y="14.5" width="5" height="4.5" rx="1.2"/><rect x="9.5" y="14.5" width="5" height="4.5" rx="1.2"/><rect x="15.5" y="14.5" width="5" height="4.5" rx="1.2"/></g>
+    <g id="g-twin"><path d="M3 7.5 12 3l9 4.5-9 4.5z"/><path d="M3 13.2 12 17.7l9-4.5"/><path d="M3 7.5v5.7M21 7.5v5.7"/></g>
+    <g id="g-camera"><rect x="2.5" y="4.5" width="11.5" height="7" rx="2"/><path d="M14 7 20.5 4.5v9L14 11z"/><path d="M8.5 11.5v8.5"/><path d="M5.5 20.5h6"/></g>
+    <g id="g-key"><circle cx="5.5" cy="12" r="3"/><path d="M8.5 12h6"/><path d="M12 12v3"/><rect x="15" y="4.5" width="6.5" height="15" rx="1.5"/><circle cx="18" cy="12" r="1"/></g>
+    <g id="g-db"><ellipse cx="5" cy="4.8" rx="3" ry="1.5"/><path d="M2 4.8v3.6c0 .8 1.3 1.5 3 1.5s3-.7 3-1.5V4.8"/><path d="M8 8.4h3a3 3 0 0 1 3 3v2.1"/><rect x="9.5" y="14" width="11" height="6.5" rx="1.5"/><path d="M9.5 17.2h11"/></g>
+    <g id="g-failover"><rect x="2" y="3" width="8.5" height="6" rx="1.5"/><rect x="13.5" y="14.5" width="8.5" height="6" rx="1.5"/><path d="M10.5 6h4.5"/><path d="M17 4 20.5 7.5M20.5 4 17 7.5"/><path d="M6.2 9v5.5a3 3 0 0 0 3 3h4.3" stroke-dasharray="2.6 2.6"/></g>
+    <g id="g-check"><rect x="2.5" y="2.5" width="12" height="15" rx="2"/><path d="M5.8 7.3 7.4 8.9l3.2-3.2"/><path d="M5.8 12.6h5"/><circle cx="17.5" cy="16.5" r="4.8"/><path d="M17.5 14v2.7l1.9 1.1"/></g>
+    <g id="g-shield"><path d="M12 2.5 4.5 5.6v5.7c0 4.8 3.2 8.2 7.5 9.7 4.3-1.5 7.5-4.9 7.5-9.7V5.6z"/><path d="M12 7.2 10 11.8h3.2L11.6 16.6"/></g>
+    <g id="g-graph"><circle cx="5.5" cy="6" r="2.5"/><circle cx="18.5" cy="8" r="2.5"/><circle cx="9.5" cy="18" r="2.5"/><path d="M8 6.4l8 1.2M6.6 8.3 8.7 15.6M17 10.2l-5.6 5.9"/></g>
+    <g id="g-labels"><rect x="2.5" y="2.5" width="19" height="19" rx="2"/><path d="M2.5 9h19M2.5 15h19M9 2.5v19M15 2.5v19"/><rect x="2.5" y="2.5" width="6.5" height="6.5" fill="currentColor" stroke="none" opacity=".26"/><rect x="15" y="9" width="6.5" height="6" fill="currentColor" stroke="none" opacity=".26"/></g>
+    <g id="g-depth"><path d="M2.5 20.5c2.2-6.6 5.6-9.9 9.5-9.9s7.3 3.3 9.5 9.9"/><path d="M6.4 20.5c1.5-3.8 3.4-5.7 5.6-5.7s4.1 1.9 5.6 5.7"/><path d="M10.1 20.5c.7-1.6 1.3-2.4 1.9-2.4s1.2.8 1.9 2.4"/><path d="M12 3v4"/></g>
+    <g id="g-context"><rect x="2.5" y="8" width="19" height="8" rx="2"/><path d="M6.2 8v8M17.8 8v8" stroke-dasharray="2 2"/><rect x="8.6" y="8" width="6.8" height="8" fill="currentColor" stroke="none" opacity=".24"/></g>
+    <g id="g-leaf"><path d="M20.5 3.5c0 8.3-5.2 13.5-13.5 13.5 0-8.3 5.2-13.5 13.5-13.5z"/><path d="M7 17c3.1-4.2 6.2-6.8 10.3-8.3"/><path d="M3.5 20.5 7 17"/></g>
+    <g id="g-book"><path d="M3 5.2c2.9-1.5 6-1.5 9 0v13.4c-3-1.5-6.1-1.5-9 0z"/><path d="M21 5.2c-2.9-1.5-6-1.5-9 0v13.4c3-1.5 6.1-1.5 9 0z"/></g>
+  </defs></svg>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="brand">
+        <span class="brand-mark"><img src="pictures/ebstar-mark-white.png" alt="" /></span>
+        <span class="brand-name">Ebenezer&nbsp;Tarubinga</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Sections">
+        <a href="#systems">Systems</a>
+        <a href="#publications">Papers</a>
+        <a href="#opensource">Open source</a>
+        <a href="#experience">Experience</a>
+        <a class="nav-cta" href="data/ebstar_cv.pdf" target="_blank" rel="noopener">CV ↓</a>
+      </nav>
+
+      <div class="nav-tools">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle colour theme" title="Toggle theme">
+          <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button id="menuBtn" class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="hero-grid reveal">
+      <div class="hero-text">
+        <p class="eyebrow"><span class="dot"></span> Open to ML and research-engineer roles, and research collaborations</p>
+
+        <h1>Ebenezer Tarubinga</h1>
+        <p class="role"><span class="mono">AI/ML Engineer</span></p>
+
+        <p class="lede">
+          I build production AI systems: retrieval, agents and computer vision for city
+          infrastructure, edge to cloud. I publish on the research side of the same problem, and I
+          build the platform underneath a nine-product fleet.
+        </p>
+        <p class="lede-2">Four first-author papers · one Korean patent filed · MSc AI, Korea University · shipping since 2019</p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#systems">See the work</a>
+          <a class="btn btn-ghost" href="data/ebstar_cv.pdf" target="_blank" rel="noopener">Download CV</a>
+        </div>
+
+        <div class="socials">
+          <a class="social" href="mailto:ebstarmusic@gmail.com" title="Email" aria-label="Email"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg></a>
+          <a class="social" href="https://github.com/psychofict" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 5 18 5.3 18 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg></a>
+          <a class="social" href="https://scholar.google.com/citations?user=W818y-gAAAAJ&amp;hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.9V17h2V9zM6 13.7v3.2c0 1.6 2.7 3.1 6 3.1s6-1.5 6-3.1v-3.2l-6 3.3z"/></svg></a>
+          <a class="social" href="https://orcid.org/0009-0004-7340-1873" target="_blank" rel="me noopener" title="ORCID iD 0009-0004-7340-1873" aria-label="ORCID iD"><svg viewBox="0 0 256 256" width="19" height="19" aria-hidden="true"><path d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z" fill="#A6CE39"/><g fill="#fff"><path d="M86.3 186.2H70.9V79.1h15.4v107.1z"/><path d="M108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7C191.7 111.2 178 93 148 93h-23.7v79.4z"/><path d="M88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></g></svg></a>
+          <a class="social" href="https://arxiv.org/search/cs?searchtype=author&amp;query=Tarubinga,+E" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv papers"><span class="social-txt">arXiv</span></a>
+          <a class="social" href="https://huggingface.co/psychofict" target="_blank" rel="noopener" title="Hugging Face" aria-label="Hugging Face models"><span class="social-txt">HF</span></a>
+          <a class="social" href="https://www.linkedin.com/in/ebstar" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.3v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4A2 2 0 1 1 5.3 3.3a2 2 0 0 1 0 4.1zM7.1 20.4H3.6V9h3.5z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <div class="photo-ring">
+          <img src="pictures/ebstar.png" alt="Ebenezer Tarubinga" width="208" height="208" />
+        </div>
+        <span class="loc-chip"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Seoul, Korea</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STATS ===================== -->
+  <!-- Two tracks, three figures each, so neither reads as the whole career. -->
+  <div class="stats reveal">
+    <p class="stats-cap">Building</p>
+    <div class="stat"><p class="stat-num">8</p><p class="stat-lbl">Production systems</p></div>
+    <div class="stat"><p class="stat-num">9</p><p class="stat-lbl">Products shipped</p></div>
+    <div class="stat"><p class="stat-num">2019</p><p class="stat-lbl">Shipping since</p></div>
+    <p class="stats-cap">Research</p>
+    <div class="stat"><p class="stat-num">4</p><p class="stat-lbl">First-author papers</p></div>
+    <div class="stat"><p class="stat-num">2</p><p class="stat-lbl">Peer-reviewed</p></div>
+    <div class="stat"><p class="stat-num">1</p><p class="stat-lbl">Korean patent filed</p></div>
+  </div>
+
+  <!-- ===================== SYSTEMS ===================== -->
+  <section class="section" id="systems">
+    <div class="section-head reveal">
+      <p class="kicker">01 — Building</p>
+      <h2>Systems</h2>
+      <p class="section-sub">
+        Client work is described by what it does and what I built, not by whose data is in it, so
+        those repositories stay private.
+      </p>
+    </div>
+
+    <div class="filters reveal" id="sysFilters" role="group" aria-label="Filter systems">
+      <button class="chip active" data-filter="all">All <span class="chip-n">15</span></button>
+      <button class="chip" data-filter="production">Production <span class="chip-n">4</span></button>
+      <button class="chip" data-filter="platform">Platform <span class="chip-n">4</span></button>
+      <button class="chip" data-filter="applied">Applied AI <span class="chip-n">5</span></button>
+      <button class="chip" data-filter="fullstack">Full-stack <span class="chip-n">2</span></button>
+    </div>
+
+    <ol class="sysgrid reveal" id="sysGrid">
+
+      <li class="sys" data-cat="production">
+        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-retrieval"/></svg></span>
+        <div class="sys-main">
+          <div class="sys-head"><span class="sys-idx mono">01</span><h3>Retrieval over utility operations data</h3><span class="tag">Production · RAG</span></div>
+          <p class="sys-body">
+            Hybrid retrieval and reranking over a water utility's operations data, reasoning across a knowledge graph so every answer carries its evidence. Scored on a held-out set.
+          </p>
+          <div class="stack"><span>FastAPI</span><span>Knowledge graph</span><span>RAG</span><span class="stack-note">Client work · private</span></div>
+        </div>
+      </li>
+
+      <li class="sys" data-cat="production">
+        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-agent"/></svg></span>
+        <div class="sys-main">
+          <div class="sys-head"><span class="sys-idx mono">02</span><h3>Operations agent for a water grid</h3><span class="tag">Production · Agents</span></div>
+          <p class="sys-body">
+            A tool-calling agent that reads the live grid strictly read-only, so it cannot act on infrastructure. Guardrails at every tool boundary, adversarial inputs in the eval harness.
+          </p>
+          <div class="stack"><span>Python</span><span>LangGraph</span><span>Eval harness</span><span class="stack-note">Client work · private</span></div>
+        </div>
+      </li>
+
+      <li class="sys" data-cat="production">
+        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-twin"/></svg></span>
+        <div class="sys-main">
+          <div class="sys-head"><span class="sys-idx mono">03</span><h3>3D digital twin for road infrastructure</h3><span class="tag">Production · Digital twin</span></div>
+          <p class="sys-body">
+            Live motorway telemetry on a Three.js map over PostGIS, for an international smart-mobility programme. My part was hardening a prototype until it could pass certification.
+          </p>
+          <div class="stack"><span>FastAPI</span><span>Three.js</span><span>PostGIS</span><span class="stack-note">Client work · private</span></div>
+        </div>
+      </li>
+
+      <li class="sys" data-cat="production">
+        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-camera"/></svg></span>
+        <div class="sys-main">
+          <div class="sys-head"><span class="sys-idx mono">04</span><h3>Edge vision on street-level camera hardware</h3><span class="tag">Production · Edge AI</span></div>
+          <p class="sys-body">
+            On-device detection on municipal camera poles, MQTT and serial down to the hardware. Offline-first: it survives a cloud outage and recovers a device that stops reporting.
+          </p>
+          <div class="stack"><span>Python</span><span>YOLOv5</span><span>MQTT</span><span class="stack-note">Client work · private</span></div>
+        </div>
+      </li>
+
+      <li class="sys" data-cat="platform">
+        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-key"/></svg></span>
+        <div class="sys-main">
+          <div class="sys-head"><span class="sys-idx mono">05</span><h3>Single sign-on and billing for a nine-product fleet</h3><span class="tag">Platform · Identity</span></div>
+          <p class="sys-body">
+            One OIDC provider answers two questions for every product: who is this request, and is this organisation's subscription active. Identity fails closed and the gate fails open, so a billing blip cannot lock out someone who paid.
+          </p>
+          <div class="stack"><span>OIDC</span><span>Next.js</span><span>Postgres</span><span class="stack-note">Private · architecture on request</span></div>
+        </div>
+      </li>
+
+      <li class="sys" data-cat="platform">
+        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-db"/></svg></span>
+        <div class="sys-main">
+          <div class="sys-head"><span class="sys-idx mono">06</span><h3>Ten databases onto one box</h3><span class="tag">Platform · Data</span></div>
+          <p class="sys-body">
+            Moved a fleet off managed Postgres onto one instance behind pgbouncer, one role per product. What forced it was an ORM <code>distinct</code> with no limit: 54,000 rows every five minutes to compute eight booleans.
+          </p>
+          <div class="stack"><span>Postgres</span><span>pgbouncer</span><span>Docker</span><span class="stack-note">Private · architecture on request</span></div>
+        </div>
+      </li>
+
+      <li class="sys" data-cat="platform">
+        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-failover"/></svg></span>
+        <div class="sys-main">
+          <div class="sys-head"><span class="sys-idx mono">07</span><h3>A model gateway that cannot bill</h3><span class="tag">Platform · LLM infra</span></div>
+          <p class="sys-body">
+            Two free tiers chained, so no product holds a paid model key. It fails over on 401, 402, 403, 404, 413, 429 and 5xx, and never on 400, because a 400 is our own bad request.
+          </p>
+          <div class="stack"><span>TypeScript</span><span>Cloudflare</span><span>Groq</span><span class="stack-note">Private · architecture on request</span></div>
+        </div>
+      </li>
+
+      <li class="sys" data-cat="platform">
+        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-check"/></svg></span>
+        <div class="sys-main">
+          <div class="sys-head"><span class="sys-idx mono">08</span><h3>Checkers instead of memory</h3><span class="tag">Platform · Reliability</span></div>
+          <p class="sys-body">
+            Certificates, search visibility, crawler policy and factual claims, each swept weekly by a script that exits non-zero only on new drift. None of it is visible to a build or a test.
+          </p>
+          <div class="stack"><span>Python</span><span>cron</span><span>DNS APIs</span><span class="stack-note">Private · architecture on request</span></div>
+        </div>
+      </li>
+
+      <li class="sys" data-cat="applied">
+        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-shield"/></svg></span>
+        <div class="sys-main">
+          <div class="sys-head"><span class="sys-idx mono">09</span><h3>Backdoor attacks on CLIP</h3><span class="tag tag-quiet">Applied AI · Adversarial ML</span></div>
+          <p class="sys-body">
+            Stealthy backdoor triggers via dual-embedding alignment in CLIP's joint visual and textual space, reproducing and extending BadCLIP.
+          </p>
+          <div class="stack"><span>PyTorch</span><span>CLIP</span></div>
+          <div class="links">
+            <a href="https://github.com/psychofict/badclip-backdoor-study" target="_blank" rel="noopener">Code</a>
+            <a href="https://drive.google.com/file/d/1OnPxU3cuqhB0uwFL-8w2sg2gjNiUdZNB/view" target="_blank" rel="noopener">Slides</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="sys" data-cat="applied">
+        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-graph"/></svg></span>
+        <div class="sys-main">
+          <div class="sys-head"><span class="sys-idx mono">10</span><h3>Semantic-aware multi-label adversarial attacks</h3><span class="tag tag-quiet">Applied AI · Adversarial ML</span></div>
+          <p class="sys-body">
+            Targeted perturbations for multi-label classifiers that exploit semantic label co-occurrence instead of treating each label independently.
+          </p>
+          <div class="stack"><span>PyTorch</span><span>Multi-label</span></div>
+          <div class="links">
+            <a href="https://github.com/psychofict/semantic-adversarial-attacks-study" target="_blank" rel="noopener">Code</a>
+            <a href="https://drive.google.com/file/d/16gKQe9vyjaXc6fQhMEOzhQRfN6H8z__J/view" target="_blank" rel="noopener">Slides</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="sys" data-cat="applied">
+        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-labels"/></svg></span>
+        <div class="sys-main">
+          <div class="sys-head"><span class="sys-idx mono">11</span><h3>Semi-supervised segmentation baselines</h3><span class="tag tag-quiet">Applied AI · Segmentation</span></div>
+          <p class="sys-body">
+            A systematic evaluation of weak-to-strong consistency (UniMatch) and self-training (ST++). The groundwork the four papers were built on.
+          </p>
+          <div class="stack"><span>PyTorch</span><span>UniMatch</span><span>ST++</span></div>
+          <div class="links">
+            <a href="https://github.com/psychofict/semi-supervised-segmentation-baselines" target="_blank" rel="noopener">Code</a>
+            <a href="https://drive.google.com/file/d/1CRrbuWRL5Z9S_eKx_QkYUsb3n1NkhzUE/view" target="_blank" rel="noopener">Slides</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="sys" data-cat="applied">
+        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-depth"/></svg></span>
+        <div class="sys-main">
+          <div class="sys-head"><span class="sys-idx mono">12</span><h3>Monocular depth estimation</h3><span class="tag tag-quiet">Applied AI · 3D vision</span></div>
+          <p class="sys-body">
+            Depth and point-cloud generation for autonomous driving on KITTI, over an improved depth-to-pointcloud pipeline on Depth Anything V2.
+          </p>
+          <div class="stack"><span>PyTorch</span><span>KITTI</span></div>
+          <div class="links">
+            <a href="https://github.com/psychofict/depth-estimation-experiments" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="sys" data-cat="applied">
+        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-context"/></svg></span>
+        <div class="sys-main">
+          <div class="sys-head"><span class="sys-idx mono">13</span><h3>Effective context length of LLMs</h3><span class="tag tag-quiet">Applied AI · LLMs</span></div>
+          <p class="sys-body">
+            Why a declared context length overstates the effective one: positional-encoding bias and the STRING shift, measured across Llama, Mistral and Qwen.
+          </p>
+          <div class="stack"><span>PyTorch</span><span>Transformers</span></div>
+          <div class="links">
+            <a href="https://github.com/psychofict/llm-effective-context-length" target="_blank" rel="noopener">Code</a>
+            <a href="https://drive.google.com/file/d/16obkOE5o65m8zrUtdMEZdOygMwHD6Aiu/view" target="_blank" rel="noopener">Slides</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="sys" data-cat="fullstack">
+        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-leaf"/></svg></span>
+        <div class="sys-main">
+          <div class="sys-head"><span class="sys-idx mono">14</span><h3>AgriLet, crop disease detection</h3><span class="tag tag-quiet">Full-stack</span></div>
+          <p class="sys-body">
+            Disease identification with severity scoring for smallholder farmers, plus learning modules, community data contributions and downloadable datasets.
+          </p>
+          <div class="stack"><span>React</span><span>TypeScript</span><span>Prisma</span></div>
+          <div class="links">
+            <a href="https://github.com/psychofict/agrilet" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="sys" data-cat="fullstack">
+        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-book"/></svg></span>
+        <div class="sys-main">
+          <div class="sys-head"><span class="sys-idx mono">15</span><h3>eLearn, an e-learning platform</h3><span class="tag tag-quiet">Full-stack</span></div>
+          <p class="sys-body">
+            O Level and A Level revision for African high-school students: 20+ subjects, 70+ lessons, study streaks and a learning-analytics dashboard.
+          </p>
+          <div class="stack"><span>React</span><span>Express</span><span>Prisma</span></div>
+          <div class="links">
+            <a href="https://github.com/psychofict/elearn" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+      </li>
+
+    </ol>
+
+    <button class="more-btn reveal" id="sysMore" type="button" aria-expanded="false">
+      <span class="more-label">Show all 15</span>
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+  </section>
+  <!-- ===================== PUBLICATIONS ===================== -->
+  <section class="section" id="publications">
+    <div class="section-head reveal">
+      <p class="kicker">02 — Research</p>
+      <h2>Papers</h2>
+      <p class="section-sub">
+        Four mechanisms for one problem: learning to label every pixel from a handful of examples,
+        without letting the model's own mistakes compound. Two are peer-reviewed.
+      </p>
+    </div>
+
+    <div class="reveal">
+      <a class="orcid" href="https://orcid.org/0009-0004-7340-1873" target="_blank" rel="me noopener">
+        <svg viewBox="0 0 256 256" width="17" height="17" aria-hidden="true"><path d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z" fill="#A6CE39"/><g fill="#fff"><path d="M86.3 186.2H70.9V79.1h15.4v107.1z"/><path d="M108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7C191.7 111.2 178 93 148 93h-23.7v79.4z"/><path d="M88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></g></svg>
+        orcid.org/0009-0004-7340-1873
+      </a>
+
+      <details class="disclose">
+        <summary>Research topics</summary>
+        <div class="topics">
+        <span>Semi-supervised learning</span><span>Semantic segmentation</span>
+        <span>Pseudo-labeling &amp; consistency</span><span>Calibration &amp; uncertainty</span>
+        <span>Contrastive representation learning</span><span>Long-tailed / class imbalance</span>
+        <span>Boundary-aware learning</span><span>Foundation models (DINOv2, ViT)</span>
+        <span>Selective prediction</span><span>Evaluation methodology</span>
+      </div>
+      </details>
+    </div>
+
+    <ol class="pubs reveal">
+
+      <li class="pub">
+        <div class="pub-grid">
+          <p class="pub-idx">01</p>
+          <div>
+            <div class="pub-meta">
+              <span class="venue">Under review · IEEE TPAMI</span>
+              <span class="standing">2nd among DINOv2 methods</span>
+            </div>
+            <h3>CW-BASS v2: Saturation-Aware Pseudo-Label Selection for Semi-Supervised Segmentation under Foundation-Model Teachers</h3>
+            <p class="authors"><strong>Ebenezer Tarubinga</strong> · independent</p>
+            <p class="pub-body">
+              A foundation-model teacher's confidence saturates, so a one-pass gate asks whether its confident set deserves the confidence it demands.
+            </p>
+            <p class="result">
+              Picks correctly on all six DINOv2 teachers, blind · +1.5 mIoU on ADE20K
+            </p>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2608.12773" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://github.com/psychofict/CW-BASS-v2" target="_blank" rel="noopener">Code</a>
+              <a href="https://psychofict.github.io/CW-BASS-v2/" target="_blank" rel="noopener">Project</a>
+              <a href="https://huggingface.co/psychofict" target="_blank" rel="noopener">Models</a>
+              <a href="https://huggingface.co/spaces/hugging-apps/cwbass-v2-segmentation" target="_blank" rel="noopener">Demo</a>
+            </div>
+          </div>
+          <div class="pub-fig"><img src="pictures/cwbass_v2_results.gif" alt="CW-BASS v2 qualitative segmentation results" loading="lazy" /></div>
+        </div>
+      </li>
+
+      <li class="pub">
+        <div class="pub-grid">
+          <p class="pub-idx">02</p>
+          <div>
+            <div class="pub-meta">
+              <span class="venue">Under review · WACV 2027</span>
+              <span class="standing">#2 · Global SSSS SOTA</span>
+            </div>
+            <h3>PixCon: Clean-Positive Contrastive Learning for Foundation-Model Semi-Supervised Segmentation</h3>
+            <p class="authors"><strong>Ebenezer Tarubinga</strong> · independent</p>
+            <p class="pub-body">
+              A pixel memory that admits only labeled pixels, keeping contrastive positives free of pseudo-label noise, with nothing added at inference.
+            </p>
+            <p class="result">
+              Beats a compute-matched UniMatch V2 on every Pascal-1/8 seed · 87.90 mIoU, three-seed mean
+            </p>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2607.03068" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://github.com/psychofict/PixCon" target="_blank" rel="noopener">Code</a>
+              <a href="https://psychofict.github.io/PixCon/" target="_blank" rel="noopener">Project</a>
+            </div>
+          </div>
+          <div class="pub-fig"><img src="pictures/pixcon_results.gif" alt="PixCon qualitative segmentation results" loading="lazy" /></div>
+        </div>
+      </li>
+
+      <li class="pub">
+        <div class="pub-grid">
+          <p class="pub-idx">03</p>
+          <div>
+            <div class="pub-meta">
+              <span class="venue">Neural Networks 2026 · Q1 · Top 10% IF</span>
+              <span class="standing">Former #2 · Global SSSS SOTA</span>
+            </div>
+            <h3>FARCLUSS: Fuzzy Adaptive Rebalancing &amp; Contrastive Uncertainty Learning for Semi-Supervised Segmentation</h3>
+            <p class="authors"><strong>Ebenezer Tarubinga</strong>, <a href="https://scholar.google.com/citations?user=uH_-hRUAAAAJ&amp;hl=en" target="_blank" rel="noopener">Jenifer Kalafatovich</a>, <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee" target="_blank" rel="noopener">Seong-Whan Lee</a></p>
+            <p class="pub-body">
+              Fuzzy top-K pseudo-labels with entropy-normalized uncertainty weighting: the pixels the model is least sure about are down-weighted, not discarded.
+            </p>
+            <p class="result">
+              #2 on the Papers with Code SSSS leaderboards at release · 78.8 / 78.2 mIoU, Cityscapes and Pascal VOC, ResNet-101
+            </p>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2506.11142" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://github.com/psychofict/FARCLUSS" target="_blank" rel="noopener">Code</a>
+              <a href="https://psychofict.github.io/FARCLUSS/" target="_blank" rel="noopener">Project</a>
+            </div>
+          </div>
+          <div class="pub-fig"><img src="pictures/farcluss.png" alt="FARCLUSS qualitative segmentation results" loading="lazy" /></div>
+        </div>
+      </li>
+
+      <li class="pub">
+        <div class="pub-grid">
+          <p class="pub-idx">04</p>
+          <div>
+            <div class="pub-meta">
+              <span class="venue">IEEE IJCNN 2025 · CORE A</span>
+              <span class="standing">Former #3 · Global SSSS SOTA</span>
+            </div>
+            <h3>CW-BASS: Confidence-Weighted Boundary-Aware Learning for Semi-Supervised Semantic Segmentation</h3>
+            <p class="authors"><strong>Ebenezer Tarubinga</strong>, <a href="https://scholar.google.com/citations?user=uH_-hRUAAAAJ&amp;hl=en" target="_blank" rel="noopener">Jenifer Kalafatovich</a>, <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee" target="_blank" rel="noopener">Seong-Whan Lee</a></p>
+            <p class="pub-body">
+              Confidence-weighted cross-entropy with Sobel boundary regularization, against two failures that compound: boundary blur and confirmation bias.
+            </p>
+            <p class="result">
+              #3 at release · 77.15 mIoU on Pascal VOC 2012, ResNet-50 · 65.9 on Cityscapes from 100 labeled images
+            </p>
+            <div class="links">
+              <a href="https://ieeexplore.ieee.org/abstract/document/11227871/" target="_blank" rel="noopener">IEEE</a>
+              <a href="https://arxiv.org/abs/2502.15152" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://github.com/psychofict/CW-BASS" target="_blank" rel="noopener">Code</a>
+              <a href="https://psychofict.github.io/CW-BASS/" target="_blank" rel="noopener">Project</a>
+            </div>
+          </div>
+          <div class="pub-fig"><img src="pictures/cw-bass.png" alt="CW-BASS qualitative segmentation results" loading="lazy" /></div>
+        </div>
+      </li>
+
+    </ol>
+  </section>
+
+
+  <!-- ===================== OPEN SOURCE ===================== -->
+  <section class="section" id="opensource">
+    <div class="section-head reveal">
+      <p class="kicker">03 — Released</p>
+      <h2>Open source</h2>
+      <p class="section-sub">
+        Tools I needed and published, plus the training code behind every paper.
+      </p>
+    </div>
+
+    <ul class="oss reveal">
+
+      <li class="oss-row">
+        <div class="oss-id">
+          <a class="oss-name mono" href="https://github.com/psychofict/hwpkit" target="_blank" rel="noopener">hwpkit</a>
+          <span class="lang" data-lang="Python">Python</span>
+          <span class="tag-quiet tag">PyPI</span>
+        </div>
+        <p class="oss-body">
+          Read, edit and extract text from Korean HWP and HWPX files in pure Python, with no Hancom Office and no Windows. Form filling, seals, and text extraction for retrieval pipelines.
+        </p>
+        <div class="links">
+          <a href="https://github.com/psychofict/hwpkit" target="_blank" rel="noopener">Code</a>
+          <a href="https://pypi.org/project/hwpkit/" target="_blank" rel="noopener">PyPI</a>
+        </div>
+      </li>
+
+      <li class="oss-row">
+        <div class="oss-id">
+          <a class="oss-name mono" href="https://github.com/psychofict/tzohar-engine" target="_blank" rel="noopener">tzohar-engine</a>
+          <span class="lang" data-lang="TypeScript">TypeScript</span>
+          <span class="tag-quiet tag">Apache-2.0</span>
+        </div>
+        <p class="oss-body">
+          A framework for personal and academic websites: typed section blocks, ORCID and BibTeX ingestion, and a licence that leaves the owner holding their own copy.
+        </p>
+        <div class="links">
+          <a href="https://github.com/psychofict/tzohar-engine" target="_blank" rel="noopener">Code</a>
+        </div>
+      </li>
+
+      <li class="oss-row">
+        <div class="oss-id">
+          <a class="oss-name mono" href="https://github.com/psychofict/claudehop" target="_blank" rel="noopener">claudehop</a>
+          <span class="lang" data-lang="Python">Python</span>
+        </div>
+        <p class="oss-body">
+          Move an agent CLI between accounts without logging in again. One file, standard library only.
+        </p>
+        <div class="links">
+          <a href="https://github.com/psychofict/claudehop" target="_blank" rel="noopener">Code</a>
+        </div>
+      </li>
+
+      <li class="oss-row">
+        <div class="oss-id">
+          <span class="oss-name mono">Paper code</span>
+          <span class="lang" data-lang="Python">Python</span>
+          <span class="tag-quiet tag">4 repositories</span>
+        </div>
+        <p class="oss-body">
+          Training code, configs and released checkpoints for all four papers.
+        </p>
+        <div class="links">
+          <a href="https://github.com/psychofict/CW-BASS-v2" target="_blank" rel="noopener">CW-BASS v2</a>
+          <a href="https://github.com/psychofict/PixCon" target="_blank" rel="noopener">PixCon</a>
+          <a href="https://github.com/psychofict/FARCLUSS" target="_blank" rel="noopener">FARCLUSS</a>
+          <a href="https://github.com/psychofict/CW-BASS" target="_blank" rel="noopener">CW-BASS</a>
+          <a href="https://huggingface.co/psychofict" target="_blank" rel="noopener">Models</a>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section class="section" id="experience">
+    <div class="section-head reveal">
+      <p class="kicker">04 — Path</p>
+      <h2>Experience</h2>
+    </div>
+
+    <div class="roles reveal">
+
+      <article class="role-card">
+        <div class="role-logo"><img src="pictures/gractor.png" alt="" /></div>
+        <div>
+          <div class="role-head">
+            <h3>AI/ML Engineer</h3>
+            <span class="badge-now">Now</span>
+          </div>
+          <p class="role-org">Gractor · Smart-city AI</p>
+          <p class="role-when mono">Sept 2025 — present · Seoul, Korea</p>
+          <p class="role-body">
+            Retrieval, agents and computer vision for smart-city platforms, edge to cloud. I build the
+            systems, the guardrails around them, and the evaluation harnesses that keep them honest
+            once real operators depend on them.
+          </p>
+        </div>
+      </article>
+
+      <article class="role-card">
+        <div class="role-logo"><img src="pictures/ku_logo.png" alt="" /></div>
+        <div>
+          <div class="role-head">
+            <h3>Research Engineer (MSc)</h3>
+          </div>
+          <p class="role-org">Korea University · Pattern Recognition &amp; ML Lab</p>
+          <p class="role-when mono">Aug 2023 — Feb 2026 · Seoul, Korea</p>
+          <p class="role-body">
+            Semi-supervised segmentation under
+            <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee" target="_blank" rel="noopener">Prof. Seong-Whan Lee</a>
+            (IEEE Fellow): four first-author papers, ~10K lines of multi-GPU PyTorch training
+            infrastructure, one Korean patent filing.
+          </p>
+        </div>
+      </article>
+
+      <article class="role-card">
+        <div class="role-logo"><img src="pictures/glit-logo.png" alt="" /></div>
+        <div>
+          <div class="role-head">
+            <h3>AI Software Engineer</h3>
+          </div>
+          <p class="role-org">GliT · EdTech</p>
+          <p class="role-when mono">Jan 2019 — Jan 2021 · Hybrid</p>
+          <p class="role-body">
+            Offline-first mobile learning reaching 500+ students and 80,000+ sessions, ten-plus
+            full-cycle product builds, STEM programmes with partner schools.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="side-grid reveal">
+      <div class="side">
+        <div class="side-logos"><img src="pictures/ku_logo.png" alt="" loading="lazy" /></div>
+        <h3>MSc, Artificial Intelligence</h3>
+        <p class="mono">Korea University · 2023 – 2026</p>
+        <p>
+          Computer vision, advised by
+          <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee" target="_blank" rel="noopener">Prof. Seong-Whan Lee</a>
+          (IEEE Fellow).
+        </p>
+        <div class="awards">
+          <span>Global Korea Scholarship — sole Zimbabwean awardee</span>
+          <span class="plain">BK21 Research Fellowship</span>
+        </div>
+      </div>
+
+      <div class="side">
+        <h3>Patent</h3>
+        <p class="mono">Republic of Korea · application filed</p>
+        <p>
+          Real-time object detection method, recording medium and device performing the same. Filed
+          out of the autonomous-driving perception work.
+        </p>
+        <div class="awards">
+          <span class="plain recog">
+            <img src="pictures/gincon-icon.png" alt="" loading="lazy" />
+            <img src="pictures/national-assembly.svg" alt="" loading="lazy" />
+            GINCON Global Committee 2025 · Korean National Assembly
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section class="section" id="skills">
+    <div class="section-head reveal">
+      <p class="kicker">05 — Toolkit</p>
+      <h2>Skills</h2>
+      <p class="section-sub">Every row opens to the full list.</p>
+    </div>
+
+    <div class="skills reveal" id="skills-list">
+      <div class="skill-row"><span class="skill-cat">AI / LLM</span><div class="pills"><span>RAG (hybrid retrieval)</span><span>Agents &amp; tool-calling</span><span>Model Context Protocol</span><span>Evaluation harnesses</span><span>Guardrails</span><span>LangGraph</span><span>OpenAI</span><span>Anthropic Claude</span><span>HyperCLOVA X</span><span>Hugging Face</span></div></div>
+      <div class="skill-row"><span class="skill-cat">ML / CV</span><div class="pills"><span>PyTorch</span><span>TensorFlow</span><span>OpenCV</span><span>scikit-learn</span><span>NumPy</span><span>Pandas</span><span>SciPy</span><span>YOLOv5</span><span>OpenVINO</span><span>ONNX</span><span>CUDA</span><span>Weights &amp; Biases</span></div></div>
+      <div class="skill-row"><span class="skill-cat">Backend &amp; data</span><div class="pills"><span>FastAPI</span><span>Flask</span><span>Node.js</span><span>Express</span><span>SQLAlchemy</span><span>Prisma</span><span>Knowledge graphs</span><span>PostgreSQL + PostGIS</span><span>MongoDB</span><span>Redis</span><span>OpenSearch</span><span>SQLite</span></div></div>
+      <div class="skill-row"><span class="skill-cat">Frontend</span><div class="pills"><span>React 19</span><span>TypeScript</span><span>Next.js</span><span>Three.js</span><span>deck.gl</span><span>MapLibre</span><span>ECharts</span><span>Tailwind</span><span>Radix UI</span><span>Framer Motion</span><span>Zustand</span><span>Vite</span></div></div>
+      <div class="skill-row"><span class="skill-cat">Infra &amp; IoT</span><div class="pills"><span>Docker</span><span>Kubernetes</span><span>AWS</span><span>Nginx</span><span>systemd</span><span>Prometheus</span><span>Grafana</span><span>Mosquitto MQTT</span><span>ModBus RTU</span><span>Vercel</span><span>Cloudflare</span><span>GitHub Actions</span></div></div>
+      <div class="skill-row"><span class="skill-cat">Languages</span><div class="pills"><span>Python</span><span>TypeScript</span><span>JavaScript</span><span>C++</span><span>C#</span><span>Java</span><span>SQL</span><span>Bash</span></div></div>
+    </div>
+  </section>
+
+  <!-- ===================== CERTIFICATES ===================== -->
+  <!-- The issuer is the claim, so eight marks in a strip say it in one row.
+       The course titles are the detail, and detail belongs behind a click. -->
+  <section class="section" id="certificates">
+    <div class="section-head reveal">
+      <p class="kicker">06 — Credentials</p>
+      <h2>Certifications</h2>
+    </div>
+
+    <div class="reveal">
+      <ul class="marks">
+        <li class="mark" title="IBM — Applied AI Professional Certificate"><img src="pictures/ibm.svg" alt="IBM" loading="lazy" /></li>
+        <li class="mark" title="Northwestern University — Modern Robotics Specialization"><img src="pictures/northwestern.svg" alt="Northwestern University" loading="lazy" /></li>
+        <li class="mark" title="Amazon Web Services — Semantic Segmentation with SageMaker"><img src="pictures/aws.svg" alt="Amazon Web Services" loading="lazy" /></li>
+        <li class="mark" title="Microsoft — ML Pipelines with Azure ML Studio"><img src="pictures/azure.svg" alt="Microsoft" loading="lazy" /></li>
+        <li class="mark" title="Google — Foundations of Project Management"><img src="pictures/google.svg" alt="Google" loading="lazy" /></li>
+        <li class="mark" title="Emory University — Neuroscience"><img src="pictures/emory.svg" alt="Emory University" loading="lazy" /></li>
+        <li class="mark" title="MIT — Game Development with Scratch"><img src="pictures/mit.svg" alt="MIT" loading="lazy" /></li>
+      </ul>
+
+      <details class="disclose">
+        <summary>All eight, with titles</summary>
+        <ul class="cert-list">
+          <li><span class="cert-org">IBM</span><span class="cert-name">Applied AI Professional Certificate</span></li>
+          <li><span class="cert-org">Northwestern University</span><span class="cert-name">Modern Robotics Specialization</span></li>
+          <li><span class="cert-org">Amazon Web Services</span><span class="cert-name">Semantic Segmentation with SageMaker</span></li>
+          <li><span class="cert-org">Microsoft</span><span class="cert-name">ML Pipelines with Azure ML Studio</span></li>
+          <li><span class="cert-org">Google</span><span class="cert-name">Foundations of Project Management</span></li>
+          <li><span class="cert-org">Amazon Web Services</span><span class="cert-name">AWS S3 Basics</span></li>
+          <li><span class="cert-org">Emory University</span><span class="cert-name">Neuroscience</span></li>
+          <li><span class="cert-org">MIT</span><span class="cert-name">Game Development with Scratch</span></li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===================== CLOSING ===================== -->
+  <section class="closing reveal">
+    <div class="closing-inner">
+      <h2>Let's build something that ships.</h2>
+      <p>Open to ML and research-engineer roles, and to research collaborations.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="mailto:ebstarmusic@gmail.com">Get in touch</a>
+        <a class="btn btn-ghost" href="data/ebstar_cv.pdf" target="_blank" rel="noopener">Download CV</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Ebenezer Tarubinga</p>
+    <nav class="footer-links" aria-label="Elsewhere">
+      <a href="https://github.com/psychofict" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=W818y-gAAAAJ&amp;hl=en" target="_blank" rel="noopener">Scholar</a>
+      <a href="https://orcid.org/0009-0004-7340-1873" target="_blank" rel="me noopener">ORCID</a>
+      <a href="https://huggingface.co/psychofict" target="_blank" rel="noopener">Hugging Face</a>
+      <a href="https://www.linkedin.com/in/ebstar" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://ebstar.co" target="_blank" rel="noopener">ebstar.co</a>
+    </nav>
+  </footer>
+  <script>
+    // ---- Vendor marks on skill pills and project tags ----
+    // Served from simpleicons' CDN, which returns a single-colour SVG per slug.
+    // A name with no mark gets a dot rather than a gap, so the row still reads
+    // as a list; a mark that fails to load degrades to the same dot.
+    (function () {
+      var SLUG = {
+        "LangGraph": "langgraph", "OpenAI": "openai", "Anthropic Claude": "anthropic",
+        "Hugging Face": "huggingface",
+        "PyTorch": "pytorch", "TensorFlow": "tensorflow", "OpenCV": "opencv",
+        "scikit-learn": "scikitlearn", "NumPy": "numpy", "Pandas": "pandas", "SciPy": "scipy",
+        "YOLOv5": "yolo", "OpenVINO": "intel", "ONNX": "onnx", "CUDA": "nvidia",
+        "Weights & Biases": "weightsandbiases",
+        "FastAPI": "fastapi", "Flask": "flask", "Node.js": "nodedotjs", "Express": "express",
+        "SQLAlchemy": "sqlalchemy", "Prisma": "prisma", "PostgreSQL + PostGIS": "postgresql",
+        "PostGIS": "postgresql", "MongoDB": "mongodb", "Redis": "redis",
+        "OpenSearch": "opensearch", "SQLite": "sqlite",
+        "React 19": "react", "React": "react", "TypeScript": "typescript",
+        "Next.js": "nextdotjs", "Three.js": "threedotjs", "MapLibre": "maplibre",
+        "ECharts": "apacheecharts", "Tailwind": "tailwindcss", "Radix UI": "radixui",
+        "Framer Motion": "framer", "Vite": "vite",
+        "Docker": "docker", "Kubernetes": "kubernetes", "Nginx": "nginx",
+        "Prometheus": "prometheus", "Grafana": "grafana", "Mosquitto MQTT": "mqtt",
+        "MQTT": "mqtt", "Vercel": "vercel", "Cloudflare": "cloudflare",
+        "GitHub Actions": "githubactions",
+        "Python": "python", "JavaScript": "javascript", "C++": "cplusplus",
+        "Postgres": "postgresql", "Transformers": "huggingface",
+        "Java": "openjdk", "Bash": "gnubash"
+      };
+      var LOCAL = { "AWS": "pictures/aws.svg", "OpenAI": "pictures/openai.svg" };
+      function src(label) {
+        if (LOCAL[label]) return LOCAL[label];
+        return SLUG[label] ? "https://cdn.simpleicons.org/" + SLUG[label] : null;
+      }
+      document.querySelectorAll(".pills > span").forEach(function (el) {
+        var url = src(el.textContent.trim());
+        if (!url) {
+          var dot = document.createElement("span");
+          dot.className = "skill-dot";
+          el.insertBefore(dot, el.firstChild);
+          return;
+        }
+        var ico = new Image(18, 18);
+        ico.className = "skill-ico"; ico.alt = ""; ico.loading = "lazy";
+        ico.onerror = function () {
+          var d = document.createElement("span"); d.className = "skill-dot"; this.replaceWith(d);
+        };
+        ico.src = url;
+        el.insertBefore(ico, el.firstChild);
+      });
+      document.querySelectorAll(".stack span").forEach(function (el) {
+        var url = src(el.textContent.trim());
+        if (!url) return;
+        var ico = new Image(13, 13);
+        ico.className = "tag-ico"; ico.alt = ""; ico.loading = "lazy";
+        ico.onerror = function () { this.remove(); };
+        ico.src = url;
+        el.insertBefore(ico, el.firstChild);
+      });
+    })();
+
+    // ---- Theme toggle ----
+    // Resolve the *effective* theme first, so the first click always flips what
+    // the visitor is actually looking at, including on the system default.
+    (function () {
+      var root = document.documentElement;
+      document.getElementById('themeToggle').addEventListener('click', function () {
+        var explicit = root.getAttribute('data-theme');
+        var effective = explicit || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        var next = effective === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+      });
+    })();
+
+    // ---- Mobile menu ----
+    (function () {
+      var navLinks = document.getElementById('navLinks');
+      var btn = document.getElementById('menuBtn');
+      btn.addEventListener('click', function () {
+        var open = navLinks.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+      navLinks.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          navLinks.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+
+    // ---- Nav background on scroll ----
+    (function () {
+      var nav = document.getElementById('nav');
+      var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
+      onScroll();
+      addEventListener('scroll', onScroll, { passive: true });
+    })();
+
+    // ---- Scroll reveal ----
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.08 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+
+    // ---- Active nav link ----
+    (function () {
+      var links = [].slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+      var secs = links.map(function (l) { return document.querySelector(l.getAttribute('href')); }).filter(Boolean);
+      if (!secs.length || !('IntersectionObserver' in window)) return;
+      var spy = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            links.forEach(function (l) { l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id); });
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      secs.forEach(function (s) { spy.observe(s); });
+    })();
+
+    // ---- Systems: filter, plus a preview so the page opens short ----
+    // Six rows is roughly one and a half phone screens. A filter is always
+    // shown whole, because the largest bucket is five.
+    (function () {
+      var PREVIEW = 6;
+      var filters = document.getElementById('sysFilters');
+      var grid = document.getElementById('sysGrid');
+      var more = document.getElementById('sysMore');
+      if (!filters || !grid || !more) return;
+
+      var rows = [].slice.call(grid.querySelectorAll('.sys'));
+      var label = more.querySelector('.more-label');
+      var filter = 'all';
+      var expanded = false;
+
+      function render() {
+        var shown = 0;
+        rows.forEach(function (row) {
+          var matches = filter === 'all' || row.getAttribute('data-cat') === filter;
+          var capped = filter === 'all' && !expanded && shown >= PREVIEW;
+          row.hidden = !matches || capped;
+          if (matches && !capped) shown++;
+        });
+        var capping = filter === 'all' && rows.length > PREVIEW;
+        more.hidden = !capping;
+        more.setAttribute('aria-expanded', String(expanded));
+        label.textContent = expanded ? 'Show fewer' : 'Show all ' + rows.length;
+        more.classList.toggle('is-open', expanded);
+      }
+
+      filters.addEventListener('click', function (ev) {
+        var btn = ev.target.closest('.chip');
+        if (!btn) return;
+        filters.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('active'); });
+        btn.classList.add('active');
+        filter = btn.getAttribute('data-filter');
+        expanded = false;
+        render();
+      });
+
+      more.addEventListener('click', function () {
+        expanded = !expanded;
+        render();
+        if (!expanded) grid.scrollIntoView({ block: 'start', behavior: 'smooth' });
+      });
+
+      render();
+    })();
+
+    // ---- Skills: show a row's first few, open the rest on demand ----
+    (function () {
+      // A long pill such as "Model Context Protocol" takes a whole row on a
+      // phone, so the cap is a function of width, not a constant.
+      var CAP = window.matchMedia('(max-width: 780px)').matches ? 4 : 8;
+      document.querySelectorAll('#skills-list .pills').forEach(function (row) {
+        var items = [].slice.call(row.children);
+        if (items.length <= CAP + 1) return;
+        var hidden = items.slice(CAP);
+        hidden.forEach(function (el) { el.hidden = true; });
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'pill-more';
+        btn.textContent = '+' + hidden.length;
+        btn.setAttribute('aria-label', 'Show ' + hidden.length + ' more');
+        btn.addEventListener('click', function () {
+          hidden.forEach(function (el) { el.hidden = false; });
+          btn.remove();
+        });
+        row.appendChild(btn);
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,696 @@
+/* ============================================================================
+   Ebenezer Tarubinga — portfolio
+   Tokens are the ebstar.co ramp (ocean accent on one cool-graphite neutral) so
+   this page and ebstar.co/ai read as one identity. Change a colour here only
+   by changing it there too.
+   ========================================================================= */
+
+/* ===================== TOKENS ===================== */
+:root {
+  --bg: #f6f8fb;
+  --surface: #eef2f7;
+  --surface-2: #e5ebf3;
+  --elevated: #ffffff;
+
+  --ink: #101720;
+  --ink-2: #454e5c;
+  --ink-3: #5b636e;
+
+  --line: #d5dee9;
+  --line-strong: #b9c7d7;
+
+  --accent: #1f5fe0;
+  --accent-strong: #1648b0;
+  --accent-soft: rgba(31, 95, 224, 0.09);
+  --on-accent: #ffffff;
+
+  --warm: #f08a2b;
+  --warm-text: #91541a;
+  --good: #1e754f;
+
+  --shadow-card: 0 1px 2px rgba(16, 23, 32, 0.04), 0 10px 28px -12px rgba(16, 23, 32, 0.1);
+  --shadow-card-hover: 0 1px 2px rgba(16, 23, 32, 0.05), 0 16px 36px -14px rgba(16, 23, 32, 0.16);
+
+  --radius: 16px;
+  --maxw: 1080px;
+  --nav-h: 60px;
+}
+
+/* Dark by system preference, unless light was chosen explicitly. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #090c11;
+    --surface: #141a22;
+    --surface-2: #1b2430;
+    --elevated: #222c39;
+
+    --ink: #f5f7fa;
+    --ink-2: #c5cdd8;
+    --ink-3: #96a2b3;
+
+    --line: #2a3442;
+    --line-strong: #3c4a5e;
+
+    --accent: #5ca8ff;
+    --accent-strong: #91c7ff;
+    --accent-soft: rgba(92, 168, 255, 0.14);
+    --on-accent: #081018;
+
+    --warm: #ffae57;
+    --warm-text: #ffd08f;
+    --good: #5fd3a0;
+
+    /* On near-black a drop shadow is invisible; elevation is a lit top edge. */
+    --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 10px 28px -14px rgba(0, 0, 0, 0.7);
+    --shadow-card-hover: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 18px 40px -16px rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* And dark when it was chosen explicitly, so the toggle wins both ways. */
+:root[data-theme="dark"] {
+  --bg: #090c11;
+  --surface: #141a22;
+  --surface-2: #1b2430;
+  --elevated: #222c39;
+
+  --ink: #f5f7fa;
+  --ink-2: #c5cdd8;
+  --ink-3: #96a2b3;
+
+  --line: #2a3442;
+  --line-strong: #3c4a5e;
+
+  --accent: #5ca8ff;
+  --accent-strong: #91c7ff;
+  --accent-soft: rgba(92, 168, 255, 0.14);
+  --on-accent: #081018;
+
+  --warm: #ffae57;
+  --warm-text: #ffd08f;
+  --good: #5fd3a0;
+
+  --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 10px 28px -14px rgba(0, 0, 0, 0.7);
+  --shadow-card-hover: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 18px 40px -16px rgba(0, 0, 0, 0.8);
+}
+
+/* ===================== BASE ===================== */
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 16px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent); text-decoration: none; transition: color 0.15s; }
+a:hover { color: var(--accent-strong); }
+
+h1, h2, h3, h4 { margin: 0; line-height: 1.15; letter-spacing: -0.02em; }
+p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+img { max-width: 100%; display: block; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+.mono { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace; }
+.muted { color: var(--ink-2); }
+.faint { color: var(--ink-3); }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* One soft accent wash behind the top of the page — no floating orbs. */
+.page-glow {
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(58% 42% at 50% -6%, var(--accent-soft), transparent 68%);
+}
+
+/* ===================== NAV ===================== */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  border-bottom: 1px solid transparent;
+  transition: background 0.2s, border-color 0.2s;
+}
+.nav.scrolled {
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: var(--line);
+}
+.nav-inner {
+  max-width: var(--maxw); margin: 0 auto; padding: 0 20px;
+  height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+/* min-width matters as much as min-height: below 540px the name is hidden and
+   the anchor would shrink to the 30px mark. */
+.brand {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  min-height: 44px; min-width: 44px; color: var(--ink); font-weight: 700;
+}
+/* The mark is white art, so the chip stays dark in both themes — `ink` would
+   invert it to near-white in dark and the mark would vanish. */
+.brand-mark {
+  display: grid; place-items: center; width: 30px; height: 30px;
+  border-radius: 9px; background: #101720; flex: none;
+}
+.brand-mark img { width: 17px; }
+.brand-name { font-size: 0.92rem; letter-spacing: -0.01em; white-space: nowrap; }
+
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-links a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px;
+  border-radius: 999px; color: var(--ink-2); font-size: 0.875rem; font-weight: 500;
+}
+.nav-links a:hover { color: var(--ink); background: var(--surface); }
+.nav-links a.active { color: var(--accent); }
+.nav-cta {
+  margin-left: 6px; border: 1px solid var(--line-strong);
+  font-family: "JetBrains Mono", monospace; font-size: 0.8rem !important; color: var(--ink) !important;
+}
+.nav-cta:hover { background: var(--accent-soft) !important; border-color: var(--accent); }
+
+.nav-tools { display: flex; align-items: center; gap: 8px; }
+.icon-btn {
+  display: grid; place-items: center; width: 44px; height: 44px; flex: none;
+  border-radius: 10px; border: 1px solid var(--line); background: var(--surface);
+  color: var(--ink); cursor: pointer; transition: 0.15s;
+}
+.icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+/* The icon shows the destination, not the current state: a moon by day. */
+.i-sun { display: none; }
+.i-moon { display: block; }
+:root[data-theme="dark"] .i-sun { display: block; }
+:root[data-theme="dark"] .i-moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .i-sun { display: block; }
+  :root:not([data-theme="light"]) .i-moon { display: none; }
+}
+.menu-btn { display: none; }
+
+/* ===================== LAYOUT ===================== */
+.section { max-width: var(--maxw); margin: 0 auto; padding: 44px 20px 0; }
+.section:last-of-type { padding-bottom: 8px; }
+.section-head { margin-bottom: 22px; }
+.kicker {
+  font-family: "JetBrains Mono", monospace; font-size: 0.75rem;
+  color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase;
+}
+.section-head h2 { font-size: clamp(1.6rem, 3.6vw, 2.2rem); margin: 8px 0 10px; }
+.section-sub { color: var(--ink-2); max-width: 62ch; font-size: 0.975rem; }
+.rule { height: 1px; background: var(--line); border: 0; margin: 0; }
+
+/* ===================== HERO ===================== */
+.hero { max-width: var(--maxw); margin: 0 auto; padding: 24px 20px 4px; }
+.hero-grid { display: grid; grid-template-columns: 1fr 232px; gap: 44px; align-items: center; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 13px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--surface);
+  color: var(--ink-2); font-size: 0.8rem; font-weight: 500;
+}
+.eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--good); flex: none; }
+
+.hero h1 {
+  font-size: clamp(1.95rem, 4.6vw, 2.9rem); font-weight: 800;
+  margin: 18px 0 6px; letter-spacing: -0.02em; text-wrap: balance;
+}
+.hero h1 .accent { color: var(--accent); }
+.role { color: var(--ink-2); font-size: 0.95rem; }
+.role .mono { color: var(--ink); font-weight: 600; }
+.lede-2 { margin-top: 10px; color: var(--ink-3); font-size: 0.9rem; }
+.lede { margin-top: 16px; color: var(--ink-2); font-size: 1.02rem; max-width: 58ch; text-wrap: pretty; }
+.lede strong { color: var(--ink); font-weight: 600; }
+
+.hero-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; padding: 0 20px; border-radius: 999px;
+  font-size: 0.925rem; font-weight: 600; border: 1px solid transparent; cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s, color 0.15s;
+}
+.btn-primary { background: var(--accent); color: var(--on-accent); box-shadow: var(--shadow-card); }
+.btn-primary:hover { background: var(--accent-strong); color: var(--on-accent); }
+.btn-ghost { border-color: var(--line-strong); color: var(--ink); }
+.btn-ghost:hover { background: var(--surface); color: var(--ink); }
+
+.socials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.social {
+  display: grid; place-items: center; min-width: 44px; height: 44px; padding: 0 12px;
+  border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--ink-2);
+}
+.social:hover { color: var(--accent); border-color: var(--accent); }
+.social-txt { font-family: "JetBrains Mono", monospace; font-size: 0.78rem; font-weight: 600; }
+
+.hero-photo { position: relative; justify-self: center; }
+.photo-ring {
+  width: 208px; height: 208px; border-radius: 50%; overflow: hidden;
+  border: 1px solid var(--line-strong); background: var(--surface);
+  box-shadow: var(--shadow-card);
+}
+.photo-ring img { width: 100%; height: 100%; object-fit: cover; }
+.loc-chip {
+  position: absolute; left: 50%; bottom: -12px; transform: translateX(-50%);
+  display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+  padding: 6px 12px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--elevated); color: var(--ink-2);
+  font-size: 0.775rem; box-shadow: var(--shadow-card);
+}
+
+/* ===================== STATS ===================== */
+.stats {
+  display: grid;
+  grid-template-columns: max-content repeat(3, minmax(0, 1fr)) max-content repeat(3, minmax(0, 1fr));
+  gap: 10px; max-width: var(--maxw); margin: 34px auto 0; padding: 0 20px;
+}
+.stats-cap {
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  display: grid; place-items: center;
+  font-family: "JetBrains Mono", monospace; font-size: 0.66rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.16em; color: var(--ink-3);
+}
+.stat {
+  border: 1px solid var(--line); background: var(--elevated); border-radius: var(--radius);
+  padding: 16px 14px; text-align: center; box-shadow: var(--shadow-card);
+}
+.stat-num {
+  font-family: "JetBrains Mono", monospace; font-size: clamp(1.35rem, 3.4vw, 1.9rem);
+  font-weight: 700; color: var(--ink); line-height: 1;
+}
+.stat-lbl {
+  margin-top: 7px; font-size: 0.7rem; line-height: 1.35; color: var(--ink-3);
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+
+/* ===================== CHIP FILTERS ===================== */
+.filters { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 20px; }
+.chip {
+  min-height: 44px; padding: 0 15px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--surface);
+  color: var(--ink-2); font-size: 0.83rem; font-weight: 500; cursor: pointer; transition: 0.15s;
+}
+.chip:hover { color: var(--ink); border-color: var(--line-strong); }
+.chip.active { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+
+/* ===================== PROJECT CARDS ===================== */
+.proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.proj {
+  display: flex; flex-direction: column;
+  border: 1px solid var(--line); background: var(--elevated);
+  border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow-card);
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+.proj:hover { border-color: color-mix(in srgb, var(--accent) 40%, transparent); box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
+.proj-top { display: flex; align-items: center; gap: 10px; margin-bottom: 11px; }
+.proj-idx { font-family: "JetBrains Mono", monospace; font-size: 0.76rem; color: var(--accent); font-weight: 600; }
+.tag {
+  padding: 3px 9px; border-radius: 999px; background: var(--accent-soft);
+  color: var(--accent); font-size: 0.69rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em; white-space: nowrap;
+}
+.tag-quiet { background: var(--surface-2); color: var(--ink-3); }
+.proj h3 { font-size: 1rem; font-weight: 650; margin-bottom: 8px; text-wrap: balance; }
+.proj p { color: var(--ink-2); font-size: 0.89rem; }
+.stack { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 13px; }
+.stack span {
+  padding: 3px 8px; border-radius: 7px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink-2);
+  font-family: "JetBrains Mono", monospace; font-size: 0.7rem;
+}
+.links { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: auto; padding-top: 13px; }
+.links a, .links span {
+  display: inline-flex; align-items: center; gap: 5px;
+  min-height: 44px; min-width: 44px;
+  font-size: 0.82rem; font-weight: 600;
+}
+.links span { color: var(--ink-3); font-weight: 500; font-size: 0.78rem; }
+
+/* ===================== PUBLICATIONS ===================== */
+.pubs { border-top: 1px solid var(--line); }
+.pub { border-bottom: 1px solid var(--line); padding: 22px 0; }
+.pub-grid { display: grid; grid-template-columns: 2.25rem 1fr 11rem; gap: 0 26px; align-items: start; }
+.pub-idx { font-family: "JetBrains Mono", monospace; font-size: 0.82rem; color: var(--accent); padding-top: 3px; }
+.pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; }
+.venue {
+  padding: 3px 10px; border-radius: 999px; background: var(--accent); color: var(--on-accent);
+  font-size: 0.69rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+}
+.standing {
+  padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line);
+  color: var(--ink-3); font-family: "JetBrains Mono", monospace; font-size: 0.7rem;
+}
+.pub h3 { font-size: 1.075rem; font-weight: 650; text-wrap: balance; }
+.authors { margin-top: 7px; font-size: 0.82rem; color: var(--ink-3); }
+.authors strong { color: var(--ink-2); font-weight: 650; }
+.pub-body { margin-top: 10px; color: var(--ink-2); font-size: 0.93rem; text-wrap: pretty; }
+.result {
+  margin-top: 11px; padding-left: 12px;
+  border-left: 2px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  font-family: "JetBrains Mono", monospace; font-size: 0.76rem; line-height: 1.6; color: var(--ink-3);
+}
+.pub-fig {
+  border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+  background: var(--surface); aspect-ratio: 4 / 3;
+}
+/* These are result figures, not photography, and they run from 2:1 to portrait
+   — cover would crop the result out of half of them. */
+.pub-fig img { width: 100%; height: 100%; object-fit: contain; padding: 7px; box-sizing: border-box; }
+
+.topics { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+.topics span {
+  padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink-2); font-size: 0.78rem;
+}
+.orcid {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 15px;
+  border-radius: 999px; border: 1px solid var(--line); color: var(--ink-2);
+  font-family: "JetBrains Mono", monospace; font-size: 0.8rem; margin-bottom: 22px;
+}
+.orcid:hover { color: var(--ink); border-color: color-mix(in srgb, var(--accent) 40%, transparent); }
+/* ORCID's mark is a trademark: its green and white knockout are baked into the
+   SVG, fixed in both themes. Never re-tint it to a brand colour. */
+.orcid svg { flex: none; }
+
+/* ===================== EXPERIENCE ===================== */
+.roles { display: grid; gap: 12px; }
+.role-card {
+  display: grid; grid-template-columns: 42px 1fr; gap: 16px;
+  border: 1px solid var(--line); background: var(--elevated);
+  border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow-card);
+}
+/* Company marks keep a white chip in both themes for the same reason the
+   certification marks do — a dark wordmark vanishes on a #090c11 card. */
+.role-logo {
+  width: 42px; height: 42px; border-radius: 11px; overflow: hidden;
+  background: #fff; border: 1px solid var(--line); display: grid; place-items: center;
+}
+.role-logo img { width: 100%; height: 100%; object-fit: contain; padding: 5px; }
+.role-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.role-head h3 { font-size: 1rem; font-weight: 650; }
+.badge-now {
+  padding: 2px 8px; border-radius: 999px;
+  background: color-mix(in srgb, var(--good) 14%, transparent);
+  color: var(--good); font-size: 0.66rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.07em;
+}
+.role-org { margin-top: 2px; font-size: 0.875rem; color: var(--accent); font-weight: 550; }
+.role-when { margin-top: 3px; font-family: "JetBrains Mono", monospace; font-size: 0.72rem; color: var(--ink-3); }
+.role-body { margin-top: 10px; color: var(--ink-2); font-size: 0.91rem; text-wrap: pretty; }
+
+.side-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+.side {
+  border: 1px solid var(--line); background: var(--elevated);
+  border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow-card);
+}
+.side h3 { font-size: 0.95rem; font-weight: 650; margin-bottom: 4px; }
+.side .mono { font-size: 0.72rem; color: var(--ink-3); }
+.side p { margin-top: 8px; font-size: 0.875rem; color: var(--ink-2); }
+.awards { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px; }
+.awards span {
+  padding: 4px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 600;
+  background: color-mix(in srgb, var(--warm) 13%, transparent); color: var(--warm-text);
+}
+.awards span.plain { background: var(--surface); color: var(--ink-2); border: 1px solid var(--line); }
+
+/* ===================== SKILLS ===================== */
+.skills { display: flex; flex-direction: column; gap: 13px; }
+.skill-row {
+  display: grid; grid-template-columns: 132px 1fr; gap: 16px; align-items: start;
+  padding-bottom: 13px; border-bottom: 1px solid var(--line);
+}
+.skill-row:last-child { border-bottom: none; padding-bottom: 0; }
+.skill-cat {
+  font-family: "JetBrains Mono", monospace; font-size: 0.72rem; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 0.09em; padding-top: 7px;
+}
+.pills { display: flex; flex-wrap: wrap; gap: 7px; }
+.pills > span {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 11px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--elevated); color: var(--ink-2);
+  font-size: 0.8rem; transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.pills > span:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.pills > span[hidden] { display: none; }
+/* Vendor marks are supplied as-is by the vendor, so they sit on white in both
+   themes — a brand blue on a #090c11 card is unreadable and re-tinting a
+   trademark is not ours to do. */
+.pills .skill-ico {
+  width: 18px; height: 18px; flex: none; object-fit: contain;
+  padding: 2px; border-radius: 5px; background: #fff; box-sizing: border-box;
+}
+.pills .skill-dot { width: 5px; height: 5px; flex: none; border-radius: 50%; background: var(--line-strong); }
+.stack .tag-ico {
+  width: 13px; height: 13px; flex: none; object-fit: contain; margin-right: 5px;
+  padding: 1px; border-radius: 3px; background: #fff; box-sizing: border-box;
+}
+.stack span { display: inline-flex; align-items: center; }
+
+/* Marks on the education / recognition cards. */
+.side-logos { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; }
+.side-logos img,
+.recog img {
+  width: 38px; height: 38px; flex: none; object-fit: contain;
+  padding: 6px; border-radius: 10px; background: #fff; box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(16, 23, 32, 0.14);
+}
+.recog { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.recog img { width: 30px; height: 30px; padding: 5px; }
+
+@media (max-width: 760px) {
+  .skill-row { grid-template-columns: 1fr; gap: 9px; }
+  .skill-cat { padding-top: 0; }
+}
+
+/* ===================== CERTIFICATES ===================== */
+/* Vendor marks ship in their own colours — IBM's grey and MIT's maroon vanish
+   on a #090c11 card — so each keeps a white chip in both themes rather than
+   being re-tinted, which is not ours to do to a trademark. */
+.marks { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+.mark {
+  width: 56px; height: 56px; display: grid; place-items: center;
+  border-radius: 13px; border: 1px solid var(--line); background: #fff;
+  box-shadow: var(--shadow-card);
+}
+.mark img { width: 34px; height: 34px; object-fit: contain; }
+
+.cert-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 22px; }
+.cert-list li {
+  display: flex; flex-direction: column; gap: 1px;
+  padding-bottom: 8px; border-bottom: 1px solid var(--line);
+}
+.cert-org { font-size: 0.8rem; font-weight: 650; color: var(--ink); }
+.cert-name { font-size: 0.75rem; line-height: 1.35; color: var(--ink-3); }
+
+/* ===================== CLOSING ===================== */
+.closing {
+  max-width: var(--maxw); margin: 48px auto 0; padding: 0 20px;
+}
+.closing-inner {
+  border: 1px solid var(--line); border-radius: 22px; padding: 40px 26px;
+  background: var(--surface); text-align: center;
+}
+.closing h2 { font-size: clamp(1.5rem, 3.6vw, 2.15rem); text-wrap: balance; }
+.closing p { margin: 12px auto 0; max-width: 46ch; color: var(--ink-2); }
+.closing .hero-cta { justify-content: center; margin-top: 22px; }
+
+footer {
+  max-width: var(--maxw); margin: 0 auto; padding: 30px 20px 40px;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+  color: var(--ink-3); font-size: 0.82rem;
+}
+.footer-links { display: flex; flex-wrap: wrap; gap: 4px; }
+.footer-links a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 9px;
+  border-radius: 8px; color: var(--ink-2); font-weight: 500;
+}
+.footer-links a:hover { color: var(--accent); background: var(--surface); }
+
+/* ===================== REVEAL ===================== */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ===================== GLYPH SPRITE ===================== */
+/* display:none on the sprite breaks <use> in some engines, so it is hidden by
+   size instead. */
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* ===================== SYSTEMS ===================== */
+.sysgrid { border-top: 1px solid var(--line); }
+.sys {
+  display: grid; grid-template-columns: 46px 1fr; gap: 18px;
+  padding: 20px 0; border-bottom: 1px solid var(--line);
+}
+.sys[hidden] { display: none; }
+.sys-glyph {
+  width: 46px; height: 46px; border-radius: 13px;
+  border: 1px solid var(--line); background: var(--surface);
+  display: grid; place-items: center; color: var(--accent);
+}
+.sys-glyph svg {
+  width: 25px; height: 25px;
+  fill: none; stroke: currentColor; stroke-width: 1.5;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.sys-head { display: flex; flex-wrap: wrap; align-items: center; gap: 7px 11px; }
+.sys-idx { font-size: 0.76rem; color: var(--accent); font-weight: 600; }
+.sys-head h3 { font-size: 1.02rem; font-weight: 650; text-wrap: balance; }
+.sys-body { margin-top: 9px; color: var(--ink-2); font-size: 0.915rem; max-width: 74ch; text-wrap: pretty; }
+.sys-body code {
+  font-family: "JetBrains Mono", monospace; font-size: 0.85em;
+  padding: 1px 5px; border-radius: 5px; background: var(--surface-2); color: var(--ink);
+}
+/* The access note rides in the stack row rather than taking a line of its own:
+   eight of them stacked read as a wall of "private". */
+.stack-note {
+  padding: 3px 9px; border-radius: 7px; border: 1px dashed var(--line-strong);
+  color: var(--ink-3); font-family: "JetBrains Mono", monospace; font-size: 0.68rem;
+}
+.sys .stack { margin-top: 12px; }
+.sys .links { margin-top: 2px; padding-top: 4px; }
+
+.chip-n {
+  margin-left: 7px; font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem; opacity: 0.65;
+}
+
+.more-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 44px; margin-top: 18px; padding: 0 20px;
+  border-radius: 999px; border: 1px solid var(--line-strong);
+  background: var(--elevated); color: var(--ink);
+  font-size: 0.9rem; font-weight: 600; cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.more-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.more-btn svg { transition: transform 0.2s; }
+.more-btn.is-open svg { transform: rotate(180deg); }
+.more-btn[hidden] { display: none; }
+
+/* ===================== DISCLOSURE ===================== */
+.disclose { margin-bottom: 20px; }
+.disclose > summary {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 44px; padding: 0 15px; width: fit-content;
+  border-radius: 999px; border: 1px dashed var(--line-strong);
+  color: var(--ink-2); font-size: 0.83rem; font-weight: 500; cursor: pointer;
+  list-style: none;
+}
+.disclose > summary::-webkit-details-marker { display: none; }
+.disclose > summary::after {
+  content: "+"; font-family: "JetBrains Mono", monospace; color: var(--accent); font-weight: 700;
+}
+.disclose[open] > summary::after { content: "\2212"; }
+.disclose > summary:hover { color: var(--ink); border-color: var(--accent); }
+.disclose[open] > summary { margin-bottom: 12px; }
+
+/* ===================== OPEN SOURCE ===================== */
+.oss { border-top: 1px solid var(--line); }
+.oss-row { padding: 17px 0; border-bottom: 1px solid var(--line); }
+.oss-id { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.oss-name { font-size: 1rem; font-weight: 650; color: var(--ink); }
+a.oss-name:hover { color: var(--accent); }
+.lang {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 0.74rem; color: var(--ink-3);
+}
+.lang::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--line-strong); }
+/* Linguist's own colours, so the language reads at a glance the way it does on
+   a repository listing. */
+.lang[data-lang="Python"]::before { background: #3572a5; }
+.lang[data-lang="TypeScript"]::before { background: #3178c6; }
+.oss-body { margin-top: 8px; color: var(--ink-2); font-size: 0.905rem; max-width: 74ch; text-wrap: pretty; }
+.oss-row .links { margin-top: 0; padding-top: 2px; }
+
+/* ===================== SKILL OVERFLOW ===================== */
+.pill-more {
+  min-height: 32px; padding: 0 13px; border-radius: 999px;
+  border: 1px dashed var(--line-strong); background: transparent;
+  color: var(--accent); font-family: "JetBrains Mono", monospace;
+  font-size: 0.76rem; font-weight: 600; cursor: pointer;
+}
+.pill-more:hover { background: var(--accent-soft); border-style: solid; }
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 900px) {
+  .pub-grid { grid-template-columns: 2rem 1fr; }
+  .oss-id { gap: 6px 10px; }
+  /* On a phone the figure leads the entry as a wide band instead of sitting
+     in a right-hand rail. */
+  .pub-fig { grid-column: 1 / -1; order: -1; aspect-ratio: 16 / 9; margin-bottom: 14px; }
+}
+
+@media (max-width: 780px) {
+  .nav-links {
+    position: absolute; top: var(--nav-h); left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 2px;
+    padding: 10px 16px 16px;
+    background: var(--bg); border-bottom: 1px solid var(--line);
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { min-height: 48px; padding: 0 14px; font-size: 1rem; }
+  .nav-cta { margin: 6px 0 0; justify-content: center; }
+  .menu-btn { display: grid; }
+
+  .hero { padding-top: 16px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 26px; }
+  /* Photo above the name on a phone — it is the fastest thing to read. */
+  .hero-photo { order: -1; justify-self: start; }
+  .photo-ring { width: 108px; height: 108px; }
+  .loc-chip { position: static; transform: none; margin-top: 12px; display: inline-flex; }
+  .hero h1 { margin-top: 14px; }
+
+  .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .stats-cap {
+    grid-column: 1 / -1; writing-mode: horizontal-tb; transform: none;
+    justify-content: start; padding-top: 6px;
+  }
+  .proj-grid { grid-template-columns: 1fr; }
+  /* The rail narrows rather than collapsing: 46px of width costs nothing
+     vertically, and stacking the glyph cost a line on every row. */
+  .sys { grid-template-columns: 34px 1fr; gap: 12px; padding: 18px 0; }
+  .sys-glyph { width: 34px; height: 34px; border-radius: 10px; }
+  .sys-glyph svg { width: 19px; height: 19px; }
+  .sys-head h3 { font-size: 0.99rem; }
+  /* A 16:9 result band is 220px on a phone. 4:3 was costing a whole screen
+     per paper. */
+  .pub-fig { aspect-ratio: 21 / 9; }
+  .side-grid { grid-template-columns: 1fr; }
+  .section { padding-top: 38px; }
+}
+
+@media (max-width: 540px) {
+  .cert-list { grid-template-columns: 1fr; }
+  .brand-name { display: none; }
+  .skills { grid-template-columns: 1fr; }
+  .closing-inner { padding: 30px 20px; }
+  footer { justify-content: center; text-align: center; }
+}
+
+/* ===================== PRINT ===================== */
+@media print {
+  .nav, .page-glow, .hero-cta, .socials, .filters, .closing, footer,
+  .more-btn, .pill-more { display: none; }
+  /* Print the whole record, not the preview. */
+  .sys[hidden] { display: grid !important; }
+  .pills > span[hidden] { display: inline-flex !important; }
+  .disclose > summary { display: none; }
+  body { background: #fff; color: #000; }
+  .proj, .stat, .side, .skill, .role-card, .sys, .oss-row, .pub { break-inside: avoid; box-shadow: none; }
+}

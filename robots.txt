@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://psychofict.github.io/sitemap.xml

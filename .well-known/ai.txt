@@ -1,0 +1,43 @@
+# AI usage policy for psychofict.github.io. It mirrors robots.txt, which is generated from the same list.
+# Training crawlers are not permitted, and no licence is granted to copy this site into a training corpus.
+# Answer and search engines may read, quote and cite this site, with a link back.
+# Summary: https://psychofict.github.io/ai/summary.json  Services: https://psychofict.github.io/ai/service.json  Index: https://psychofict.github.io/llms.txt
+# Contact: ebstarmusic@gmail.com
+
+User-Agent: GPTBot
+User-Agent: ClaudeBot
+User-Agent: anthropic-ai
+User-Agent: CCBot
+User-Agent: Google-Extended
+User-Agent: Applebot-Extended
+User-Agent: meta-externalagent
+User-Agent: FacebookBot
+User-Agent: Bytespider
+User-Agent: Amazonbot
+User-Agent: AI2Bot
+User-Agent: Diffbot
+User-Agent: omgili
+User-Agent: omgilibot
+User-Agent: ImagesiftBot
+User-Agent: PanguBot
+User-Agent: Timpibot
+User-Agent: Kangaroo Bot
+User-Agent: cohere-ai
+User-Agent: Scrapy
+Disallow: /
+
+User-Agent: Googlebot
+User-Agent: Googlebot-Image
+User-Agent: Bingbot
+User-Agent: DuckDuckBot
+User-Agent: Applebot
+User-Agent: YandexBot
+User-Agent: Yeti
+User-Agent: SeznamBot
+User-Agent: OAI-SearchBot
+User-Agent: ChatGPT-User
+User-Agent: Claude-User
+User-Agent: Claude-SearchBot
+User-Agent: PerplexityBot
+User-Agent: Perplexity-User
+Allow: /

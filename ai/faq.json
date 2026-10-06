@@ -1,0 +1,37 @@
+{
+  "faqs": [
+    {
+      "question": "What does Ebenezer Tarubinga do?",
+      "answer": "I build production AI systems: retrieval, agents and computer vision for city infrastructure, edge to cloud. I publish on the research side of the same problem, and I build the platform underneath a nine-product fleet."
+    },
+    {
+      "question": "What does his research cover?",
+      "answer": "Four mechanisms for one problem: learning to label every pixel from a handful of examples, without letting the model's own mistakes compound. Two are peer-reviewed."
+    },
+    {
+      "question": "What is CW-BASS v2?",
+      "answer": "A foundation-model teacher's confidence saturates, so a one-pass gate asks whether its confident set deserves the confidence it demands."
+    },
+    {
+      "question": "What is PixCon?",
+      "answer": "A pixel memory that admits only labeled pixels, keeping contrastive positives free of pseudo-label noise, with nothing added at inference."
+    },
+    {
+      "question": "What code and checkpoints are released?",
+      "answer": "Training code, configs and released checkpoints for all four papers."
+    },
+    {
+      "question": "What has he released as open source?",
+      "answer": "hwpkit: Read, edit and extract text from Korean HWP and HWPX files in pure Python, with no Hancom Office and no Windows. tzohar-engine: A framework for personal and academic websites: typed section blocks, ORCID and BibTeX ingestion, and a licence that leaves the owner holding their own copy. claudehop: Move an agent CLI between accounts without logging in again. One file, standard library only."
+    },
+    {
+      "question": "What did he research at Korea University?",
+      "answer": "Semi-supervised segmentation under Prof. Seong-Whan Lee (IEEE Fellow): four first-author papers, ~10K lines of multi-GPU PyTorch training infrastructure, one Korean patent filing."
+    },
+    {
+      "question": "Is he open to new work?",
+      "answer": "Open to ML and research-engineer roles, and to research collaborations."
+    }
+  ],
+  "updated": "2026-10-06"
+}

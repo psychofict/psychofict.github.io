@@ -493,6 +493,18 @@ img { max-width: 100%; display: block; }
 .cert-org { font-size: 0.8rem; font-weight: 650; color: var(--ink); }
 .cert-name { font-size: 0.75rem; line-height: 1.35; color: var(--ink-3); }
 
+/* ===================== QUESTIONS ===================== */
+.faq { columns: 2; column-gap: 12px; }
+.faq-item {
+  break-inside: avoid; margin-bottom: 12px;
+  border: 1px solid var(--line); background: var(--elevated);
+  border-radius: var(--radius); padding: 20px 22px; box-shadow: var(--shadow-card);
+}
+.faq-item h3 { font-size: 0.98rem; font-weight: 650; margin-bottom: 8px; }
+.faq-item p { font-size: 0.9rem; color: var(--ink-2); text-wrap: pretty; }
+.faq-item p strong { color: var(--ink); font-weight: 600; }
+@media (max-width: 760px) { .faq { columns: 1; } }
+
 /* ===================== CLOSING ===================== */
 .closing {
   max-width: var(--maxw); margin: 48px auto 0; padding: 0 20px;

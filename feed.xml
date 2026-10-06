@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ebenezer Tarubinga: papers</title>
+    <link>https://psychofict.github.io/</link>
+    <atom:link href="https://psychofict.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Papers by Ebenezer Tarubinga on semi-supervised semantic segmentation, each dated by its first posting on arXiv.</description>
+    <language>en</language>
+    <lastBuildDate>Tue, 06 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>CW-BASS v2: Saturation-Aware Pseudo-Label Selection for Semi-Supervised Segmentation under Foundation-Model Teachers</title>
+      <link>https://arxiv.org/abs/2608.12773</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.12773</guid>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <description>A foundation-model teacher's confidence saturates, so a one-pass gate asks whether its confident set deserves the confidence it demands. Under review · IEEE TPAMI</description>
+    </item>
+    <item>
+      <title>PixCon: Clean-Positive Contrastive Learning for Foundation-Model Semi-Supervised Segmentation</title>
+      <link>https://arxiv.org/abs/2607.03068</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2607.03068</guid>
+      <pubDate>Fri, 03 Jul 2026 00:00:00 +0000</pubDate>
+      <description>A pixel memory that admits only labeled pixels, keeping contrastive positives free of pseudo-label noise, with nothing added at inference. Under review · WACV 2027</description>
+    </item>
+    <item>
+      <title>FARCLUSS: Fuzzy Adaptive Rebalancing &amp; Contrastive Uncertainty Learning for Semi-Supervised Segmentation</title>
+      <link>https://doi.org/10.1016/j.neunet.2026.109494</link>
+      <guid isPermaLink="true">https://doi.org/10.1016/j.neunet.2026.109494</guid>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      <description>Fuzzy top-K pseudo-labels with entropy-normalized uncertainty weighting: the pixels the model is least sure about are down-weighted, not discarded. Neural Networks 205</description>
+    </item>
+    <item>
+      <title>CW-BASS: Confidence-Weighted Boundary-Aware Learning for Semi-Supervised Semantic Segmentation</title>
+      <link>https://ieeexplore.ieee.org/abstract/document/11227871/</link>
+      <guid isPermaLink="true">https://ieeexplore.ieee.org/abstract/document/11227871/</guid>
+      <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
+      <description>Confidence-weighted cross-entropy with Sobel boundary regularization, against two failures that compound: boundary blur and confirmation bias. IEEE IJCNN 2025</description>
+    </item>
+  </channel>
+</rss>

@@ -1,17 +1,17 @@
 # Ebenezer Tarubinga
 
-> Ebenezer Tarubinga — AI/ML engineer in Seoul. Production retrieval, agents, computer vision and platform infrastructure, plus four first-author papers on learning to segment from almost no labels.
+> Ebenezer Tarubinga â AI/ML engineer in Seoul. Production retrieval, agents, computer vision and platform infrastructure, plus four first-author papers on learning to segment from almost no labels.
 
 This file holds the full text of Ebenezer Tarubinga (https://psychofict.github.io), built from the live pages on 2026-10-06. The shorter index is https://psychofict.github.io/llms.txt.
 
-## Ebenezer Tarubinga
+## Ebenezer Tarubinga â AI/ML Engineer
 Source: https://psychofict.github.io/
 
 Open to ML and research-engineer roles, and research collaborations
 Ebenezer Tarubinga
 AI/ML Engineer
 I build production AI systems: retrieval, agents and computer vision for city infrastructure, edge to cloud. I publish on the research side of the same problem, and I build the platform underneath a nine-product fleet.
-Four first-author papers · one Korean patent filed · MSc AI, Korea University · shipping since 2019
+Four first-author papers Â· one Korean patent filed Â· MSc AI, Korea University Â· shipping since 2019
 Building
 Production systems
 Products shipped
@@ -21,7 +21,7 @@ Research
 First-author papers
 Peer-reviewed
 Korean patent filed
-01 — Building
+01 â Building
 ### Systems
 Client work is described by what it does and what I built, not by whose data is in it, so those repositories stay private.
 ### Retrieval over utility operations data
@@ -54,57 +54,57 @@ Why a declared context length overstates the effective one: positional-encoding 
 Disease identification with severity scoring for smallholder farmers, plus learning modules, community data contributions and downloadable datasets.
 ### eLearn, an e-learning platform
 O Level and A Level revision for African high-school students: 20+ subjects, 70+ lessons, study streaks and a learning-analytics dashboard.
-02 — Research
+02 â Research
 ### Papers
 Four mechanisms for one problem: learning to label every pixel from a handful of examples, without letting the model's own mistakes compound. Two are peer-reviewed.
 Research topics
 ### CW-BASS v2: Saturation-Aware Pseudo-Label Selection for Semi-Supervised Segmentation under Foundation-Model Teachers
-Ebenezer Tarubinga · independent
+Ebenezer Tarubinga Â· independent
 A foundation-model teacher's confidence saturates, so a one-pass gate asks whether its confident set deserves the confidence it demands.
-Picks correctly on all six DINOv2 teachers, blind · +1.5 mIoU on ADE20K
+Picks correctly on all six DINOv2 teachers, blind Â· +1.5 mIoU on ADE20K
 ### PixCon: Clean-Positive Contrastive Learning for Foundation-Model Semi-Supervised Segmentation
-Ebenezer Tarubinga · independent
+Ebenezer Tarubinga Â· independent
 A pixel memory that admits only labeled pixels, keeping contrastive positives free of pseudo-label noise, with nothing added at inference.
-Beats a compute-matched UniMatch V2 on every Pascal-1/8 seed · 87.90 mIoU, three-seed mean
+Beats a compute-matched UniMatch V2 on every Pascal-1/8 seed Â· 87.90 mIoU, three-seed mean
 ### FARCLUSS: Fuzzy Adaptive Rebalancing & Contrastive Uncertainty Learning for Semi-Supervised Segmentation
 Ebenezer Tarubinga , Jenifer Kalafatovich , Seong-Whan Lee
 Fuzzy top-K pseudo-labels with entropy-normalized uncertainty weighting: the pixels the model is least sure about are down-weighted, not discarded.
-#2 on the Papers with Code SSSS leaderboards at release · 78.8 / 78.2 mIoU, Cityscapes and Pascal VOC, ResNet-101
+78.8 / 78.2 mIoU, Cityscapes and Pascal VOC, ResNet-101
 ### CW-BASS: Confidence-Weighted Boundary-Aware Learning for Semi-Supervised Semantic Segmentation
 Ebenezer Tarubinga , Jenifer Kalafatovich , Seong-Whan Lee
 Confidence-weighted cross-entropy with Sobel boundary regularization, against two failures that compound: boundary blur and confirmation bias.
-#3 at release · 77.15 mIoU on Pascal VOC 2012, ResNet-50 · 65.9 on Cityscapes from 100 labeled images
-03 — Released
+77.15 mIoU on Pascal VOC 2012, ResNet-50 Â· 65.9 on Cityscapes from 100 labeled images
+03 â Released
 ### Open source
 Tools I needed and published, plus the training code behind every paper.
 Read, edit and extract text from Korean HWP and HWPX files in pure Python, with no Hancom Office and no Windows. Form filling, seals, and text extraction for retrieval pipelines.
 A framework for personal and academic websites: typed section blocks, ORCID and BibTeX ingestion, and a licence that leaves the owner holding their own copy.
 Move an agent CLI between accounts without logging in again. One file, standard library only.
 Training code, configs and released checkpoints for all four papers.
-04 — Path
+04 â Path
 ### Experience
 ### AI/ML Engineer
-Gractor · Smart-city AI
-Sept 2025 — present · Seoul, Korea
+Gractor Â· Smart-city AI
+Sept 2025 â present Â· Seoul, Korea
 Retrieval, agents and computer vision for smart-city platforms, edge to cloud. I build the systems, the guardrails around them, and the evaluation harnesses that keep them honest once real operators depend on them.
 ### Research Engineer (MSc)
-Korea University · Pattern Recognition & ML Lab
-Aug 2023 — Feb 2026 · Seoul, Korea
+Korea University Â· Pattern Recognition & ML Lab
+Aug 2023 â Feb 2026 Â· Seoul, Korea
 Semi-supervised segmentation under Prof. Seong-Whan Lee (IEEE Fellow): four first-author papers, ~10K lines of multi-GPU PyTorch training infrastructure, one Korean patent filing.
 ### AI Software Engineer
-GliT · EdTech
-Jan 2019 — Jan 2021 · Hybrid
+GliT Â· EdTech
+Jan 2019 â Jan 2021 Â· Hybrid
 Offline-first mobile learning reaching 500+ students and 80,000+ sessions, ten-plus full-cycle product builds, STEM programmes with partner schools.
 ### MSc, Artificial Intelligence
-Korea University · 2023 – 2026
+Korea University Â· 2023 â 2026
 Computer vision, advised by Prof. Seong-Whan Lee (IEEE Fellow).
 ### Patent
-Republic of Korea · application filed
+Republic of Korea Â· application filed
 Real-time object detection method, recording medium and device performing the same. Filed out of the autonomous-driving perception work.
-05 — Toolkit
+05 â Toolkit
 ### Skills
 Every row opens to the full list.
-06 — Credentials
+06 â Credentials
 ### Certifications
 All eight, with titles
 - IBM Applied AI Professional Certificate
@@ -115,7 +115,7 @@ All eight, with titles
 - Amazon Web Services AWS S3 Basics
 - Emory University Neuroscience
 - MIT Game Development with Scratch
-07 — Questions
+07 â Questions
 ### Questions
 ### What does Ebenezer Tarubinga do?
 I build production AI systems: retrieval, agents and computer vision for city infrastructure, edge to cloud. I publish on the research side of the same problem, and I build the platform underneath a nine-product fleet.

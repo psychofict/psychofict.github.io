@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://psychofict.github.io/sitemap.xml
+Sitemap: https://psychofict.github.io/sitemap-pages.xml
 
 # EBENWORKS-AI-CRAWLERS:BEGIN — generated, do not edit between the markers
 # Source: infra/docs/ai-crawlers.json · sync: infra/scripts/sync-ai-crawlers.py

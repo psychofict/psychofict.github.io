@@ -6,13 +6,13 @@
     <atom:link href="https://psychofict.github.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Papers by Ebenezer Tarubinga on semi-supervised semantic segmentation, each dated by its first posting on arXiv.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 10 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 00:00:00 +0000</lastBuildDate>
     <item>
       <title>CW-BASS v2: Saturation-Aware Pseudo-Label Selection for Semi-Supervised Segmentation under Foundation-Model Teachers</title>
       <link>https://arxiv.org/abs/2608.12773</link>
       <guid isPermaLink="true">https://arxiv.org/abs/2608.12773</guid>
       <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
-      <description>A foundation-model teacher's confidence saturates, so a one-pass gate asks whether its confident set deserves the confidence it demands. arXiv preprint · 2026</description>
+      <description>A foundation-model teacher's confidence saturates, so a one-pass gate asks whether its confident set deserves the confidence it demands. Under review · IEEE TPAMI</description>
     </item>
     <item>
       <title>PixCon: Clean-Positive Contrastive Learning for Foundation-Model Semi-Supervised Segmentation</title>

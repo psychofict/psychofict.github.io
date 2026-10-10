@@ -2,7 +2,7 @@
 
 > Ebenezer Tarubinga â AI/ML engineer in Seoul. Production retrieval, agents, computer vision and platform infrastructure, plus four first-author papers on learning to segment from almost no labels.
 
-This file holds the full text of Ebenezer Tarubinga (https://psychofict.github.io), built from the live pages on 2026-10-10. The shorter index is https://psychofict.github.io/llms.txt.
+This file holds the full text of Ebenezer Tarubinga (https://psychofict.github.io), built from the live pages on 2026-10-11. The shorter index is https://psychofict.github.io/llms.txt.
 
 ## Ebenezer Tarubinga â AI/ML Engineer
 Source: https://psychofict.github.io/

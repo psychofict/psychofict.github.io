@@ -6,6 +6,6 @@
   "language": "en",
   "llms": "https://psychofict.github.io/llms.txt",
   "services": "https://psychofict.github.io/ai/service.json",
-  "updated": "2026-10-10",
+  "updated": "2026-10-11",
   "faq": "https://psychofict.github.io/ai/faq.json"
 }

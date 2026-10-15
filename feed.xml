@@ -19,7 +19,7 @@
       <link>https://arxiv.org/abs/2607.03068</link>
       <guid isPermaLink="true">https://arxiv.org/abs/2607.03068</guid>
       <pubDate>Fri, 03 Jul 2026 00:00:00 +0000</pubDate>
-      <description>A pixel memory that admits only labeled pixels, keeping contrastive positives free of pseudo-label noise, with nothing added at inference. Under review · WACV 2027</description>
+      <description>A pixel memory that admits only labeled pixels, keeping contrastive positives free of pseudo-label noise, with nothing added at inference. Under review · CVPR 2027</description>
     </item>
     <item>
       <title>FARCLUSS: Fuzzy Adaptive Rebalancing &amp; Contrastive Uncertainty Learning for Semi-Supervised Segmentation</title>

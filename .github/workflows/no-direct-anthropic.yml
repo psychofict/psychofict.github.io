@@ -1,0 +1,40 @@
+# Written by ebenworks-infra scripts/check-direct-anthropic.py (EBE-2022). Do not edit here: change
+# docs/anthropic-direct-allow.json in ebenworks-infra and run `check-direct-anthropic.py install-ci`.
+# The daily fleet scan fails when this file is missing or differs from what the script writes.
+#
+# Eben's order of 13 Oct 2026: every model call goes through llm.ebenworks.co with an engine key; the engine
+# answers from the Team seat first and uses Anthropic's API only as overflow inside a budget. No repository
+# holds an Anthropic key or calls Anthropic's API directly. This job fails on a key-shaped string anywhere and
+# on the API's host name outside the allowed files. It prints file names only, never a matching line.
+name: No direct Anthropic calls
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: No Anthropic key, and no direct link to Anthropic's API
+        shell: bash
+        run: |
+          set -u
+          fail=0
+          keys=$(git grep -I -l -E 'sk-ant-[A-Za-z0-9_-]{60,}' -- . || true)
+          if [ -n "$keys" ]; then
+            echo "::error::A string shaped like an Anthropic key is committed. Remove it and tell ew-security. Files:"
+            echo "$keys"
+            fail=1
+          fi
+          hosts=$(git grep -I -l -i -E 'api\.anthropic\.com' -- . ':(exclude)*njere_generated.py' ':(exclude)*njere.generated.ts' ':(exclude)*_njere.generated.js' ':(exclude,icase)*.md' ':(exclude,icase)*.txt' ':(exclude,icase)*.pdf' ':(exclude,icase)*.rst' || true)
+          if [ -n "$hosts" ]; then
+            echo "::error::These files name Anthropic's API. Call llm.ebenworks.co with an engine key instead (infra docs/FLEET.md, 'Every model call goes through Njere Engine'). Files:"
+            echo "$hosts"
+            fail=1
+          fi
+          [ "$fail" = 0 ] && echo "No Anthropic key and no direct link to Anthropic's API."
+          exit $fail

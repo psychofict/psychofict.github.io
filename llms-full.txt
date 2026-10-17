@@ -94,7 +94,7 @@ Semi-supervised segmentation under Prof. Seong-Whan Lee (IEEE Fellow): four firs
 ### AI Software Engineer
 GliT Â· EdTech
 Jan 2019 â Jan 2021 Â· Hybrid
-Offline-first mobile learning reaching 500+ students and 80,000+ sessions, ten-plus full-cycle product builds, STEM programmes with partner schools.
+Ten-plus full-cycle product builds and STEM programmes with partner schools.
 ### MSc, Artificial Intelligence
 Korea University Â· 2023 â 2026
 Computer vision, advised by Prof. Seong-Whan Lee (IEEE Fellow).

@@ -2,36 +2,36 @@
   "faqs": [
     {
       "question": "What does Ebenezer Tarubinga do?",
-      "answer": "I build production AI systems: retrieval, agents and computer vision for city infrastructure, edge to cloud. I publish on the research side of the same problem, and I build the platform underneath a nine-product fleet."
+      "answer": "AI/ML engineer and first-author researcher working across dense prediction and production LLM systems. Research spans semi-supervised semantic segmentation, pseudo-label reliability, uncertainty calibration and contrastive learning; engineering work spans hybrid RAG, knowledge-graph retrieval, tool-using agents, multi-provider model routing and edge vision."
+    },
+    {
+      "question": "What is his current role?",
+      "answer": "AI/ML Engineer at Gractor in Seoul, Korea, since September 2025. I built hybrid retrieval for utility-operations data, a read-only tool-calling operations agent for water-grid workflows, multi-provider LLM routing with circuit-breaker failover and YOLOv5/OpenVINO edge detection, and hardened a road-infrastructure digital twin."
     },
     {
       "question": "What does his research cover?",
-      "answer": "Four mechanisms for one problem: learning to label every pixel from a handful of examples, without letting the model's own mistakes compound. Two are peer-reviewed."
+      "answer": "Four first-author papers on semi-supervised semantic segmentation: CW-BASS (IEEE IJCNN 2025), FARCLUSS (Neural Networks, vol. 205), CW-BASS v2 (arXiv:2608.12773) and PixCon (arXiv:2607.03068, under review). The first two are MSc research at Korea University; the last two are independent research."
     },
     {
       "question": "What is CW-BASS v2?",
-      "answer": "A foundation-model teacher's confidence saturates, so a one-pass gate asks whether its confident set deserves the confidence it demands."
+      "answer": "A first-author paper on saturation-aware pseudo-label selection under foundation-model teachers (arXiv:2608.12773, 2026). It uses DINOv2-Base (ViT-B/14) with DPT-lite and a reliability gate evaluated across six DINOv2 teacher settings, and reaches 86.19 ± 1.82 mIoU on Pascal VOC 1/8 over three seeds."
     },
     {
       "question": "What is PixCon?",
-      "answer": "A pixel memory that admits only labeled pixels, keeping contrastive positives free of pseudo-label noise, with nothing added at inference."
-    },
-    {
-      "question": "What code and checkpoints are released?",
-      "answer": "Training code, configs and released checkpoints for all four papers."
+      "answer": "A first-author paper on clean-positive contrastive learning for foundation-model semi-supervised segmentation (arXiv:2607.03068, 2026), under review. The contrastive head is training-only and adds no inference-time parameters. On Pascal VOC 1/8 it reaches 87.90 mIoU (3-seed mean, versus 87.01 for the matched reproduction)."
     },
     {
       "question": "What has he released as open source?",
-      "answer": "hwpkit: Read, edit and extract text from Korean HWP and HWPX files in pure Python, with no Hancom Office and no Windows. tzohar-engine: A framework for personal and academic websites: typed section blocks, ORCID and BibTeX ingestion, and a licence that leaves the owner holding their own copy. claudehop: Move an agent CLI between accounts without logging in again. One file, standard library only."
+      "answer": "hwpkit: a pure-Python HWP/HWPX document reader and editor, published on PyPI. codexwatch: local-first Codex usage and token analytics. claudehop and codexhop: dependency-free Python utilities for switching Claude Code and OpenAI Codex accounts or provider profiles across terminals. Also tzohar-engine, a framework for personal and academic websites, and the code for the four papers."
     },
     {
-      "question": "What did he research at Korea University?",
-      "answer": "Semi-supervised segmentation under Prof. Seong-Whan Lee (IEEE Fellow): four first-author papers, ~10K lines of multi-GPU PyTorch training infrastructure, one Korean patent filing."
+      "question": "What did he study and research at Korea University?",
+      "answer": "An MSc in Artificial Intelligence, 2023–2026, GPA 3.78/4.0, advised by Prof. Seong-Whan Lee (IEEE Fellow). I was a Research Engineer in the Pattern Recognition & Machine Learning Lab from August 2023 to August 2025, hold the Global Korea Scholarship (sole Zimbabwean awardee) and a BK21 Research Fellowship, and contributed to a Korean patent application for real-time object detection."
     },
     {
       "question": "Is he open to new work?",
       "answer": "Open to ML and research-engineer roles, and to research collaborations."
     }
   ],
-  "updated": "2026-10-11"
+  "updated": "2026-11-22"
 }

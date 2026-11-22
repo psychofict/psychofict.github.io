@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ebenezer Tarubinga — AI/ML Engineer</title>
+  <title>Ebenezer Tarubinga | AI/ML Research Engineer</title>
   <meta name="author" content="Ebenezer Tarubinga" />
-  <meta name="description" content="Ebenezer Tarubinga — AI/ML engineer in Seoul. Production retrieval, agents, computer vision and platform infrastructure, plus four first-author papers on learning to segment from almost no labels." />
+  <meta name="description" content="Ebenezer Tarubinga, AI/ML research engineer in Seoul. Four first-author papers on semi-supervised semantic segmentation, and production LLM systems: hybrid RAG, tool-using agents, model routing and edge vision." />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Ebenezer Tarubinga — AI/ML Engineer" />
-  <meta property="og:description" content="Production AI systems for city infrastructure, the platform underneath a nine-product fleet, and four first-author papers. MSc AI, Korea University." />
+  <meta property="og:title" content="Ebenezer Tarubinga | AI/ML Research Engineer" />
+  <meta property="og:description" content="AI/ML research engineer. Four first-author papers on semi-supervised semantic segmentation; hybrid RAG, tool-using agents and edge vision in production. MSc AI, Korea University." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Ebenezer Tarubinga" />
   <meta property="og:url" content="https://psychofict.github.io/" />
@@ -49,8 +49,8 @@
     "alternateName": "Ebstar",
     "givenName": "Ebenezer",
     "familyName": "Tarubinga",
-    "jobTitle": "AI/ML Engineer",
-    "description": "Ebenezer Tarubinga — AI/ML engineer in Seoul. Production retrieval, agents, computer vision and platform infrastructure, plus four first-author papers on learning to segment from almost no labels.",
+    "jobTitle": "AI/ML Research Engineer",
+    "description": "AI/ML engineer and first-author researcher working across dense prediction and production LLM systems. Research spans semi-supervised semantic segmentation, pseudo-label reliability, uncertainty calibration and contrastive learning; engineering work spans hybrid RAG, knowledge-graph retrieval, tool-using agents, multi-provider model routing and edge vision.",
     "url": "https://ebstar.co",
     "mainEntityOfPage": "https://psychofict.github.io/",
     "image": "https://psychofict.github.io/pictures/ebstar.png",
@@ -71,16 +71,21 @@
       }
     },
     "knowsAbout": [
-      "Semi-supervised learning",
-      "Semantic segmentation",
-      "Pseudo-labeling & consistency",
-      "Calibration & uncertainty",
-      "Contrastive representation learning",
-      "Long-tailed / class imbalance",
-      "Boundary-aware learning",
+      "Semi-supervised semantic segmentation",
+      "Pseudo-label reliability",
+      "Uncertainty calibration",
+      "Contrastive learning",
+      "Dense prediction",
       "Foundation models (DINOv2, ViT)",
-      "Selective prediction",
-      "Evaluation methodology"
+      "Hybrid RAG",
+      "Knowledge-graph retrieval",
+      "Tool-using agents",
+      "Multi-provider model routing",
+      "Edge vision"
+    ],
+    "award": [
+      "Global Korea Scholarship (sole Zimbabwean awardee)",
+      "BK21 Research Fellowship"
     ],
     "identifier": {
       "@type": "PropertyValue",
@@ -107,7 +112,7 @@
     "@id": "https://psychofict.github.io/#website",
     "name": "Ebenezer Tarubinga",
     "url": "https://psychofict.github.io/",
-    "description": "Ebenezer Tarubinga — AI/ML engineer in Seoul. Production retrieval, agents, computer vision and platform infrastructure, plus four first-author papers on learning to segment from almost no labels.",
+    "description": "Ebenezer Tarubinga, AI/ML research engineer in Seoul. Four first-author papers on semi-supervised semantic segmentation, and production LLM systems: hybrid RAG, tool-using agents, model routing and edge vision.",
     "inLanguage": "en",
     "author": {
       "@id": "https://ebstar.co/#person"
@@ -119,7 +124,7 @@
       "@id": "https://ebstar.co/#person"
     },
     "copyrightYear": 2026,
-    "dateModified": "2026-10-11"
+    "dateModified": "2026-11-22"
   }
   </script>
   <script type="application/ld+json">
@@ -146,7 +151,7 @@
     "@id": "https://psychofict.github.io/#paper-cw-bass-v2",
     "headline": "CW-BASS v2: Saturation-Aware Pseudo-Label Selection for Semi-Supervised Segmentation under Foundation-Model Teachers",
     "name": "CW-BASS v2: Saturation-Aware Pseudo-Label Selection for Semi-Supervised Segmentation under Foundation-Model Teachers",
-    "description": "A foundation-model teacher's confidence saturates, so a one-pass gate asks whether its confident set deserves the confidence it demands.",
+    "description": "A reliability gate for pseudo-label selection, evaluated across six DINOv2 teacher settings with 5% held-out calibration, on DINOv2-Base (ViT-B/14) with DPT-lite.",
     "author": [
       {
         "@id": "https://ebstar.co/#person"
@@ -171,7 +176,7 @@
     "@id": "https://psychofict.github.io/#paper-pixcon",
     "headline": "PixCon: Clean-Positive Contrastive Learning for Foundation-Model Semi-Supervised Segmentation",
     "name": "PixCon: Clean-Positive Contrastive Learning for Foundation-Model Semi-Supervised Segmentation",
-    "description": "A pixel memory that admits only labeled pixels, keeping contrastive positives free of pseudo-label noise, with nothing added at inference.",
+    "description": "A clean-positive pixel-contrastive branch with 256 entries per class and τ=0.1. The contrastive head is training-only and adds no inference-time parameters.",
     "author": [
       {
         "@id": "https://ebstar.co/#person"
@@ -194,9 +199,9 @@
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
     "@id": "https://psychofict.github.io/#paper-farcluss",
-    "headline": "FARCLUSS: Fuzzy Adaptive Rebalancing & Contrastive Uncertainty Learning for Semi-Supervised Segmentation",
-    "name": "FARCLUSS: Fuzzy Adaptive Rebalancing & Contrastive Uncertainty Learning for Semi-Supervised Segmentation",
-    "description": "Fuzzy top-K pseudo-labels with entropy-normalized uncertainty weighting: the pixels the model is least sure about are down-weighted, not discarded.",
+    "headline": "FARCLUSS: Fuzzy Adaptive Rebalancing and Contrastive Uncertainty Learning for Semi-Supervised Semantic Segmentation",
+    "name": "FARCLUSS: Fuzzy Adaptive Rebalancing and Contrastive Uncertainty Learning for Semi-Supervised Semantic Segmentation",
+    "description": "Top-K fuzzy labels, entropy-based uncertainty weighting, adaptive class rebalancing and a 128-D prototype-contrastive head, with ResNet-101 at 1/8 labeled data.",
     "author": [
       {
         "@id": "https://ebstar.co/#person"
@@ -245,7 +250,7 @@
     "@id": "https://psychofict.github.io/#paper-cw-bass",
     "headline": "CW-BASS: Confidence-Weighted Boundary-Aware Learning for Semi-Supervised Semantic Segmentation",
     "name": "CW-BASS: Confidence-Weighted Boundary-Aware Learning for Semi-Supervised Semantic Segmentation",
-    "description": "Confidence-weighted cross-entropy with Sobel boundary regularization, against two failures that compound: boundary blur and confirmation bias.",
+    "description": "A confidence-weighted pseudo-label loss, adaptive thresholding and Sobel boundary supervision, targeting confirmation bias, noisy pseudo-labels and limited-label learning.",
     "author": [
       {
         "@id": "https://ebstar.co/#person"
@@ -264,6 +269,7 @@
     "datePublished": "2025-02-21",
     "url": "https://ieeexplore.ieee.org/abstract/document/11227871/",
     "sameAs": [
+      "https://doi.org/10.1109/IJCNN64981.2025.11227871",
       "https://ieeexplore.ieee.org/abstract/document/11227871/",
       "https://arxiv.org/abs/2502.15152",
       "https://psychofict.github.io/CW-BASS/",
@@ -275,7 +281,8 @@
     "publisher": {
       "@type": "Organization",
       "name": "IEEE"
-    }
+    },
+    "identifier": "https://doi.org/10.1109/IJCNN64981.2025.11227871"
   }
   </script>
   <script type="application/ld+json">
@@ -290,7 +297,15 @@
         "name": "What does Ebenezer Tarubinga do?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "I build production AI systems: retrieval, agents and computer vision for city infrastructure, edge to cloud. I publish on the research side of the same problem, and I build the platform underneath a nine-product fleet."
+          "text": "AI/ML engineer and first-author researcher working across dense prediction and production LLM systems. Research spans semi-supervised semantic segmentation, pseudo-label reliability, uncertainty calibration and contrastive learning; engineering work spans hybrid RAG, knowledge-graph retrieval, tool-using agents, multi-provider model routing and edge vision."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is his current role?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI/ML Engineer at Gractor in Seoul, Korea, since September 2025. I built hybrid retrieval for utility-operations data, a read-only tool-calling operations agent for water-grid workflows, multi-provider LLM routing with circuit-breaker failover and YOLOv5/OpenVINO edge detection, and hardened a road-infrastructure digital twin."
         }
       },
       {
@@ -298,7 +313,7 @@
         "name": "What does his research cover?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Four mechanisms for one problem: learning to label every pixel from a handful of examples, without letting the model's own mistakes compound. Two are peer-reviewed."
+          "text": "Four first-author papers on semi-supervised semantic segmentation: CW-BASS (IEEE IJCNN 2025), FARCLUSS (Neural Networks, vol. 205), CW-BASS v2 (arXiv:2608.12773) and PixCon (arXiv:2607.03068, under review). The first two are MSc research at Korea University; the last two are independent research."
         }
       },
       {
@@ -306,7 +321,7 @@
         "name": "What is CW-BASS v2?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A foundation-model teacher's confidence saturates, so a one-pass gate asks whether its confident set deserves the confidence it demands."
+          "text": "A first-author paper on saturation-aware pseudo-label selection under foundation-model teachers (arXiv:2608.12773, 2026). It uses DINOv2-Base (ViT-B/14) with DPT-lite and a reliability gate evaluated across six DINOv2 teacher settings, and reaches 86.19 ± 1.82 mIoU on Pascal VOC 1/8 over three seeds."
         }
       },
       {
@@ -314,15 +329,7 @@
         "name": "What is PixCon?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A pixel memory that admits only labeled pixels, keeping contrastive positives free of pseudo-label noise, with nothing added at inference."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What code and checkpoints are released?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Training code, configs and released checkpoints for all four papers."
+          "text": "A first-author paper on clean-positive contrastive learning for foundation-model semi-supervised segmentation (arXiv:2607.03068, 2026), under review. The contrastive head is training-only and adds no inference-time parameters. On Pascal VOC 1/8 it reaches 87.90 mIoU (3-seed mean, versus 87.01 for the matched reproduction)."
         }
       },
       {
@@ -330,15 +337,15 @@
         "name": "What has he released as open source?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "hwpkit: Read, edit and extract text from Korean HWP and HWPX files in pure Python, with no Hancom Office and no Windows. tzohar-engine: A framework for personal and academic websites: typed section blocks, ORCID and BibTeX ingestion, and a licence that leaves the owner holding their own copy. claudehop: Move an agent CLI between accounts without logging in again. One file, standard library only."
+          "text": "hwpkit: a pure-Python HWP/HWPX document reader and editor, published on PyPI. codexwatch: local-first Codex usage and token analytics. claudehop and codexhop: dependency-free Python utilities for switching Claude Code and OpenAI Codex accounts or provider profiles across terminals. Also tzohar-engine, a framework for personal and academic websites, and the code for the four papers."
         }
       },
       {
         "@type": "Question",
-        "name": "What did he research at Korea University?",
+        "name": "What did he study and research at Korea University?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Semi-supervised segmentation under Prof. Seong-Whan Lee (IEEE Fellow): four first-author papers, ~10K lines of multi-GPU PyTorch training infrastructure, one Korean patent filing."
+          "text": "An MSc in Artificial Intelligence, 2023–2026, GPA 3.78/4.0, advised by Prof. Seong-Whan Lee (IEEE Fellow). I was a Research Engineer in the Pattern Recognition & Machine Learning Lab from August 2023 to August 2025, hold the Global Korea Scholarship (sole Zimbabwean awardee) and a BK21 Research Fellowship, and contributed to a Korean patent application for real-time object detection."
         }
       },
       {
@@ -379,7 +386,6 @@
     <g id="g-key"><circle cx="5.5" cy="12" r="3"/><path d="M8.5 12h6"/><path d="M12 12v3"/><rect x="15" y="4.5" width="6.5" height="15" rx="1.5"/><circle cx="18" cy="12" r="1"/></g>
     <g id="g-db"><ellipse cx="5" cy="4.8" rx="3" ry="1.5"/><path d="M2 4.8v3.6c0 .8 1.3 1.5 3 1.5s3-.7 3-1.5V4.8"/><path d="M8 8.4h3a3 3 0 0 1 3 3v2.1"/><rect x="9.5" y="14" width="11" height="6.5" rx="1.5"/><path d="M9.5 17.2h11"/></g>
     <g id="g-failover"><rect x="2" y="3" width="8.5" height="6" rx="1.5"/><rect x="13.5" y="14.5" width="8.5" height="6" rx="1.5"/><path d="M10.5 6h4.5"/><path d="M17 4 20.5 7.5M20.5 4 17 7.5"/><path d="M6.2 9v5.5a3 3 0 0 0 3 3h4.3" stroke-dasharray="2.6 2.6"/></g>
-    <g id="g-check"><rect x="2.5" y="2.5" width="12" height="15" rx="2"/><path d="M5.8 7.3 7.4 8.9l3.2-3.2"/><path d="M5.8 12.6h5"/><circle cx="17.5" cy="16.5" r="4.8"/><path d="M17.5 14v2.7l1.9 1.1"/></g>
     <g id="g-shield"><path d="M12 2.5 4.5 5.6v5.7c0 4.8 3.2 8.2 7.5 9.7 4.3-1.5 7.5-4.9 7.5-9.7V5.6z"/><path d="M12 7.2 10 11.8h3.2L11.6 16.6"/></g>
     <g id="g-graph"><circle cx="5.5" cy="6" r="2.5"/><circle cx="18.5" cy="8" r="2.5"/><circle cx="9.5" cy="18" r="2.5"/><path d="M8 6.4l8 1.2M6.6 8.3 8.7 15.6M17 10.2l-5.6 5.9"/></g>
     <g id="g-labels"><rect x="2.5" y="2.5" width="19" height="19" rx="2"/><path d="M2.5 9h19M2.5 15h19M9 2.5v19M15 2.5v19"/><rect x="2.5" y="2.5" width="6.5" height="6.5" fill="currentColor" stroke="none" opacity=".26"/><rect x="15" y="9" width="6.5" height="6" fill="currentColor" stroke="none" opacity=".26"/></g>
@@ -426,14 +432,12 @@
         <p class="eyebrow"><span class="dot"></span> Open to ML and research-engineer roles, and research collaborations</p>
 
         <h1>Ebenezer Tarubinga</h1>
-        <p class="role"><span class="mono">AI/ML Engineer</span></p>
+        <p class="role"><span class="mono">AI/ML Research Engineer</span> · Computer Vision · LLM Systems</p>
 
         <p class="lede">
-          I build production AI systems: retrieval, agents and computer vision for city
-          infrastructure, edge to cloud. I publish on the research side of the same problem, and I
-          build the platform underneath a nine-product fleet.
+          AI/ML engineer and first-author researcher working across dense prediction and production LLM systems. Research spans semi-supervised semantic segmentation, pseudo-label reliability, uncertainty calibration and contrastive learning; engineering work spans hybrid RAG, knowledge-graph retrieval, tool-using agents, multi-provider model routing and edge vision.
         </p>
-        <p class="lede-2">Four first-author papers · one Korean patent filed · MSc AI, Korea University · shipping since 2019</p>
+        <p class="lede-2">Four first-author papers · Korean patent application · MSc AI, Korea University, 2023–2026</p>
 
         <div class="hero-cta">
           <a class="btn btn-primary" href="#systems">See the work</a>
@@ -461,16 +465,16 @@
   </section>
 
   <!-- ===================== STATS ===================== -->
-  <!-- Two tracks, three figures each, so neither reads as the whole career. -->
+  <!-- Two tracks, three figures each, all taken from the CV. -->
   <div class="stats reveal">
     <p class="stats-cap">Building</p>
-    <div class="stat"><p class="stat-num">8</p><p class="stat-lbl">Production systems</p></div>
-    <div class="stat"><p class="stat-num">9</p><p class="stat-lbl">Products shipped</p></div>
-    <div class="stat"><p class="stat-num">2019</p><p class="stat-lbl">Shipping since</p></div>
+    <div class="stat"><p class="stat-num">500+</p><p class="stat-lbl">Student users</p></div>
+    <div class="stat"><p class="stat-num">80,000+</p><p class="stat-lbl">Learning sessions</p></div>
+    <div class="stat"><p class="stat-num">10</p><p class="stat-lbl">PostgreSQL databases</p></div>
     <p class="stats-cap">Research</p>
     <div class="stat"><p class="stat-num">4</p><p class="stat-lbl">First-author papers</p></div>
-    <div class="stat"><p class="stat-num">2</p><p class="stat-lbl">Peer-reviewed</p></div>
-    <div class="stat"><p class="stat-num">1</p><p class="stat-lbl">Korean patent filed</p></div>
+    <div class="stat"><p class="stat-num">2</p><p class="stat-lbl">Conference and journal papers</p></div>
+    <div class="stat"><p class="stat-num">1</p><p class="stat-lbl">Korean patent application</p></div>
   </div>
 
   <!-- ===================== SYSTEMS ===================== -->
@@ -479,15 +483,15 @@
       <p class="kicker">01 — Building</p>
       <h2>Systems</h2>
       <p class="section-sub">
-        Client work is described by what it does and what I built, not by whose data is in it, so
-        those repositories stay private.
+        Production and platform work is described by what it does and what I built, not by whose
+        data is in it, so those repositories stay private.
       </p>
     </div>
 
     <div class="filters reveal" id="sysFilters" role="group" aria-label="Filter systems">
-      <button class="chip active" data-filter="all">All <span class="chip-n">15</span></button>
-      <button class="chip" data-filter="production">Production <span class="chip-n">4</span></button>
-      <button class="chip" data-filter="platform">Platform <span class="chip-n">4</span></button>
+      <button class="chip active" data-filter="all">All <span class="chip-n">14</span></button>
+      <button class="chip" data-filter="production">Production <span class="chip-n">5</span></button>
+      <button class="chip" data-filter="platform">Platform <span class="chip-n">2</span></button>
       <button class="chip" data-filter="applied">Applied AI <span class="chip-n">5</span></button>
       <button class="chip" data-filter="fullstack">Full-stack <span class="chip-n">2</span></button>
     </div>
@@ -497,95 +501,84 @@
       <li class="sys" data-cat="production">
         <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-retrieval"/></svg></span>
         <div class="sys-main">
-          <div class="sys-head"><span class="sys-idx mono">01</span><h3>Retrieval over utility operations data</h3><span class="tag">Production · RAG</span></div>
+          <div class="sys-head"><span class="sys-idx mono">01</span><h3>Hybrid retrieval over utility-operations data</h3><span class="tag">Production · RAG</span></div>
           <p class="sys-body">
-            Hybrid retrieval and reranking over a water utility's operations data, reasoning across a knowledge graph so every answer carries its evidence. Scored on a held-out set.
+            Hybrid retrieval combining lexical and vector retrieval, reranking and knowledge-graph reasoning to produce evidence-backed answers. Retrieval quality is evaluated on a held-out set.
           </p>
-          <div class="stack"><span>FastAPI</span><span>Knowledge graph</span><span>RAG</span><span class="stack-note">Client work · private</span></div>
+          <div class="stack"><span>Hybrid RAG</span><span>Reranking</span><span>Knowledge graph</span><span class="stack-note">Private</span></div>
         </div>
       </li>
 
       <li class="sys" data-cat="production">
         <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-agent"/></svg></span>
         <div class="sys-main">
-          <div class="sys-head"><span class="sys-idx mono">02</span><h3>Operations agent for a water grid</h3><span class="tag">Production · Agents</span></div>
+          <div class="sys-head"><span class="sys-idx mono">02</span><h3>Read-only operations agent for water-grid workflows</h3><span class="tag">Production · Agents</span></div>
           <p class="sys-body">
-            A tool-calling agent that reads the live grid strictly read-only, so it cannot act on infrastructure. Guardrails at every tool boundary, adversarial inputs in the eval harness.
+            A read-only, tool-calling operations agent for water-grid workflows, with guardrails at tool boundaries and an adversarial-input evaluation harness.
           </p>
-          <div class="stack"><span>Python</span><span>LangGraph</span><span>Eval harness</span><span class="stack-note">Client work · private</span></div>
+          <div class="stack"><span>Tool calling</span><span>Guardrails</span><span>Eval harness</span><span class="stack-note">Private</span></div>
         </div>
       </li>
 
       <li class="sys" data-cat="production">
         <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-twin"/></svg></span>
         <div class="sys-main">
-          <div class="sys-head"><span class="sys-idx mono">03</span><h3>3D digital twin for road infrastructure</h3><span class="tag">Production · Digital twin</span></div>
+          <div class="sys-head"><span class="sys-idx mono">03</span><h3>Road-infrastructure digital twin</h3><span class="tag">Production · Digital twin</span></div>
           <p class="sys-body">
-            Live motorway telemetry on a Three.js map over PostGIS, for an international smart-mobility programme. My part was hardening a prototype until it could pass certification.
+            Hardened a live road-infrastructure digital twin built with Three.js and PostGIS, taking a prototype toward certification.
           </p>
-          <div class="stack"><span>FastAPI</span><span>Three.js</span><span>PostGIS</span><span class="stack-note">Client work · private</span></div>
+          <div class="stack"><span>Three.js</span><span>PostGIS</span><span class="stack-note">Private</span></div>
+        </div>
+      </li>
+
+      <li class="sys" data-cat="production">
+        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-failover"/></svg></span>
+        <div class="sys-main">
+          <div class="sys-head"><span class="sys-idx mono">04</span><h3>Multi-provider LLM routing</h3><span class="tag">Production · LLM infra</span></div>
+          <p class="sys-body">
+            Implemented multi-provider LLM routing with circuit-breaker failover.
+          </p>
+          <div class="stack"><span>Multi-provider routing</span><span>Circuit breaker</span><span class="stack-note">Private</span></div>
         </div>
       </li>
 
       <li class="sys" data-cat="production">
         <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-camera"/></svg></span>
         <div class="sys-main">
-          <div class="sys-head"><span class="sys-idx mono">04</span><h3>Edge vision on street-level camera hardware</h3><span class="tag">Production · Edge AI</span></div>
+          <div class="sys-head"><span class="sys-idx mono">05</span><h3>Edge vision on municipal camera hardware</h3><span class="tag">Production · Edge AI</span></div>
           <p class="sys-body">
-            On-device detection on municipal camera poles, MQTT and serial down to the hardware. Offline-first: it survives a cloud outage and recovers a device that stops reporting.
+            Deployed YOLOv5/OpenVINO detection to municipal camera hardware, with MQTT/serial integration and offline-first recovery.
           </p>
-          <div class="stack"><span>Python</span><span>YOLOv5</span><span>MQTT</span><span class="stack-note">Client work · private</span></div>
-        </div>
-      </li>
-
-      <li class="sys" data-cat="platform">
-        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-key"/></svg></span>
-        <div class="sys-main">
-          <div class="sys-head"><span class="sys-idx mono">05</span><h3>Single sign-on and billing for a nine-product fleet</h3><span class="tag">Platform · Identity</span></div>
-          <p class="sys-body">
-            One OIDC provider answers two questions for every product: who is this request, and is this organisation's subscription active. Identity fails closed and the gate fails open, so a billing blip cannot lock out someone who paid.
-          </p>
-          <div class="stack"><span>OIDC</span><span>Next.js</span><span>Postgres</span><span class="stack-note">Private · architecture on request</span></div>
+          <div class="stack"><span>YOLOv5</span><span>OpenVINO</span><span>MQTT</span><span class="stack-note">Private</span></div>
         </div>
       </li>
 
       <li class="sys" data-cat="platform">
         <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-db"/></svg></span>
         <div class="sys-main">
-          <div class="sys-head"><span class="sys-idx mono">06</span><h3>Ten databases onto one box</h3><span class="tag">Platform · Data</span></div>
+          <div class="sys-head"><span class="sys-idx mono">06</span><h3>10-database PostgreSQL fleet behind PgBouncer</h3><span class="tag">Platform · Data</span></div>
           <p class="sys-body">
-            Moved a fleet off managed Postgres onto one instance behind pgbouncer, one role per product. What forced it was an ORM <code>distinct</code> with no limit: 54,000 rows every five minutes to compute eight booleans.
+            Consolidated a 10-database PostgreSQL fleet behind PgBouncer, and traced a recurring ORM workload that read 54,000 rows every five minutes to compute eight status flags.
           </p>
-          <div class="stack"><span>Postgres</span><span>pgbouncer</span><span>Docker</span><span class="stack-note">Private · architecture on request</span></div>
+          <div class="stack"><span>PostgreSQL</span><span>PgBouncer</span><span class="stack-note">Private · architecture on request</span></div>
         </div>
       </li>
 
       <li class="sys" data-cat="platform">
-        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-failover"/></svg></span>
+        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-key"/></svg></span>
         <div class="sys-main">
-          <div class="sys-head"><span class="sys-idx mono">07</span><h3>A model gateway that cannot bill</h3><span class="tag">Platform · LLM infra</span></div>
+          <div class="sys-head"><span class="sys-idx mono">07</span><h3>OIDC identity and subscription gating</h3><span class="tag">Platform · Identity</span></div>
           <p class="sys-body">
-            Two free tiers chained, so no product holds a paid model key. It fails over on 401, 402, 403, 404, 413, 429 and 5xx, and never on 400, because a 400 is our own bad request.
+            Built OIDC identity and subscription-gating components for a multi-product platform.
           </p>
-          <div class="stack"><span>TypeScript</span><span>Cloudflare</span><span>Groq</span><span class="stack-note">Private · architecture on request</span></div>
-        </div>
-      </li>
-
-      <li class="sys" data-cat="platform">
-        <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-check"/></svg></span>
-        <div class="sys-main">
-          <div class="sys-head"><span class="sys-idx mono">08</span><h3>Checkers instead of memory</h3><span class="tag">Platform · Reliability</span></div>
-          <p class="sys-body">
-            Certificates, search visibility, crawler policy and factual claims, each swept weekly by a script that exits non-zero only on new drift. None of it is visible to a build or a test.
-          </p>
-          <div class="stack"><span>Python</span><span>cron</span><span>DNS APIs</span><span class="stack-note">Private · architecture on request</span></div>
+          <div class="stack"><span>OIDC</span><span class="stack-note">Private · architecture on request</span></div>
         </div>
       </li>
 
       <li class="sys" data-cat="applied">
         <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-shield"/></svg></span>
         <div class="sys-main">
-          <div class="sys-head"><span class="sys-idx mono">09</span><h3>Backdoor attacks on CLIP</h3><span class="tag tag-quiet">Applied AI · Adversarial ML</span></div>
+          <div class="sys-head"><span class="sys-idx mono">08</span><h3>Backdoor attacks on CLIP</h3><span class="tag tag-quiet">Applied AI · Adversarial ML</span></div>
           <p class="sys-body">
             Stealthy backdoor triggers via dual-embedding alignment in CLIP's joint visual and textual space, reproducing and extending BadCLIP.
           </p>
@@ -600,7 +593,7 @@
       <li class="sys" data-cat="applied">
         <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-graph"/></svg></span>
         <div class="sys-main">
-          <div class="sys-head"><span class="sys-idx mono">10</span><h3>Semantic-aware multi-label adversarial attacks</h3><span class="tag tag-quiet">Applied AI · Adversarial ML</span></div>
+          <div class="sys-head"><span class="sys-idx mono">09</span><h3>Semantic-aware multi-label adversarial attacks</h3><span class="tag tag-quiet">Applied AI · Adversarial ML</span></div>
           <p class="sys-body">
             Targeted perturbations for multi-label classifiers that exploit semantic label co-occurrence instead of treating each label independently.
           </p>
@@ -615,9 +608,9 @@
       <li class="sys" data-cat="applied">
         <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-labels"/></svg></span>
         <div class="sys-main">
-          <div class="sys-head"><span class="sys-idx mono">11</span><h3>Semi-supervised segmentation baselines</h3><span class="tag tag-quiet">Applied AI · Segmentation</span></div>
+          <div class="sys-head"><span class="sys-idx mono">10</span><h3>Semi-supervised segmentation baselines</h3><span class="tag tag-quiet">Applied AI · Segmentation</span></div>
           <p class="sys-body">
-            A systematic evaluation of weak-to-strong consistency (UniMatch) and self-training (ST++). The groundwork the four papers were built on.
+            A systematic evaluation of weak-to-strong consistency (UniMatch) and self-training (ST++).
           </p>
           <div class="stack"><span>PyTorch</span><span>UniMatch</span><span>ST++</span></div>
           <div class="links">
@@ -630,7 +623,7 @@
       <li class="sys" data-cat="applied">
         <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-depth"/></svg></span>
         <div class="sys-main">
-          <div class="sys-head"><span class="sys-idx mono">12</span><h3>Monocular depth estimation</h3><span class="tag tag-quiet">Applied AI · 3D vision</span></div>
+          <div class="sys-head"><span class="sys-idx mono">11</span><h3>Monocular depth estimation</h3><span class="tag tag-quiet">Applied AI · 3D vision</span></div>
           <p class="sys-body">
             Depth and point-cloud generation for autonomous driving on KITTI, over an improved depth-to-pointcloud pipeline on Depth Anything V2.
           </p>
@@ -644,9 +637,9 @@
       <li class="sys" data-cat="applied">
         <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-context"/></svg></span>
         <div class="sys-main">
-          <div class="sys-head"><span class="sys-idx mono">13</span><h3>Effective context length of LLMs</h3><span class="tag tag-quiet">Applied AI · LLMs</span></div>
+          <div class="sys-head"><span class="sys-idx mono">12</span><h3>LLM evaluation: effective context length study</h3><span class="tag tag-quiet">Applied AI · LLMs</span></div>
           <p class="sys-body">
-            Why a declared context length overstates the effective one: positional-encoding bias and the STRING shift, measured across Llama, Mistral and Qwen.
+            Reproduced and extended STRING-style analysis across Llama-2-7B, Llama-3-8B, Mistral-7B and Qwen2-7B. Evaluated RULER-style retrieval/tracking tasks at 4K–32K context lengths and analyzed RoPE positional decay and attention sinks; repository reports effective lengths of approximately 6K, 14K, 11K and 18K respectively.
           </p>
           <div class="stack"><span>PyTorch</span><span>Transformers</span></div>
           <div class="links">
@@ -659,7 +652,7 @@
       <li class="sys" data-cat="fullstack">
         <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-leaf"/></svg></span>
         <div class="sys-main">
-          <div class="sys-head"><span class="sys-idx mono">14</span><h3>AgriLet, crop disease detection</h3><span class="tag tag-quiet">Full-stack</span></div>
+          <div class="sys-head"><span class="sys-idx mono">13</span><h3>AgriLet, crop disease detection</h3><span class="tag tag-quiet">Full-stack</span></div>
           <p class="sys-body">
             Disease identification with severity scoring for smallholder farmers, plus learning modules, community data contributions and downloadable datasets.
           </p>
@@ -673,7 +666,7 @@
       <li class="sys" data-cat="fullstack">
         <span class="sys-glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-book"/></svg></span>
         <div class="sys-main">
-          <div class="sys-head"><span class="sys-idx mono">15</span><h3>eLearn, an e-learning platform</h3><span class="tag tag-quiet">Full-stack</span></div>
+          <div class="sys-head"><span class="sys-idx mono">14</span><h3>eLearn, an e-learning platform</h3><span class="tag tag-quiet">Full-stack</span></div>
           <p class="sys-body">
             O Level and A Level revision for African high-school students: 20+ subjects, 70+ lessons, study streaks and a learning-analytics dashboard.
           </p>
@@ -687,7 +680,7 @@
     </ol>
 
     <button class="more-btn reveal" id="sysMore" type="button" aria-expanded="false">
-      <span class="more-label">Show all 15</span>
+      <span class="more-label">Show all 14</span>
       <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
     </button>
   </section>
@@ -697,8 +690,8 @@
       <p class="kicker">02 — Research</p>
       <h2>Papers</h2>
       <p class="section-sub">
-        Four mechanisms for one problem: learning to label every pixel from a handful of examples,
-        without letting the model's own mistakes compound. Two are peer-reviewed.
+        Four first-author papers on semi-supervised semantic segmentation: pseudo-label reliability,
+        uncertainty calibration and contrastive learning, on CNN and DINOv2 backbones.
       </p>
     </div>
 
@@ -711,11 +704,10 @@
       <details class="disclose">
         <summary>Research topics</summary>
         <div class="topics">
-        <span>Semi-supervised learning</span><span>Semantic segmentation</span>
-        <span>Pseudo-labeling &amp; consistency</span><span>Calibration &amp; uncertainty</span>
-        <span>Contrastive representation learning</span><span>Long-tailed / class imbalance</span>
-        <span>Boundary-aware learning</span><span>Foundation models (DINOv2, ViT)</span>
-        <span>Selective prediction</span><span>Evaluation methodology</span>
+        <span>Semi-supervised semantic segmentation</span><span>Pseudo-label reliability</span>
+        <span>Uncertainty calibration</span><span>Contrastive learning</span>
+        <span>Dense prediction</span><span>Adaptive class rebalancing</span>
+        <span>Boundary supervision</span><span>Foundation models (DINOv2, ViT)</span>
       </div>
       </details>
     </div>
@@ -727,16 +719,73 @@
           <p class="pub-idx">01</p>
           <div>
             <div class="pub-meta">
-              <span class="venue">Preprint · arXiv 2608.12773</span>
-              <span class="standing">2nd among DINOv2 methods</span>
+              <span class="venue">IEEE IJCNN 2025</span>
+              <span class="standing">First author · MSc research</span>
             </div>
-            <h3>CW-BASS v2: Saturation-Aware Pseudo-Label Selection for Semi-Supervised Segmentation under Foundation-Model Teachers</h3>
-            <p class="authors"><strong>Ebenezer Tarubinga</strong> · independent</p>
+            <h3>CW-BASS: Confidence-Weighted Boundary-Aware Learning for Semi-Supervised Semantic Segmentation</h3>
+            <p class="authors"><strong>Ebenezer Tarubinga</strong>, <a href="https://scholar.google.com/citations?user=uH_-hRUAAAAJ&amp;hl=en" target="_blank" rel="noopener">Jenifer Kalafatovich</a>, <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee" target="_blank" rel="noopener">Seong-Whan Lee</a></p>
+            <p class="authors">IEEE International Joint Conference on Neural Networks (IJCNN), 2025 · DOI <a href="https://doi.org/10.1109/IJCNN64981.2025.11227871" target="_blank" rel="noopener">10.1109/IJCNN64981.2025.11227871</a></p>
             <p class="pub-body">
-              A foundation-model teacher's confidence saturates, so a one-pass gate asks whether its confident set deserves the confidence it demands.
+              A confidence-weighted pseudo-label loss, adaptive thresholding and Sobel boundary supervision, targeting confirmation bias, noisy pseudo-labels and limited-label learning.
             </p>
             <p class="result">
-              Picks correctly on all six DINOv2 teachers, blind · +1.5 mIoU on ADE20K
+              65.9 mIoU on Cityscapes with 100 labeled images (1/30)
+            </p>
+            <div class="links">
+              <a href="https://ieeexplore.ieee.org/abstract/document/11227871/" target="_blank" rel="noopener">IEEE</a>
+              <a href="https://arxiv.org/abs/2502.15152" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://github.com/psychofict/CW-BASS" target="_blank" rel="noopener">Code</a>
+              <a href="https://psychofict.github.io/CW-BASS/" target="_blank" rel="noopener">Project</a>
+            </div>
+          </div>
+          <div class="pub-fig"><img src="pictures/cw-bass.png" alt="CW-BASS qualitative segmentation results" loading="lazy" /></div>
+        </div>
+      </li>
+
+      <li class="pub">
+        <div class="pub-grid">
+          <p class="pub-idx">02</p>
+          <div>
+            <div class="pub-meta">
+              <span class="venue">Neural Networks 205</span>
+              <span class="standing">First author · MSc research</span>
+            </div>
+            <h3>FARCLUSS: Fuzzy Adaptive Rebalancing and Contrastive Uncertainty Learning for Semi-Supervised Semantic Segmentation</h3>
+            <p class="authors"><strong>Ebenezer Tarubinga</strong>, <a href="https://scholar.google.com/citations?user=uH_-hRUAAAAJ&amp;hl=en" target="_blank" rel="noopener">Jenifer Kalafatovich</a>, <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee" target="_blank" rel="noopener">Seong-Whan Lee</a></p>
+            <p class="authors">Neural Networks, vol. 205, article 109494 (2027) · DOI <a href="https://doi.org/10.1016/j.neunet.2026.109494" target="_blank" rel="noopener">10.1016/j.neunet.2026.109494</a></p>
+            <p class="pub-body">
+              Top-K fuzzy labels, entropy-based uncertainty weighting, adaptive class rebalancing and a 128-D prototype-contrastive head, with ResNet-101 at 1/8 labeled data.
+            </p>
+            <p class="result">
+              78.2 mIoU on Pascal VOC and 78.5 on Cityscapes
+            </p>
+            <div class="links">
+              <a href="https://doi.org/10.1016/j.neunet.2026.109494" target="_blank" rel="noopener">Elsevier</a>
+              <a href="https://arxiv.org/abs/2506.11142" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://github.com/psychofict/FARCLUSS" target="_blank" rel="noopener">Code</a>
+              <a href="https://psychofict.github.io/FARCLUSS/" target="_blank" rel="noopener">Project</a>
+            </div>
+          </div>
+          <div class="pub-fig"><img src="pictures/farcluss.png" alt="FARCLUSS qualitative segmentation results" loading="lazy" /></div>
+        </div>
+      </li>
+
+      <li class="pub">
+        <div class="pub-grid">
+          <p class="pub-idx">03</p>
+          <div>
+            <div class="pub-meta">
+              <span class="venue">arXiv 2026</span>
+              <span class="standing">First author · Independent research</span>
+            </div>
+            <h3>CW-BASS v2: Saturation-Aware Pseudo-Label Selection for Semi-Supervised Segmentation under Foundation-Model Teachers</h3>
+            <p class="authors"><strong>Ebenezer Tarubinga</strong></p>
+            <p class="authors">arXiv:<a href="https://arxiv.org/abs/2608.12773" target="_blank" rel="noopener">2608.12773</a> (2026)</p>
+            <p class="pub-body">
+              A reliability gate for pseudo-label selection, evaluated across six DINOv2 teacher settings with 5% held-out calibration, on DINOv2-Base (ViT-B/14) with DPT-lite.
+            </p>
+            <p class="result">
+              Pascal VOC 1/8: 86.19 ± 1.82 mIoU (3 seeds) · Cityscapes 83.96 and ADE20K 50.58 (+1.5 over the strict-threshold reproduction)
             </p>
             <div class="links">
               <a href="https://arxiv.org/abs/2608.12773" target="_blank" rel="noopener">arXiv</a>
@@ -752,18 +801,20 @@
 
       <li class="pub">
         <div class="pub-grid">
-          <p class="pub-idx">02</p>
+          <p class="pub-idx">04</p>
           <div>
             <div class="pub-meta">
-              <span class="venue">Under review</span>
+              <span class="venue">arXiv 2026</span>
+              <span class="standing">First author · Independent research</span>
             </div>
             <h3>PixCon: Clean-Positive Contrastive Learning for Foundation-Model Semi-Supervised Segmentation</h3>
-            <p class="authors"><strong>Ebenezer Tarubinga</strong> · independent</p>
+            <p class="authors"><strong>Ebenezer Tarubinga</strong></p>
+            <p class="authors">arXiv:<a href="https://arxiv.org/abs/2607.03068" target="_blank" rel="noopener">2607.03068</a> (2026) · under review</p>
             <p class="pub-body">
-              A pixel memory that admits only labeled pixels, keeping contrastive positives free of pseudo-label noise, with nothing added at inference.
+              A clean-positive pixel-contrastive branch with 256 entries per class and τ=0.1. The contrastive head is training-only and adds no inference-time parameters.
             </p>
             <p class="result">
-              Beats a compute-matched UniMatch V2 on every Pascal-1/8 seed · 87.90 mIoU, three-seed mean
+              Pascal VOC 1/8: 87.90 mIoU (3-seed mean, versus 87.01 for the matched reproduction) · Cityscapes 83.88 and ADE20K 49.23 (single-seed results)
             </p>
             <div class="links">
               <a href="https://arxiv.org/abs/2607.03068" target="_blank" rel="noopener">arXiv</a>
@@ -775,59 +826,34 @@
         </div>
       </li>
 
-      <li class="pub">
-        <div class="pub-grid">
-          <p class="pub-idx">03</p>
-          <div>
-            <div class="pub-meta">
-              <span class="venue">Neural Networks 205 · Q1 · Top 10% IF</span>
-            </div>
-            <h3>FARCLUSS: Fuzzy Adaptive Rebalancing &amp; Contrastive Uncertainty Learning for Semi-Supervised Segmentation</h3>
-            <p class="authors"><strong>Ebenezer Tarubinga</strong>, <a href="https://scholar.google.com/citations?user=uH_-hRUAAAAJ&amp;hl=en" target="_blank" rel="noopener">Jenifer Kalafatovich</a>, <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee" target="_blank" rel="noopener">Seong-Whan Lee</a></p>
-            <p class="pub-body">
-              Fuzzy top-K pseudo-labels with entropy-normalized uncertainty weighting: the pixels the model is least sure about are down-weighted, not discarded.
-            </p>
-            <p class="result">
-              78.8 / 78.2 mIoU, Cityscapes and Pascal VOC, ResNet-101
-            </p>
-            <div class="links">
-              <a href="https://doi.org/10.1016/j.neunet.2026.109494" target="_blank" rel="noopener">Elsevier</a>
-              <a href="https://arxiv.org/abs/2506.11142" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://github.com/psychofict/FARCLUSS" target="_blank" rel="noopener">Code</a>
-              <a href="https://psychofict.github.io/FARCLUSS/" target="_blank" rel="noopener">Project</a>
-            </div>
-          </div>
-          <div class="pub-fig"><img src="pictures/farcluss.png" alt="FARCLUSS qualitative segmentation results" loading="lazy" /></div>
-        </div>
-      </li>
-
-      <li class="pub">
-        <div class="pub-grid">
-          <p class="pub-idx">04</p>
-          <div>
-            <div class="pub-meta">
-              <span class="venue">IEEE IJCNN 2025 · CORE A</span>
-            </div>
-            <h3>CW-BASS: Confidence-Weighted Boundary-Aware Learning for Semi-Supervised Semantic Segmentation</h3>
-            <p class="authors"><strong>Ebenezer Tarubinga</strong>, <a href="https://scholar.google.com/citations?user=uH_-hRUAAAAJ&amp;hl=en" target="_blank" rel="noopener">Jenifer Kalafatovich</a>, <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee" target="_blank" rel="noopener">Seong-Whan Lee</a></p>
-            <p class="pub-body">
-              Confidence-weighted cross-entropy with Sobel boundary regularization, against two failures that compound: boundary blur and confirmation bias.
-            </p>
-            <p class="result">
-              77.15 mIoU on Pascal VOC 2012, ResNet-50 · 65.9 on Cityscapes from 100 labeled images
-            </p>
-            <div class="links">
-              <a href="https://ieeexplore.ieee.org/abstract/document/11227871/" target="_blank" rel="noopener">IEEE</a>
-              <a href="https://arxiv.org/abs/2502.15152" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://github.com/psychofict/CW-BASS" target="_blank" rel="noopener">Code</a>
-              <a href="https://psychofict.github.io/CW-BASS/" target="_blank" rel="noopener">Project</a>
-            </div>
-          </div>
-          <div class="pub-fig"><img src="pictures/cw-bass.png" alt="CW-BASS qualitative segmentation results" loading="lazy" /></div>
-        </div>
-      </li>
-
     </ol>
+
+    <p class="kicker block-kicker reveal">Research highlights and experimental scale</p>
+    <div class="side-grid reveal">
+      <div class="side">
+        <h3>MSc research: CW-BASS and FARCLUSS</h3>
+        <p>
+          DeepLabV3+ with ResNet-50/101 on Pascal VOC 2012 and Cityscapes; evaluated 1/16–1/2 labeled-data splits.
+          CW-BASS combines confidence-weighted pseudo-label loss, adaptive thresholding and Sobel boundary
+          supervision, reaching 65.9 mIoU on Cityscapes with 100 labeled images (1/30). FARCLUSS combines top-K
+          fuzzy labels, entropy-based uncertainty weighting, adaptive class rebalancing and a 128-D
+          prototype-contrastive head; ResNet-101 at 1/8 labeled data: 78.2 mIoU on VOC and 78.5 on Cityscapes.
+          Training recipes: 80 epochs (VOC), 240 (Cityscapes), batch 4/2; CUDA multi-GPU DataParallel support in CW-BASS.
+        </p>
+      </div>
+      <div class="side">
+        <h3>Independent foundation-model research: CW-BASS v2 and PixCon</h3>
+        <p>
+          DINOv2-Base (ViT-B/14) with DPT-lite on Pascal VOC, Cityscapes and ADE20K. CW-BASS v2: 518×518 crops,
+          60 epochs, batch 4, AdamW, BF16 AMP, 5% held-out calibration and a reliability gate evaluated across six
+          DINOv2 teacher settings. Pascal VOC 1/8: 86.19 ± 1.82 mIoU (3 seeds); Cityscapes 83.96 and ADE20K 50.58
+          (+1.5 over the strict-threshold reproduction). PixCon: 60/120-epoch recipes, batch 4 (effective 16 with
+          gradient accumulation), clean-positive pixel-contrastive branch with 256 entries/class and τ=0.1. Pascal VOC
+          1/8: 87.90 mIoU (3-seed mean, versus 87.01 for the matched reproduction); Cityscapes 83.88 and ADE20K 49.23
+          (single-seed results). The contrastive head is training-only and adds no inference-time parameters.
+        </p>
+      </div>
+    </div>
   </section>
 
 
@@ -837,7 +863,7 @@
       <p class="kicker">03 — Released</p>
       <h2>Open source</h2>
       <p class="section-sub">
-        Tools I needed and published, plus the training code behind every paper.
+        Selected open-source engineering, plus the code behind each paper.
       </p>
     </div>
 
@@ -850,11 +876,38 @@
           <span class="tag-quiet tag">PyPI</span>
         </div>
         <p class="oss-body">
-          Read, edit and extract text from Korean HWP and HWPX files in pure Python, with no Hancom Office and no Windows. Form filling, seals, and text extraction for retrieval pipelines.
+          Pure-Python HWP/HWPX document reader and editor; extracts Korean document text for retrieval pipelines and supports form filling and binary-safe rewriting. Published on PyPI.
         </p>
         <div class="links">
           <a href="https://github.com/psychofict/hwpkit" target="_blank" rel="noopener">Code</a>
           <a href="https://pypi.org/project/hwpkit/" target="_blank" rel="noopener">PyPI</a>
+        </div>
+      </li>
+
+      <li class="oss-row">
+        <div class="oss-id">
+          <a class="oss-name mono" href="https://github.com/psychofict/codexwatch" target="_blank" rel="noopener">codexwatch</a>
+          <span class="lang" data-lang="Python">Python</span>
+        </div>
+        <p class="oss-body">
+          Local-first Codex usage and token analytics with response-level deduplication, quota forensics and a terminal/dashboard interface; README reports scanning 1.85 GB of logs across 59 sessions in about 2 seconds on the development machine.
+        </p>
+        <div class="links">
+          <a href="https://github.com/psychofict/codexwatch" target="_blank" rel="noopener">Code</a>
+        </div>
+      </li>
+
+      <li class="oss-row">
+        <div class="oss-id">
+          <a class="oss-name mono" href="https://github.com/psychofict/claudehop" target="_blank" rel="noopener">claudehop / codexhop</a>
+          <span class="lang" data-lang="Python">Python</span>
+        </div>
+        <p class="oss-body">
+          Dependency-free Python utilities for switching Claude Code and OpenAI Codex accounts or provider profiles across terminals.
+        </p>
+        <div class="links">
+          <a href="https://github.com/psychofict/claudehop" target="_blank" rel="noopener">claudehop</a>
+          <a href="https://github.com/psychofict/codexhop" target="_blank" rel="noopener">codexhop</a>
         </div>
       </li>
 
@@ -874,32 +927,18 @@
 
       <li class="oss-row">
         <div class="oss-id">
-          <a class="oss-name mono" href="https://github.com/psychofict/claudehop" target="_blank" rel="noopener">claudehop</a>
-          <span class="lang" data-lang="Python">Python</span>
-        </div>
-        <p class="oss-body">
-          Move an agent CLI between accounts without logging in again. One file, standard library only.
-        </p>
-        <div class="links">
-          <a href="https://github.com/psychofict/claudehop" target="_blank" rel="noopener">Code</a>
-        </div>
-      </li>
-
-      <li class="oss-row">
-        <div class="oss-id">
           <span class="oss-name mono">Paper code</span>
           <span class="lang" data-lang="Python">Python</span>
           <span class="tag-quiet tag">4 repositories</span>
         </div>
         <p class="oss-body">
-          Training code, configs and released checkpoints for all four papers.
+          Code for each of the four papers.
         </p>
         <div class="links">
+          <a href="https://github.com/psychofict/CW-BASS" target="_blank" rel="noopener">CW-BASS</a>
+          <a href="https://github.com/psychofict/FARCLUSS" target="_blank" rel="noopener">FARCLUSS</a>
           <a href="https://github.com/psychofict/CW-BASS-v2" target="_blank" rel="noopener">CW-BASS v2</a>
           <a href="https://github.com/psychofict/PixCon" target="_blank" rel="noopener">PixCon</a>
-          <a href="https://github.com/psychofict/FARCLUSS" target="_blank" rel="noopener">FARCLUSS</a>
-          <a href="https://github.com/psychofict/CW-BASS" target="_blank" rel="noopener">CW-BASS</a>
-          <a href="https://huggingface.co/psychofict" target="_blank" rel="noopener">Models</a>
         </div>
       </li>
 
@@ -922,13 +961,14 @@
             <h3>AI/ML Engineer</h3>
             <span class="badge-now">Now</span>
           </div>
-          <p class="role-org">Gractor · Smart-city AI</p>
-          <p class="role-when mono">Sept 2025 — present · Seoul, Korea</p>
-          <p class="role-body">
-            Retrieval, agents and computer vision for smart-city platforms, edge to cloud. I build the
-            systems, the guardrails around them, and the evaluation harnesses that keep them honest
-            once real operators depend on them.
-          </p>
+          <p class="role-org">Gractor</p>
+          <p class="role-when mono">Sep 2025 – Present · Seoul, Korea</p>
+          <ul class="role-points">
+            <li>Built hybrid retrieval for utility-operations data, combining lexical/vector retrieval, reranking and knowledge-graph reasoning to produce evidence-backed answers; evaluated retrieval quality on a held-out set.</li>
+            <li>Developed a read-only, tool-calling operations agent for water-grid workflows, with guardrails at tool boundaries and an adversarial-input evaluation harness.</li>
+            <li>Implemented multi-provider LLM routing with circuit-breaker failover; deployed YOLOv5/OpenVINO detection to municipal camera hardware with MQTT/serial integration and offline-first recovery.</li>
+            <li>Hardened a live road-infrastructure digital twin using Three.js and PostGIS, taking a prototype toward certification.</li>
+          </ul>
         </div>
       </article>
 
@@ -936,16 +976,15 @@
         <div class="role-logo"><img src="pictures/ku_logo.png" alt="" /></div>
         <div>
           <div class="role-head">
-            <h3>Research Engineer (MSc)</h3>
+            <h3>Research Engineer, Pattern Recognition &amp; Machine Learning Lab</h3>
           </div>
-          <p class="role-org">Korea University · Pattern Recognition &amp; ML Lab</p>
-          <p class="role-when mono">Aug 2023 — Feb 2026 · Seoul, Korea</p>
-          <p class="role-body">
-            Semi-supervised segmentation under
-            <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee" target="_blank" rel="noopener">Prof. Seong-Whan Lee</a>
-            (IEEE Fellow): four first-author papers, ~10K lines of multi-GPU PyTorch training
-            infrastructure, one Korean patent filing.
-          </p>
+          <p class="role-org">Korea University</p>
+          <p class="role-when mono">Aug 2023 – Aug 2025 · Seoul, Korea</p>
+          <ul class="role-points">
+            <li>Led first-author MSc research on semi-supervised semantic segmentation, developing CW-BASS and FARCLUSS; both target confirmation bias, noisy pseudo-labels and limited-label learning.</li>
+            <li>Built configurable PyTorch training/evaluation pipelines with labeled/unlabeled splits, EMA teacher–student training, checkpointing and validation mIoU; CW-BASS supports CUDA multi-GPU DataParallel training.</li>
+            <li>Worked on autonomous-driving object detection and tracking, monocular depth estimation, dense/sparse matching and instance retrieval; contributed to a Korean patent application for real-time object detection.</li>
+          </ul>
         </div>
       </article>
 
@@ -955,11 +994,11 @@
           <div class="role-head">
             <h3>AI Software Engineer</h3>
           </div>
-          <p class="role-org">GliT · EdTech</p>
-          <p class="role-when mono">Jan 2019 — Jan 2021 · Hybrid</p>
-          <p class="role-body">
-            Ten-plus full-cycle product builds and STEM programmes with partner schools.
-          </p>
+          <p class="role-org">GliT</p>
+          <p class="role-when mono">Jan 2019 – Jan 2021 · Hybrid</p>
+          <ul class="role-points">
+            <li>Built offline-first learning products used by 500+ students across 80,000+ learning sessions; delivered end-to-end mobile and web product development.</li>
+          </ul>
         </div>
       </article>
 
@@ -969,32 +1008,24 @@
       <div class="side">
         <div class="side-logos"><img src="pictures/ku_logo.png" alt="" loading="lazy" /></div>
         <h3>MSc, Artificial Intelligence</h3>
-        <p class="mono">Korea University · 2023 – 2026</p>
+        <p class="mono">Korea University, Seoul · 2023–2026 · GPA 3.78/4.0</p>
         <p>
-          Computer vision, advised by
+          Advisor:
           <a href="https://pure.korea.ac.kr/en/persons/seong-whan-lee" target="_blank" rel="noopener">Prof. Seong-Whan Lee</a>
           (IEEE Fellow).
         </p>
         <div class="awards">
-          <span>Global Korea Scholarship — sole Zimbabwean awardee</span>
+          <span>Global Korea Scholarship (sole Zimbabwean awardee)</span>
           <span class="plain">BK21 Research Fellowship</span>
         </div>
       </div>
 
       <div class="side">
-        <h3>Patent</h3>
+        <h3>Patent application</h3>
         <p class="mono">Republic of Korea · application filed</p>
         <p>
-          Real-time object detection method, recording medium and device performing the same. Filed
-          out of the autonomous-driving perception work.
+          “Real-time object detection method, recording medium and device performing the same”
         </p>
-        <div class="awards">
-          <span class="plain recog">
-            <img src="pictures/gincon-icon.png" alt="" loading="lazy" />
-            <img src="pictures/national-assembly.svg" alt="" loading="lazy" />
-            GINCON Global Committee 2025 · Korean National Assembly
-          </span>
-        </div>
       </div>
     </div>
   </section>
@@ -1008,12 +1039,9 @@
     </div>
 
     <div class="skills reveal" id="skills-list">
-      <div class="skill-row"><span class="skill-cat">AI / LLM</span><div class="pills"><span>RAG (hybrid retrieval)</span><span>Agents &amp; tool-calling</span><span>Model Context Protocol</span><span>Evaluation harnesses</span><span>Guardrails</span><span>LangGraph</span><span>OpenAI</span><span>Anthropic Claude</span><span>HyperCLOVA X</span><span>Hugging Face</span></div></div>
-      <div class="skill-row"><span class="skill-cat">ML / CV</span><div class="pills"><span>PyTorch</span><span>TensorFlow</span><span>OpenCV</span><span>scikit-learn</span><span>NumPy</span><span>Pandas</span><span>SciPy</span><span>YOLOv5</span><span>OpenVINO</span><span>ONNX</span><span>CUDA</span><span>Weights &amp; Biases</span></div></div>
-      <div class="skill-row"><span class="skill-cat">Backend &amp; data</span><div class="pills"><span>FastAPI</span><span>Flask</span><span>Node.js</span><span>Express</span><span>SQLAlchemy</span><span>Prisma</span><span>Knowledge graphs</span><span>PostgreSQL + PostGIS</span><span>MongoDB</span><span>Redis</span><span>OpenSearch</span><span>SQLite</span></div></div>
-      <div class="skill-row"><span class="skill-cat">Frontend</span><div class="pills"><span>React 19</span><span>TypeScript</span><span>Next.js</span><span>Three.js</span><span>deck.gl</span><span>MapLibre</span><span>ECharts</span><span>Tailwind</span><span>Radix UI</span><span>Framer Motion</span><span>Zustand</span><span>Vite</span></div></div>
-      <div class="skill-row"><span class="skill-cat">Infra &amp; IoT</span><div class="pills"><span>Docker</span><span>Kubernetes</span><span>AWS</span><span>Nginx</span><span>systemd</span><span>Prometheus</span><span>Grafana</span><span>Mosquitto MQTT</span><span>ModBus RTU</span><span>Vercel</span><span>Cloudflare</span><span>GitHub Actions</span></div></div>
-      <div class="skill-row"><span class="skill-cat">Languages</span><div class="pills"><span>Python</span><span>TypeScript</span><span>JavaScript</span><span>C++</span><span>C#</span><span>Java</span><span>SQL</span><span>Bash</span></div></div>
+      <div class="skill-row"><span class="skill-cat">ML / Research</span><div class="pills"><span>PyTorch</span><span>TensorFlow</span><span>CUDA</span><span>DINOv2</span><span>ViT</span><span>ResNet</span><span>DeepLabV3+</span><span>Semi-supervised learning</span><span>Semantic segmentation</span><span>Contrastive learning</span><span>Calibration</span><span>Uncertainty</span><span>Adversarial ML</span><span>OpenCV</span><span>ONNX</span><span>OpenVINO</span><span>Weights &amp; Biases</span></div></div>
+      <div class="skill-row"><span class="skill-cat">LLM systems</span><div class="pills"><span>Hybrid RAG</span><span>Reranking</span><span>Knowledge graphs</span><span>Tool-calling agents</span><span>LangGraph</span><span>MCP</span><span>Evaluation harnesses</span><span>Adversarial testing</span><span>Guardrails</span><span>Multi-provider routing</span><span>OpenAI</span><span>Anthropic Claude</span><span>HyperCLOVA X</span><span>Hugging Face</span></div></div>
+      <div class="skill-row"><span class="skill-cat">Engineering</span><div class="pills"><span>Python</span><span>C++</span><span>TypeScript</span><span>JavaScript</span><span>FastAPI</span><span>PostgreSQL</span><span>PostGIS</span><span>OpenSearch</span><span>Redis</span><span>MongoDB</span><span>Docker</span><span>Kubernetes</span><span>AWS</span><span>Linux</span><span>MQTT</span><span>Prometheus</span><span>Grafana</span></div></div>
     </div>
   </section>
 
@@ -1064,37 +1092,37 @@
 
       <div class="faq-item">
         <h3>What does Ebenezer Tarubinga do?</h3>
-        <p>I build production AI systems: retrieval, agents and computer vision for city infrastructure, edge to cloud. I publish on the research side of the same problem, and I build the platform underneath a nine-product fleet.</p>
+        <p>AI/ML engineer and first-author researcher working across dense prediction and production LLM systems. Research spans semi-supervised semantic segmentation, pseudo-label reliability, uncertainty calibration and contrastive learning; engineering work spans hybrid RAG, knowledge-graph retrieval, tool-using agents, multi-provider model routing and edge vision.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is his current role?</h3>
+        <p>AI/ML Engineer at Gractor in Seoul, Korea, since September 2025. I built hybrid retrieval for utility-operations data, a read-only tool-calling operations agent for water-grid workflows, multi-provider LLM routing with circuit-breaker failover and YOLOv5/OpenVINO edge detection, and hardened a road-infrastructure digital twin.</p>
       </div>
 
       <div class="faq-item">
         <h3>What does his research cover?</h3>
-        <p>Four mechanisms for one problem: learning to label every pixel from a handful of examples, without letting the model's own mistakes compound. Two are peer-reviewed.</p>
+        <p>Four first-author papers on semi-supervised semantic segmentation: CW-BASS (IEEE IJCNN 2025), FARCLUSS (Neural Networks, vol. 205), CW-BASS v2 (arXiv:2608.12773) and PixCon (arXiv:2607.03068, under review). The first two are MSc research at Korea University; the last two are independent research.</p>
       </div>
 
       <div class="faq-item">
         <h3>What is CW-BASS v2?</h3>
-        <p>A foundation-model teacher's confidence saturates, so a one-pass gate asks whether its confident set deserves the confidence it demands.</p>
+        <p>A first-author paper on saturation-aware pseudo-label selection under foundation-model teachers (arXiv:2608.12773, 2026). It uses DINOv2-Base (ViT-B/14) with DPT-lite and a reliability gate evaluated across six DINOv2 teacher settings, and reaches 86.19 ± 1.82 mIoU on Pascal VOC 1/8 over three seeds.</p>
       </div>
 
       <div class="faq-item">
         <h3>What is PixCon?</h3>
-        <p>A pixel memory that admits only labeled pixels, keeping contrastive positives free of pseudo-label noise, with nothing added at inference.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>What code and checkpoints are released?</h3>
-        <p>Training code, configs and released checkpoints for all four papers.</p>
+        <p>A first-author paper on clean-positive contrastive learning for foundation-model semi-supervised segmentation (arXiv:2607.03068, 2026), under review. The contrastive head is training-only and adds no inference-time parameters. On Pascal VOC 1/8 it reaches 87.90 mIoU (3-seed mean, versus 87.01 for the matched reproduction).</p>
       </div>
 
       <div class="faq-item">
         <h3>What has he released as open source?</h3>
-        <p><strong>hwpkit:</strong> Read, edit and extract text from Korean HWP and HWPX files in pure Python, with no Hancom Office and no Windows. <strong>tzohar-engine:</strong> A framework for personal and academic websites: typed section blocks, ORCID and BibTeX ingestion, and a licence that leaves the owner holding their own copy. <strong>claudehop:</strong> Move an agent CLI between accounts without logging in again. One file, standard library only.</p>
+        <p><strong>hwpkit:</strong> a pure-Python HWP/HWPX document reader and editor, published on PyPI. <strong>codexwatch:</strong> local-first Codex usage and token analytics. <strong>claudehop</strong> and <strong>codexhop:</strong> dependency-free Python utilities for switching Claude Code and OpenAI Codex accounts or provider profiles across terminals. Also tzohar-engine, a framework for personal and academic websites, and the code for the four papers.</p>
       </div>
 
       <div class="faq-item">
-        <h3>What did he research at Korea University?</h3>
-        <p>Semi-supervised segmentation under Prof. Seong-Whan Lee (IEEE Fellow): four first-author papers, ~10K lines of multi-GPU PyTorch training infrastructure, one Korean patent filing.</p>
+        <h3>What did he study and research at Korea University?</h3>
+        <p>An MSc in Artificial Intelligence, 2023–2026, GPA 3.78/4.0, advised by Prof. Seong-Whan Lee (IEEE Fellow). I was a Research Engineer in the Pattern Recognition &amp; Machine Learning Lab from August 2023 to August 2025, hold the Global Korea Scholarship (sole Zimbabwean awardee) and a BK21 Research Fellowship, and contributed to a Korean patent application for real-time object detection.</p>
       </div>
 
       <div class="faq-item">
@@ -1145,7 +1173,7 @@
         "Weights & Biases": "weightsandbiases",
         "FastAPI": "fastapi", "Flask": "flask", "Node.js": "nodedotjs", "Express": "express",
         "SQLAlchemy": "sqlalchemy", "Prisma": "prisma", "PostgreSQL + PostGIS": "postgresql",
-        "PostGIS": "postgresql", "MongoDB": "mongodb", "Redis": "redis",
+        "PostGIS": "postgresql", "PostgreSQL": "postgresql", "Linux": "linux", "MongoDB": "mongodb", "Redis": "redis",
         "OpenSearch": "opensearch", "SQLite": "sqlite",
         "React 19": "react", "React": "react", "TypeScript": "typescript",
         "Next.js": "nextdotjs", "Three.js": "threedotjs", "MapLibre": "maplibre",

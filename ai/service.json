@@ -3,11 +3,11 @@
   "url": "https://psychofict.github.io",
   "contact": "ebstarmusic@gmail.com",
   "capabilities": [
-    "Builds production AI systems: retrieval, agents and computer vision for city infrastructure, edge to cloud",
-    "Publishes research on learning to label every pixel from a handful of examples, without letting the model's own mistakes compound",
-    "Four first-author papers, two of them peer-reviewed",
-    "Releases open-source tools and the training code behind every paper",
+    "Builds production LLM systems: hybrid RAG, knowledge-graph retrieval, tool-using agents, multi-provider model routing and edge vision",
+    "Researches semi-supervised semantic segmentation: pseudo-label reliability, uncertainty calibration and contrastive learning",
+    "Four first-author papers: CW-BASS (IEEE IJCNN 2025), FARCLUSS (Neural Networks, vol. 205), CW-BASS v2 (arXiv:2608.12773) and PixCon (arXiv:2607.03068, under review)",
+    "Releases open-source tools (hwpkit, codexwatch, claudehop, codexhop) and the code for each paper",
     "Open to ML and research-engineer roles, and to research collaborations"
   ],
-  "updated": "2026-10-11"
+  "updated": "2026-11-22"
 }

@@ -1,118 +1,132 @@
 # Ebenezer Tarubinga
 
-> Ebenezer Tarubinga â AI/ML engineer in Seoul. Production retrieval, agents, computer vision and platform infrastructure, plus four first-author papers on learning to segment from almost no labels.
+> Ebenezer Tarubinga, AI/ML research engineer in Seoul. Four first-author papers on semi-supervised semantic segmentation, and production LLM systems: hybrid RAG, tool-using agents, model routing and edge vision.
 
-This file describes https://psychofict.github.io, the official site of Ebenezer Tarubinga. It is built from the site's own pages and was last built on 2026-10-11.
+This file describes https://psychofict.github.io, the official site of Ebenezer Tarubinga. It is built from the site's own pages and was last built on 2026-11-22.
 
 ## What it does
 
-- Builds production AI systems: retrieval, agents and computer vision for city infrastructure, edge to cloud
-- Publishes research on learning to label every pixel from a handful of examples, without letting the model's own mistakes compound
-- Four first-author papers, two of them peer-reviewed
-- Releases open-source tools and the training code behind every paper
+- Builds production LLM systems: hybrid RAG, knowledge-graph retrieval, tool-using agents, multi-provider model routing and edge vision
+- Researches semi-supervised semantic segmentation: pseudo-label reliability, uncertainty calibration and contrastive learning
+- Four first-author papers: CW-BASS (IEEE IJCNN 2025), FARCLUSS (Neural Networks, vol. 205), CW-BASS v2 (arXiv:2608.12773) and PixCon (arXiv:2607.03068, under review)
+- Releases open-source tools (hwpkit, codexwatch, claudehop, codexhop) and the code for each paper
 - Open to ML and research-engineer roles, and to research collaborations
 
-## Ebenezer Tarubinga â AI/ML Engineer
+## Ebenezer Tarubinga
 Source: [https://psychofict.github.io/](https://psychofict.github.io/)
 
 Open to ML and research-engineer roles, and research collaborations
 Ebenezer Tarubinga
-AI/ML Engineer
-I build production AI systems: retrieval, agents and computer vision for city infrastructure, edge to cloud. I publish on the research side of the same problem, and I build the platform underneath a nine-product fleet.
-Four first-author papers Â· one Korean patent filed Â· MSc AI, Korea University Â· shipping since 2019
+AI/ML Research Engineer · Computer Vision · LLM Systems
+AI/ML engineer and first-author researcher working across dense prediction and production LLM systems. Research spans semi-supervised semantic segmentation, pseudo-label reliability, uncertainty calibration and contrastive learning; engineering work spans hybrid RAG, knowledge-graph retrieval, tool-using agents, multi-provider model routing and edge vision.
+Four first-author papers · Korean patent application · MSc AI, Korea University, 2023–2026
 Building
-Production systems
-Products shipped
-2019
-Shipping since
+500+
+Student users
+80,000+
+Learning sessions
+PostgreSQL databases
 Research
 First-author papers
-Peer-reviewed
-Korean patent filed
-01 â Building
+Conference and journal papers
+Korean patent application
+01 — Building
 ### Systems
-Client work is described by what it does and what I built, not by whose data is in it, so those repositories stay private.
-### Retrieval over utility operations data
-Hybrid retrieval and reranking over a water utility's operations data, reasoning across a knowledge graph so every answer carries its evidence. Scored on a held-out set.
-### Operations agent for a water grid
-A tool-calling agent that reads the live grid strictly read-only, so it cannot act on infrastructure. Guardrails at every tool boundary, adversarial inputs in the eval harness.
-### 3D digital twin for road infrastructure
-Live motorway telemetry on a Three.js map over PostGIS, for an international smart-mobility programme. My part was hardening a prototype until it could pass certification.
-### Edge vision on street-level camera hardware
-On-device detection on municipal camera poles, MQTT and serial down to the hardware. Offline-first: it survives a cloud outage and recovers a device that stops reporting.
-### Single sign-on and billing for a nine-product fleet
-One OIDC provider answers two questions for every product: who is this request, and is this organisation's subscription active. Identity fails closed and the gate fails open, so a billing blip cannot lock out someone who paid.
-### Ten databases onto one box
-Moved a fleet off managed Postgres onto one instance behind pgbouncer, one role per product. What forced it was an ORM distinct with no limit: 54,000 rows every five minutes to compute eight booleans.
-### A model gateway that cannot bill
-Two free tiers chained, so no product holds a paid model key. It fails over on 401, 402, 403, 404, 413, 429 and 5xx, and never on 400, because a 400 is our own bad request.
-### Checkers instead of memory
-Certificates, search visibility, crawler policy and factual claims, each swept weekly by a script that exits non-zero only on new drift. None of it is visible to a build or a test.
+Production and platform work is described by what it does and what I built, not by whose data is in it, so those repositories stay private.
+### Hybrid retrieval over utility-operations data
+Hybrid retrieval combining lexical and vector retrieval, reranking and knowledge-graph reasoning to produce evidence-backed answers. Retrieval quality is evaluated on a held-out set.
+### Read-only operations agent for water-grid workflows
+A read-only, tool-calling operations agent for water-grid workflows, with guardrails at tool boundaries and an adversarial-input evaluation harness.
+### Road-infrastructure digital twin
+Hardened a live road-infrastructure digital twin built with Three.js and PostGIS, taking a prototype toward certification.
+### Multi-provider LLM routing
+Implemented multi-provider LLM routing with circuit-breaker failover.
+### Edge vision on municipal camera hardware
+Deployed YOLOv5/OpenVINO detection to municipal camera hardware, with MQTT/serial integration and offline-first recovery.
+### 10-database PostgreSQL fleet behind PgBouncer
+Consolidated a 10-database PostgreSQL fleet behind PgBouncer, and traced a recurring ORM workload that read 54,000 rows every five minutes to compute eight status flags.
+### OIDC identity and subscription gating
+Built OIDC identity and subscription-gating components for a multi-product platform.
 ### Backdoor attacks on CLIP
 Stealthy backdoor triggers via dual-embedding alignment in CLIP's joint visual and textual space, reproducing and extending BadCLIP.
 ### Semantic-aware multi-label adversarial attacks
 Targeted perturbations for multi-label classifiers that exploit semantic label co-occurrence instead of treating each label independently.
 ### Semi-supervised segmentation baselines
-A systematic evaluation of weak-to-strong consistency (UniMatch) and self-training (ST++). The groundwork the four papers were built on.
+A systematic evaluation of weak-to-strong consistency (UniMatch) and self-training (ST++).
 ### Monocular depth estimation
 Depth and point-cloud generation for autonomous driving on KITTI, over an improved depth-to-pointcloud pipeline on Depth Anything V2.
-### Effective context length of LLMs
-Why a declared context length overstates the effective one: positional-encoding bias and the STRING shift, measured across Llama, Mistral and Qwen.
+### LLM evaluation: effective context length study
+Reproduced and extended STRING-style analysis across Llama-2-7B, Llama-3-8B, Mistral-7B and Qwen2-7B. Evaluated RULER-style retrieval/tracking tasks at 4K–32K context lengths and analyzed RoPE positional decay and attention sinks; repository reports effective lengths of approximately 6K, 14K, 11K and 18K respectively.
 ### AgriLet, crop disease detection
 Disease identification with severity scoring for smallholder farmers, plus learning modules, community data contributions and downloadable datasets.
 ### eLearn, an e-learning platform
 O Level and A Level revision for African high-school students: 20+ subjects, 70+ lessons, study streaks and a learning-analytics dashboard.
-02 â Research
+02 — Research
 ### Papers
-Four mechanisms for one problem: learning to label every pixel from a handful of examples, without letting the model's own mistakes compound. Two are peer-reviewed.
+Four first-author papers on semi-supervised semantic segmentation: pseudo-label reliability, uncertainty calibration and contrastive learning, on CNN and DINOv2 backbones.
 Research topics
-### CW-BASS v2: Saturation-Aware Pseudo-Label Selection for Semi-Supervised Segmentation under Foundation-Model Teachers
-Ebenezer Tarubinga Â· independent
-A foundation-model teacher's confidence saturates, so a one-pass gate asks whether its confident set deserves the confidence it demands.
-Picks correctly on all six DINOv2 teachers, blind Â· +1.5 mIoU on ADE20K
-### PixCon: Clean-Positive Contrastive Learning for Foundation-Model Semi-Supervised Segmentation
-Ebenezer Tarubinga Â· independent
-A pixel memory that admits only labeled pixels, keeping contrastive positives free of pseudo-label noise, with nothing added at inference.
-Beats a compute-matched UniMatch V2 on every Pascal-1/8 seed Â· 87.90 mIoU, three-seed mean
-### FARCLUSS: Fuzzy Adaptive Rebalancing & Contrastive Uncertainty Learning for Semi-Supervised Segmentation
-Ebenezer Tarubinga , Jenifer Kalafatovich , Seong-Whan Lee
-Fuzzy top-K pseudo-labels with entropy-normalized uncertainty weighting: the pixels the model is least sure about are down-weighted, not discarded.
-78.8 / 78.2 mIoU, Cityscapes and Pascal VOC, ResNet-101
 ### CW-BASS: Confidence-Weighted Boundary-Aware Learning for Semi-Supervised Semantic Segmentation
-Ebenezer Tarubinga , Jenifer Kalafatovich , Seong-Whan Lee
-Confidence-weighted cross-entropy with Sobel boundary regularization, against two failures that compound: boundary blur and confirmation bias.
-77.15 mIoU on Pascal VOC 2012, ResNet-50 Â· 65.9 on Cityscapes from 100 labeled images
-03 â Released
+Ebenezer Tarubinga, Jenifer Kalafatovich, Seong-Whan Lee
+IEEE International Joint Conference on Neural Networks (IJCNN), 2025 · DOI 10.1109/IJCNN64981.2025.11227871
+A confidence-weighted pseudo-label loss, adaptive thresholding and Sobel boundary supervision, targeting confirmation bias, noisy pseudo-labels and limited-label learning.
+65.9 mIoU on Cityscapes with 100 labeled images (1/30)
+### FARCLUSS: Fuzzy Adaptive Rebalancing and Contrastive Uncertainty Learning for Semi-Supervised Semantic Segmentation
+Ebenezer Tarubinga, Jenifer Kalafatovich, Seong-Whan Lee
+Neural Networks, vol. 205, article 109494 (2027) · DOI 10.1016/j.neunet.2026.109494
+Top-K fuzzy labels, entropy-based uncertainty weighting, adaptive class rebalancing and a 128-D prototype-contrastive head, with ResNet-101 at 1/8 labeled data.
+78.2 mIoU on Pascal VOC and 78.5 on Cityscapes
+### CW-BASS v2: Saturation-Aware Pseudo-Label Selection for Semi-Supervised Segmentation under Foundation-Model Teachers
+Ebenezer Tarubinga
+arXiv: 2608.12773 (2026)
+A reliability gate for pseudo-label selection, evaluated across six DINOv2 teacher settings with 5% held-out calibration, on DINOv2-Base (ViT-B/14) with DPT-lite.
+Pascal VOC 1/8: 86.19 ± 1.82 mIoU (3 seeds) · Cityscapes 83.96 and ADE20K 50.58 (+1.5 over the strict-threshold reproduction)
+### PixCon: Clean-Positive Contrastive Learning for Foundation-Model Semi-Supervised Segmentation
+Ebenezer Tarubinga
+arXiv: 2607.03068 (2026) · under review
+A clean-positive pixel-contrastive branch with 256 entries per class and τ=0.1. The contrastive head is training-only and adds no inference-time parameters.
+Pascal VOC 1/8: 87.90 mIoU (3-seed mean, versus 87.01 for the matched reproduction) · Cityscapes 83.88 and ADE20K 49.23 (single-seed results)
+Research highlights and experimental scale
+### MSc research: CW-BASS and FARCLUSS
+DeepLabV3+ with ResNet-50/101 on Pascal VOC 2012 and Cityscapes; evaluated 1/16–1/2 labeled-data splits. CW-BASS combines confidence-weighted pseudo-label loss, adaptive thresholding and Sobel boundary supervision, reaching 65.9 mIoU on Cityscapes with 100 labeled images (1/30). FARCLUSS combines top-K fuzzy labels, entropy-based uncertainty weighting, adaptive class rebalancing and a 128-D prototype-contrastive head; ResNet-101 at 1/8 labeled data: 78.2 mIoU on VOC and 78.5 on Cityscapes. Training recipes: 80 epochs (VOC), 240 (Cityscapes), batch 4/2; CUDA multi-GPU DataParallel support in CW-BASS.
+### Independent foundation-model research: CW-BASS v2 and PixCon
+DINOv2-Base (ViT-B/14) with DPT-lite on Pascal VOC, Cityscapes and ADE20K. CW-BASS v2: 518×518 crops, 60 epochs, batch 4, AdamW, BF16 AMP, 5% held-out calibration and a reliability gate evaluated across six DINOv2 teacher settings. Pascal VOC 1/8: 86.19 ± 1.82 mIoU (3 seeds); Cityscapes 83.96 and ADE20K 50.58 (+1.5 over the strict-threshold reproduction). PixCon: 60/120-epoch recipes, batch 4 (effective 16 with gradient accumulation), clean-positive pixel-contrastive branch with 256 entries/class and τ=0.1. Pascal VOC 1/8: 87.90 mIoU (3-seed mean, versus 87.01 for the matched reproduction); Cityscapes 83.88 and ADE20K 49.23 (single-seed results). The contrastive head is training-only and adds no inference-time parameters.
+03 — Released
 ### Open source
-Tools I needed and published, plus the training code behind every paper.
-Read, edit and extract text from Korean HWP and HWPX files in pure Python, with no Hancom Office and no Windows. Form filling, seals, and text extraction for retrieval pipelines.
+Selected open-source engineering, plus the code behind each paper.
+Pure-Python HWP/HWPX document reader and editor; extracts Korean document text for retrieval pipelines and supports form filling and binary-safe rewriting. Published on PyPI.
+Local-first Codex usage and token analytics with response-level deduplication, quota forensics and a terminal/dashboard interface; README reports scanning 1.85 GB of logs across 59 sessions in about 2 seconds on the development machine.
+Dependency-free Python utilities for switching Claude Code and OpenAI Codex accounts or provider profiles across terminals.
 A framework for personal and academic websites: typed section blocks, ORCID and BibTeX ingestion, and a licence that leaves the owner holding their own copy.
-Move an agent CLI between accounts without logging in again. One file, standard library only.
-Training code, configs and released checkpoints for all four papers.
-04 â Path
+Code for each of the four papers.
+04 — Path
 ### Experience
 ### AI/ML Engineer
-Gractor Â· Smart-city AI
-Sept 2025 â present Â· Seoul, Korea
-Retrieval, agents and computer vision for smart-city platforms, edge to cloud. I build the systems, the guardrails around them, and the evaluation harnesses that keep them honest once real operators depend on them.
-### Research Engineer (MSc)
-Korea University Â· Pattern Recognition & ML Lab
-Aug 2023 â Feb 2026 Â· Seoul, Korea
-Semi-supervised segmentation under Prof. Seong-Whan Lee (IEEE Fellow): four first-author papers, ~10K lines of multi-GPU PyTorch training infrastructure, one Korean patent filing.
+Gractor
+Sep 2025 – Present · Seoul, Korea
+- Built hybrid retrieval for utility-operations data, combining lexical/vector retrieval, reranking and knowledge-graph reasoning to produce evidence-backed answers; evaluated retrieval quality on a held-out set.
+- Developed a read-only, tool-calling operations agent for water-grid workflows, with guardrails at tool boundaries and an adversarial-input evaluation harness.
+- Implemented multi-provider LLM routing with circuit-breaker failover; deployed YOLOv5/OpenVINO detection to municipal camera hardware with MQTT/serial integration and offline-first recovery.
+- Hardened a live road-infrastructure digital twin using Three.js and PostGIS, taking a prototype toward certification.
+### Research Engineer, Pattern Recognition & Machine Learning Lab
+Korea University
+Aug 2023 – Aug 2025 · Seoul, Korea
+- Led first-author MSc research on semi-supervised semantic segmentation, developing CW-BASS and FARCLUSS; both target confirmation bias, noisy pseudo-labels and limited-label learning.
+- Built configurable PyTorch training/evaluation pipelines with labeled/unlabeled splits, EMA teacher–student training, checkpointing and validation mIoU; CW-BASS supports CUDA multi-GPU DataParallel training.
+- Worked on autonomous-driving object detection and tracking, monocular depth estimation, dense/sparse matching and instance retrieval; contributed to a Korean patent application for real-time object detection.
 ### AI Software Engineer
-GliT Â· EdTech
-Jan 2019 â Jan 2021 Â· Hybrid
-Ten-plus full-cycle product builds and STEM programmes with partner schools.
+GliT
+Jan 2019 – Jan 2021 · Hybrid
+- Built offline-first learning products used by 500+ students across 80,000+ learning sessions; delivered end-to-end mobile and web product development.
 ### MSc, Artificial Intelligence
-Korea University Â· 2023 â 2026
-Computer vision, advised by Prof. Seong-Whan Lee (IEEE Fellow).
-### Patent
-Republic of Korea Â· application filed
-Real-time object detection method, recording medium and device performing the same. Filed out of the autonomous-driving perception work.
-05 â Toolkit
+Korea University, Seoul · 2023–2026 · GPA 3.78/4.0
+Advisor: Prof. Seong-Whan Lee (IEEE Fellow).
+### Patent application
+Republic of Korea · application filed
+“Real-time object detection method, recording medium and device performing the same”
+05 — Toolkit
 ### Skills
 Every row opens to the full list.
-06 â Credentials
+06 — Credentials
 ### Certifications
 All eight, with titles
 - IBM Applied AI Professional Certificate
@@ -123,22 +137,22 @@ All eight, with titles
 - Amazon Web Services AWS S3 Basics
 - Emory University Neuroscience
 - MIT Game Development with Scratch
-07 â Questions
+07 — Questions
 ### Questions
 ### What does Ebenezer Tarubinga do?
-I build production AI systems: retrieval, agents and computer vision for city infrastructure, edge to cloud. I publish on the research side of the same problem, and I build the platform underneath a nine-product fleet.
+AI/ML engineer and first-author researcher working across dense prediction and production LLM systems. Research spans semi-supervised semantic segmentation, pseudo-label reliability, uncertainty calibration and contrastive learning; engineering work spans hybrid RAG, knowledge-graph retrieval, tool-using agents, multi-provider model routing and edge vision.
+### What is his current role?
+AI/ML Engineer at Gractor in Seoul, Korea, since September 2025. I built hybrid retrieval for utility-operations data, a read-only tool-calling operations agent for water-grid workflows, multi-provider LLM routing with circuit-breaker failover and YOLOv5/OpenVINO edge detection, and hardened a road-infrastructure digital twin.
 ### What does his research cover?
-Four mechanisms for one problem: learning to label every pixel from a handful of examples, without letting the model's own mistakes compound. Two are peer-reviewed.
+Four first-author papers on semi-supervised semantic segmentation: CW-BASS (IEEE IJCNN 2025), FARCLUSS (Neural Networks, vol. 205), CW-BASS v2 (arXiv:2608.12773) and PixCon (arXiv:2607.03068, under review). The first two are MSc research at Korea University; the last two are independent research.
 ### What is CW-BASS v2?
-A foundation-model teacher's confidence saturates, so a one-pass gate asks whether its confident set deserves the confidence it demands.
+A first-author paper on saturation-aware pseudo-label selection under foundation-model teachers (arXiv:2608.12773, 2026). It uses DINOv2-Base (ViT-B/14) with DPT-lite and a reliability gate evaluated across six DINOv2 teacher settings, and reaches 86.19 ± 1.82 mIoU on Pascal VOC 1/8 over three seeds.
 ### What is PixCon?
-A pixel memory that admits only labeled pixels, keeping contrastive positives free of pseudo-label noise, with nothing added at inference.
-### What code and checkpoints are released?
-Training code, configs and released checkpoints for all four papers.
+A first-author paper on clean-positive contrastive learning for foundation-model semi-supervised segmentation (arXiv:2607.03068, 2026), under review. The contrastive head is training-only and adds no inference-time parameters. On Pascal VOC 1/8 it reaches 87.90 mIoU (3-seed mean, versus 87.01 for the matched reproduction).
 ### What has he released as open source?
-hwpkit: Read, edit and extract text from Korean HWP and HWPX files in pure Python, with no Hancom Office and no Windows. tzohar-engine: A framework for personal and academic websites: typed section blocks, ORCID and BibTeX ingestion, and a licence that leaves the owner holding their own copy. claudehop: Move an agent CLI between accounts without logging in again. One file, standard library only.
-### What did he research at Korea University?
-Semi-supervised segmentation under Prof. Seong-Whan Lee (IEEE Fellow): four first-author papers, ~10K lines of multi-GPU PyTorch training infrastructure, one Korean patent filing.
+hwpkit: a pure-Python HWP/HWPX document reader and editor, published on PyPI. codexwatch: local-first Codex usage and token analytics. claudehop and codexhop: dependency-free Python utilities for switching Claude Code and OpenAI Codex accounts or provider profiles across terminals. Also tzohar-engine, a framework for personal and academic websites, and the code for the four papers.
+### What did he study and research at Korea University?
+An MSc in Artificial Intelligence, 2023–2026, GPA 3.78/4.0, advised by Prof. Seong-Whan Lee (IEEE Fellow). I was a Research Engineer in the Pattern Recognition & Machine Learning Lab from August 2023 to August 2025, hold the Global Korea Scholarship (sole Zimbabwean awardee) and a BK21 Research Fellowship, and contributed to a Korean patent application for real-time object detection.
 ### Is he open to new work?
 Open to ML and research-engineer roles, and to research collaborations.
 ### Let's build something that ships.

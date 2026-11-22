@@ -695,6 +695,31 @@ a.oss-name:hover { color: var(--accent); }
   footer { justify-content: center; text-align: center; }
 }
 
+/* ===================== CV CONTENT ADDITIONS ===================== */
+/* Role bullets: the CV lists each role as short points, so the cards carry a
+   list where they used to carry one paragraph. */
+.role-points { margin-top: 11px; display: grid; gap: 8px; }
+.role-points li {
+  position: relative; padding-left: 16px; color: var(--ink-2);
+  font-size: 0.91rem; line-height: 1.55; text-wrap: pretty;
+}
+.role-points li::before {
+  content: ""; position: absolute; left: 0; top: 0.7em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: 0.7;
+}
+/* A small heading above a block inside a section (research highlights). */
+.block-kicker { margin-top: 38px; }
+/* Seven-character figures such as 80,000+ need a little more room than the
+   four-digit years the strip was first drawn for. */
+.stat { padding: 16px 8px; }
+.stat-num { font-size: clamp(1.05rem, 2.3vw, 1.65rem); }
+.lede { max-width: 64ch; }
+/* On a phone the bullets run under the company mark, so each point gets the
+   full card width instead of a 230px column. */
+@media (max-width: 540px) {
+  .role-points { margin-left: -58px; }
+}
+
 /* ===================== PRINT ===================== */
 @media print {
   .nav, .page-glow, .hero-cta, .socials, .filters, .closing, footer,
